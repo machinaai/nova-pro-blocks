@@ -14,6 +14,22 @@
         "página en blanco"
       ],
       "previewUrl": "https://preview.pro.ant.design"
+    },
+    {
+      "key": "NbeLoginDynamic",
+      "description": "Formulario de acceso conforme al diseño de la nueva banca empresarial.",
+      "url": "https://github.com/machinaai/pro-blocks/tree/master/NbeLoginDynamic",
+      "path": "NbeLoginDynamic",
+      "features": [
+        "antd"
+      ],
+      "img": "https://raw.githubusercontent.com/machinaai/pro-blocks/master/NbeLoginDynamic/snapshot.png?raw=true",
+      "tags": [
+        "nbe",
+        "Iniciar sesión",
+        "dynamic"
+      ],
+      "previewUrl": "https://preview.pro.ant.design/nbe/login/dynamic"
     }
   ]
 }
