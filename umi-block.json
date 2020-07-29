@@ -1,0 +1,19 @@
+{
+  "list": [
+    {
+      "key": "EmptyPage",
+      "name": "Página en blanco",
+      "description": "Una página en blanco, ¡todo comienza aquí!",
+      "url": "https://github.com/machinaai/pro-blocks/tree/master/EmptyPage",
+      "path": "NewPage",
+      "features": [
+        "antd"
+      ],
+      "img": "https://raw.githubusercontent.com/machinaai/pro-blocks/master/EmptyPage/snapshot.png?raw=true",
+      "tags": [
+        "página en blanco"
+      ],
+      "previewUrl": "https://preview.pro.ant.design"
+    }
+  ]
+}
