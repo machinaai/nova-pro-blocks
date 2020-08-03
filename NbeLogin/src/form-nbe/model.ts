@@ -1,13 +1,11 @@
 import { stringify } from 'querystring';
 import { history, Reducer, Effect } from 'umi';
 
-import { getPageQuery } from '@/utils/utils';
 import { accountLogin, validateOTPLogin, getOTPLogin } from './service';
 
 export interface StateType {
   status?: string | number;
   type?: string;
-  currentAuthority?: 'user' | 'guest' | 'admin';
   step?: string;
   data?: { user: string; password: string };
   dataResponse?: { maskedBusinessName: string; maskedUserName: string };
@@ -97,9 +95,8 @@ const Model: LoginModelType = {
     },
 
     logout() {
-      const { redirect } = getPageQuery();
       // Note: There may be security issues, please note
-      if (window.location.pathname !== '/user/login' && !redirect) {
+      if (window.location.pathname !== '/user/login') {
         history.replace({
           pathname: '/user/login',
           search: stringify({

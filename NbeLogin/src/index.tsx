@@ -3,7 +3,7 @@ import FooterLogin from './footer-nbe';
 import HeaderLogin from './header-nbe';
 import FormLogin from './form-nbe';
 
-const PAGE_NAME_UPPER_CAMEL_CASE: React.FC<PAGE_NAME_UPPER_CAMEL_CASEProps> = () => {
+const NbeLogin: React.FC = () => {
   return (
     <>
       <HeaderLogin /> <FormLogin /> <FooterLogin />{' '}
@@ -11,4 +11,4 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC<PAGE_NAME_UPPER_CAMEL_CASEProps> = ()
   );
 };
 
-export default PAGE_NAME_UPPER_CAMEL_CASE;
+export default NbeLogin;

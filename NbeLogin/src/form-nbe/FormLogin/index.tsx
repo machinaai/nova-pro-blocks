@@ -208,7 +208,7 @@ const Login: React.FC<LoginProps> = (props) => {
               float: 'right',
               fontFamily: 'Roboto-Regular, Arial, Helvetica, sans-serif',
             }}
-            to="/user/recover"
+            to="#"
           >
             {intl.formatMessage({
               id: 'login.recoveryPassword',
@@ -222,7 +222,7 @@ const Login: React.FC<LoginProps> = (props) => {
             defaultMessage: 'Acceder',
           })}
         </Submit>
-        <Link className={styles.register} to="/user/register">
+        <Link className={styles.register} to="#">
           {intl.formatMessage({
             id: 'login.signup',
             defaultMessage: 'Registro',
