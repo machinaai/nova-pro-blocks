@@ -16,15 +16,16 @@
       "previewUrl": "https://preview.pro.ant.design"
     },
     {
-      "key": "RegistryNbe",
+      "key": "Registry-Nbe",
       "name": "Registry-Nbe",
       "description": "This block is the registry flow",
-      "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/RegistryNbe",
-      "path": "NewPage",
+      "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/Registry-Nbe",
+      "path": "Registry-Nbe",
+      "defaultPath": "/Registry-Nbe",
       "features": [
         "antd"
       ],
-      "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/RegistryNbe/snapshot.png?raw=true",
+      "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/Registry-Nbe/snapshot.png?raw=true",
       "tags": [
         "Registry Flow"
       ],
