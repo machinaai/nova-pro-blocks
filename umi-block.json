@@ -16,20 +16,20 @@
       "previewUrl": "https://preview.pro.ant.design"
     },
     {
-      "key": "NbeLoginDynamic",
-      "description": "Formulario de acceso conforme al diseño de la nueva banca empresarial.",
-      "url": "https://github.com/machinaai/pro-blocks/tree/master/NbeLoginDynamic",
-      "path": "NbeLoginDynamic",
+      "key": "Registry-Nbe",
+      "name": "Registry-Nbe",
+      "description": "This block is the registry flow",
+      "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/Registry-Nbe",
+      "path": "Registry-Nbe",
+      "defaultPath": "/Registry-Nbe",
       "features": [
         "antd"
       ],
-      "img": "https://raw.githubusercontent.com/machinaai/pro-blocks/master/NbeLoginDynamic/snapshot.png?raw=true",
+      "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/Registry-Nbe/snapshot.png?raw=true",
       "tags": [
-        "nbe",
-        "Iniciar sesión",
-        "dynamic"
+        "Registry Flow"
       ],
-      "previewUrl": "https://preview.pro.ant.design/nbe/login/dynamic"
+      "previewUrl": "https://preview.pro.ant.design"
     }
   ]
 }
