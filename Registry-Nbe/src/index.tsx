@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Steps } from 'antd';
 import { connect, formatMessage } from 'umi';
-import HeaderLogin from '@/components/HeaderLogin';
-import FooterLogin from '@/components/FooterLogin';
+import HeaderNbe from './components/HeaderNbe/src/index';
+import FooterNbe from './components/FooterNbe/src/index';
 import { StateType } from './model';
 import Step1 from './components/Step1';
 import Step2 from './components/Step2';
@@ -47,7 +47,7 @@ const FormStepForm: React.FC<FormStepFormProps> = ({ current }) => {
   }, [current]);
   return (
     <>
-      <HeaderLogin />
+      <HeaderNbe />
       <div className={styles.main}>
         <div className={styles.registryTitleContainer}>
           <span className={styles.registryTitle}>
@@ -76,7 +76,7 @@ const FormStepForm: React.FC<FormStepFormProps> = ({ current }) => {
         </Steps>
         {stepComponent}
       </div>
-      <FooterLogin />
+      <FooterNbe />
     </>
   );
 };
