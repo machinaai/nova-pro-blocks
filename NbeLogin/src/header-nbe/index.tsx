@@ -4,7 +4,7 @@ import styles from './index.less';
 import SelectLang from './components/SelectLang/index';
 import logo from './assets/logos/bne-logo.svg';
 
-const Block: React.FC = () => {
+const HeaderNbe: React.FC = () => {
   const intl = useIntl();
 
   return (
@@ -32,4 +32,4 @@ const Block: React.FC = () => {
   );
 };
 
-export default Block;
+export default HeaderNbe;
