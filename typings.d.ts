@@ -10,6 +10,9 @@ declare module '*.gif';
 declare module '*.bmp';
 declare module '*.tiff';
 
+declare module 'react';
+declare module 'umi';
+
 declare module 'bizcharts-plugin-slider';
 
 declare module 'react-fittext';
