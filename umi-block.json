@@ -46,6 +46,22 @@
         "Login"
       ],
       "previewUrl": "https://preview.pro.ant.design"
+    },
+    {
+      "key": "Nbe-Recovery",
+      "name": "Nbe-Recovery",
+      "description": "This block is the recovery flow",
+      "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/NbeRecovery",
+      "path": "NbeRecovery",
+      "defaultPath": "/NbeRecovery",
+      "features": [
+        "antd"
+      ],
+      "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/NbeRecovery/snapshot.png",
+      "tags": [
+        "Recovery"
+      ],
+      "previewUrl": "https://preview.pro.ant.design"
     }
   ]
 }
