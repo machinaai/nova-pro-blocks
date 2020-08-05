@@ -1,4 +1,5 @@
 import request from 'umi-request';
+import { enviroment } from './enviroments/enviroments.fixture';
 import { FormLoginType } from './FormLogin/interfaces/formLogin.interface';
 import { FormLoginTypeOTP } from './FormLoginOtp/interfaces/formLoginOTP.interface';
 
@@ -7,7 +8,7 @@ const errorHandler = (error: { response: Response }): Response => {
 };
 
 export async function accountLogin(params: FormLoginType) {
-  return request('/private/v1/corporate/session/login', {
+  return request(enviroment.urlBase + enviroment.login, {
     method: 'POST',
     data: params,
     errorHandler,
@@ -16,7 +17,7 @@ export async function accountLogin(params: FormLoginType) {
 }
 
 export async function getOTPLogin() {
-  return request('/private/v1/corporate/session/requestOTPLogin', {
+  return request(enviroment.urlBase + enviroment.requestOTPLogin, {
     method: 'GET',
     errorHandler,
     credentials: 'include',
@@ -24,7 +25,7 @@ export async function getOTPLogin() {
 }
 
 export async function validateOTPLogin(params: FormLoginTypeOTP) {
-  return request('/private/v1/corporate/session/validateOTPLogin', {
+  return request(enviroment.urlBase + enviroment.validateOTPLogin, {
     method: 'POST',
     data: params,
     errorHandler,
