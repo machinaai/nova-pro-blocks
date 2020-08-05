@@ -1,6 +1,6 @@
 import request from 'umi-request';
-import { enviroment } from './enviroments/enviroments.fixture';
-import { ValidateUser } from './interfaces/validateUser.interface';
+import { enviroment } from '../enviroments/enviroments.fixture';
+import { ValidateUser } from '../interfaces/validateUser.interface';
 
 const errorHandler = (error: { response: Response }): Response => {
   return error.response;

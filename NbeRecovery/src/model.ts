@@ -1,8 +1,8 @@
 import { Effect, Reducer, history } from 'umi';
 
 import { stringify } from 'qs';
-import { getUserData, validatePhoneNumber, setPassword } from './service';
-import { requestOTP, validateOTP } from '../../../services/dynamic-authentication';
+import { getUserData, validatePhoneNumber, setPassword } from './services/recovery';
+import { requestOTP, validateOTP } from './services/dynamic-authentication';
 
 export interface StateType {
   current?: string;
