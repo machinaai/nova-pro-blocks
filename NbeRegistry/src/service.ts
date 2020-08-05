@@ -1,5 +1,5 @@
 import request from 'umi-request';
-import { enviroment } from '../enviroments/enviroments.fixture';
+import { enviroment } from './enviroments/enviroments.fixture';
 import ValidateClient from './interfaces/validateClient.interface';
 import RegisterClient from './interfaces/registerClient.interface';
 
