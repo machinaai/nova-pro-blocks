@@ -1,10 +1,10 @@
 {
-  "name": "@nova-pro-blocks/registry-nbe",
+  "name": "@nova-pro-blocks/nbe-registry",
   "version": "0.0.1",
   "description": "This block is the registry flow",
   "repository": {
     "type": "git",
-    "url": "https://github.com/machinaai/umi-blocks/ant-design-pro/Registry-Nbe"
+    "url": ""
   },
   "license": "ISC",
   "publishConfig": {
