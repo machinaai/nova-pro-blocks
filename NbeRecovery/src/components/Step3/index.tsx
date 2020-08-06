@@ -2,7 +2,7 @@ import { Button, Form } from 'antd';
 import React, { useState, useEffect } from 'react';
 import { connect, Dispatch, Link, useIntl } from 'umi';
 import { UserOutlined } from '@ant-design/icons';
-import FormItem from '@/components/FormItem';
+import FormItem from '../FormItem';
 import { StateType } from '../../model';
 import styles from './index.less';
 import check from './assets/img/check.svg';

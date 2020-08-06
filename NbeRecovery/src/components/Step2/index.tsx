@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Form, Button } from 'antd';
 import { connect, Dispatch, useIntl, Link } from 'umi';
 import { PhoneOutlined, LockOutlined, ClockCircleOutlined } from '@ant-design/icons';
-import FormItem from '@/components/FormItem';
+import FormItem from '../FormItem';
 import { StateType } from '../../model';
 import styles from './index.less';
 
