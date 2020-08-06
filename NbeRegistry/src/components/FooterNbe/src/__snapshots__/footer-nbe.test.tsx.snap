@@ -9,7 +9,7 @@ exports[`FooterNbe should show correctly 1`] = `
     >
       <img
         alt="Logo Nova By Reboot"
-        src="test-file-stub"
+        src={Object {}}
       />
       Nova © Copyright 
       2020
@@ -22,7 +22,7 @@ exports[`FooterNbe should show correctly 1`] = `
     >
       <img
         alt="Logo Twitter"
-        src="test-file-stub"
+        src={Object {}}
       />
     </a>
     <a
@@ -31,7 +31,7 @@ exports[`FooterNbe should show correctly 1`] = `
     >
       <img
         alt="Logo Linkedin"
-        src="test-file-stub"
+        src={Object {}}
       />
     </a>
     <a
@@ -40,7 +40,7 @@ exports[`FooterNbe should show correctly 1`] = `
     >
       <img
         alt="Logo Facebook"
-        src="test-file-stub"
+        src={Object {}}
       />
     </a>
     <a
@@ -49,7 +49,7 @@ exports[`FooterNbe should show correctly 1`] = `
     >
       <img
         alt="Logo Instagram"
-        src="test-file-stub"
+        src={Object {}}
       />
     </a>
   </div>

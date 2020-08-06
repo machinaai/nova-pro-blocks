@@ -11,7 +11,7 @@
     "prettier": "prettier -c --write \"**/*\"",
     "screenshot": "pro screenshot",
     "start": "umi dev",
-    "test": "umi test"
+    "test": "jest"
   },
   "husky": {
     "hooks": {
@@ -31,7 +31,10 @@
     "@ant-design/icons": "^4.0.0",
     "@ant-design/pro-cli": "^1.0.5",
     "@ant-design/pro-layout": "^5.0.0",
+    "@babel/core": "^7.11.1",
+    "@babel/preset-env": "^7.11.0",
     "antd": "^4.0.0",
+    "babel-jest": "^26.2.2",
     "bizcharts": "^3.5.4",
     "numeral": "^2.0.6",
     "react": "^16.8.6",
@@ -40,16 +43,21 @@
     "umi-request": "^1.0.0"
   },
   "devDependencies": {
+    "@babel/preset-typescript": "^7.10.4",
     "@types/classnames": "^2.2.7",
     "@types/numeral": "^0.0.28",
     "@types/react-dom": "^16.8.4",
     "@umijs/fabric": "^2.0.0",
+    "@umijs/plugin-block-devtool": "^1.1.1",
     "@umijs/preset-ant-design-pro": "^1.1.2",
     "@umijs/preset-react": "^1.4.3",
-    "@umijs/plugin-block-devtool": "^1.1.1",
     "cross-env": "^7.0.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "enzyme-to-json": "^3.5.0",
     "eslint": "^7.2.0",
     "husky": "^4.0.1",
+    "jest-date-mock": "^1.0.8",
     "lint-staged": "^10.0.1",
     "mockjs": "^1.1.0",
     "prettier": "^2.0.2",
