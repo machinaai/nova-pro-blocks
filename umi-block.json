@@ -16,53 +16,52 @@
       "previewUrl": "https://preview.pro.ant.design"
     },
     {
-      "key": "NbeLogin",
-      "description": "Formulario de acceso conforme al diseño de la nueva banca empresarial.",
-      "url": "https://github.com/machinaai/pro-blocks/tree/master/NbeLogin",
-      "path": "NbeLogin",
+      "key": "Nbe-Registry",
+      "name": "Nbe-Registry",
+      "description": "This block is the registry flow",
+      "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/NbeRegistry",
+      "path": "NbeRegistry",
+      "defaultPath": "/NbeRegistry",
       "features": [
         "antd"
       ],
-      "img": "https://raw.githubusercontent.com/machinaai/pro-blocks/master/NbeLogin/snapshot.png?raw=true",
+      "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/NbeRegistry/snapshot.png",
       "tags": [
-        "nbe",
-        "Iniciar sesión"
+        "Registry Flow"
       ],
-      "previewUrl": "https://preview.pro.ant.design/nbe/login"
+      "previewUrl": "https://preview.pro.ant.design"
     },
     {
-      "key": "NbeRecovery",
+      "key": "Nbe-Login",
+      "name": "Nbe-Login",
+      "description": "Login Template for New Corporate Banking",
+      "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/NbeLogin",
+      "path": "NbeLogin",
+      "defaultPath": "/NbeLogin",
+      "features": [
+        "antd"
+      ],
+      "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/NbeLogin/snapshot.png",
+      "tags": [
+        "Login"
+      ],
+      "previewUrl": "https://preview.pro.ant.design"
+    },
+    {
+      "key": "Nbe-Recovery",
+      "name": "Nbe-Recovery",
       "description": "This block is the recovery flow",
-      "url": "https://github.com/machinaai/pro-blocks/tree/master/NbeRecovery",
+      "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/NbeRecovery",
       "path": "NbeRecovery",
+      "defaultPath": "/NbeRecovery",
       "features": [
-        "antd",
-        "i18n",
-        "dva"
+        "antd"
       ],
-      "img": "https://raw.githubusercontent.com/machinaai/pro-blocks/master/NbeRecovery/snapshot.png?raw=true",
+      "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/NbeRecovery/snapshot.png",
       "tags": [
-        "nbe",
-        "recovery"
+        "Recovery"
       ],
-      "previewUrl": "https://preview.pro.ant.design/nbe/recovery"
-    },
-    {
-      "key": "NbeRegistry",
-      "description": "This block is the registry flow",
-      "url": "https://github.com/machinaai/pro-blocks/tree/master/NbeRegistry",
-      "path": "NbeRegistry",
-      "features": [
-        "antd",
-        "i18n",
-        "dva"
-      ],
-      "img": "https://raw.githubusercontent.com/machinaai/pro-blocks/master/NbeRegistry/snapshot.png?raw=true",
-      "tags": [
-        "nbe",
-        "registry"
-      ],
-      "previewUrl": "https://preview.pro.ant.design/nbe/registry"
+      "previewUrl": "https://preview.pro.ant.design"
     }
   ]
 }
