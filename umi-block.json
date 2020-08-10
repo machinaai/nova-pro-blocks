@@ -17,7 +17,7 @@
     },
     {
       "key": "NbeLogin",
-      "description": "Formulario de acceso conforme al diseño de la nueva banca empresarial.",
+      "description": "Template for login nbe flow",
       "url": "https://github.com/machinaai/pro-blocks/tree/master/NbeLogin",
       "path": "NbeLogin",
       "features": [
