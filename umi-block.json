@@ -17,6 +17,7 @@
     },
     {
       "key": "NbeLogin",
+      "name": "Nbe-Login",
       "description": "Template for login nbe flow",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/NbeLogin",
       "path": "NbeLogin",
@@ -26,12 +27,13 @@
       "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/NbeLogin/snapshot.png",
       "tags": [
         "nbe",
-        "Iniciar sesión"
+        "login"
       ],
       "previewUrl": "https://preview.pro.ant.design/nbe/login"
     },
     {
       "key": "NbeRecovery",
+      "name": "Nbe-Recovery",
       "description": "This block is the recovery flow",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/NbeRecovery",
       "path": "NbeRecovery",
@@ -49,6 +51,7 @@
     },
     {
       "key": "NbeRegistry",
+      "name": "Nbe-Registry",
       "description": "This block is the registry flow",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/NbeRegistry",
       "path": "NbeRegistry",
