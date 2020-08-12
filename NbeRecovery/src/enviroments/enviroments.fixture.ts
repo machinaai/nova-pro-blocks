@@ -1,9 +1,7 @@
 /**
  * End points
  */
-export const enviroment = {
-  // urlBase: '',
-  urlBase: 'http://201.162.182.250:50752',
+export const enviromentEndPoints = {
   getUserData: '/private/v1/corporate/resetPassword/customer/getUserData',
   validatePhoneNumber: '/private/v1/corporate/resetPassword/customer/validatePhoneNumber',
   setPassword: '/private/v1/corporate/resetPassword/customer/setPassword',

@@ -1,5 +1,5 @@
 import request from 'umi-request';
-import { enviroment } from '../enviroments/enviroments.fixture';
+import { enviromentEndPoints } from '../enviroments/enviroments.fixture';
 import { ValidateUser } from '../interfaces/validateUser.interface';
 
 const errorHandler = (error: { response: Response }): Response => {
@@ -7,31 +7,26 @@ const errorHandler = (error: { response: Response }): Response => {
 };
 
 export async function getUserData(params: ValidateUser) {
-  return request(enviroment.urlBase + enviroment.getUserData, {
-    method: 'post',
-    headers: {},
+  return request(enviromentEndPoints.getUserData, {
+    method: 'POST',
     data: params,
     errorHandler,
-    referrerPolicy: 'unsafe-url',
-    mode: 'cors',
   });
 }
 
 export async function validatePhoneNumber(params: any) {
-  return request(enviroment.urlBase + enviroment.validatePhoneNumber, {
+  return request(enviromentEndPoints.validatePhoneNumber, {
     method: 'POST',
     headers: {
       Cookie: 'SESSION=YTk2MDFhNTMtY2Y3Ni00M2I5LWJmYWItZDA0ODFjN',
     },
     data: params,
     errorHandler,
-    referrerPolicy: 'unsafe-url',
-    mode: 'cors',
   });
 }
 
 export async function setPassword(params: any) {
-  return request(enviroment.urlBase + enviroment.setPassword, {
+  return request(enviromentEndPoints.setPassword, {
     method: 'POST',
     headers: {
       Cookie: 'SESSION=YTk2MDFhNTMtY2Y3Ni00M2I5LWJmYWItZDA0ODFjN',

@@ -1,5 +1,5 @@
 import request from 'umi-request';
-import { enviroment } from '../enviroments/enviroments.fixture';
+import { enviromentEndPoints } from '../enviroments/enviroments.fixture';
 
 /*
  * Interface for request OTP
@@ -37,12 +37,11 @@ const errorHandler = (error: { response: Response }): Response => {
 };
 
 export async function requestOTP() {
-  return request(enviroment.urlBase + enviroment.requestOTP, {
+  return request(enviromentEndPoints.requestOTP, {
     method: 'POST',
-    // headers: {
-    //   'Acceptance-Language': 'es-MX',
-    //   'Set-Cookie': 'SESSION = YTk2MDFhNTMtY2Y3Ni00M2I5LWJmYWItZDA0ODFjN',
-    // },
+    headers: {
+      Cookie: 'SESSION=YTk2MDFhNTMtY2Y3Ni00M2I5LWJmYWItZDA0ODFjN',
+    },
     data: mockTransactionInformation,
     errorHandler,
   });
@@ -50,12 +49,11 @@ export async function requestOTP() {
 
 export async function validateOTP(params: ValidationOTPInterface) {
   const { OTP } = params;
-  return request(enviroment.urlBase + enviroment.validateOTP, {
+  return request(enviromentEndPoints.validateOTP, {
     method: 'POST',
-    // headers: {
-    //   'Acceptance-Language': 'es-MX',
-    //   'Set-Cookie': 'SESSION = YTk2MDFhNTMtY2Y3Ni00M2I5LWJmYWItZDA0ODFjN',
-    // },
+    headers: {
+      Cookie: 'SESSION=YTk2MDFhNTMtY2Y3Ni00M2I5LWJmYWItZDA0ODFjN',
+    },
     data: { ...mockTransactionInformation, OTP },
     errorHandler,
   });
