@@ -1,6 +1,6 @@
 const fs = require('fs');
 const { join } = require('path');
-const gitUrl = 'https://github.com/machinaai/pro-blocks';
+const gitUrl = 'https://github.com/machinaai/nova-pro-blocks';
 
 const menuData = {
   home: 'principal',
@@ -151,7 +151,7 @@ const getFolderTreeData = (filePath) => {
             url: `${gitUrl}/tree/master/${fileName}`,
             path: fileName,
             features: getFeature(join(filePath, fileName)),
-            img: `https://raw.githubusercontent.com/machinaai/pro-blocks/master/${fileName}/snapshot.png?raw=true`,
+            img: `https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/${fileName}/snapshot.png`,
             tags: genBlockTags(fileName),
             previewUrl: `https://preview.pro.ant.design/${genBlockName(fileName)}`,
           };

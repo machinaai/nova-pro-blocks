@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { advanceTo } from 'jest-date-mock';
-import FooterNbe from './index';
+import MockDate from 'mockdate';
 
+import FooterNbe from './index';
 import logoNova from './assets/logos/nova.svg';
 import logoTwitter from './assets/icons/twitter.svg';
 import logoFacebook from './assets/icons/facebook.svg';
@@ -14,7 +14,7 @@ describe('FooterNbe', () => {
 
   beforeEach(() => {
     wrapper = shallow(<FooterNbe />);
-    advanceTo(new Date(2021, 5, 13));
+    MockDate.set(1620919810000);
   });
 
   test('should show correctly', () => {
