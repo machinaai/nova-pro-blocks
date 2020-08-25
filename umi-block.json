@@ -17,32 +17,30 @@
     },
     {
       "key": "NbeLogin",
-      "name": "Nbe-Login",
       "description": "Template for login nbe flow",
-      "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/NbeLogin",
+      "url": "https://github.com/machinaai/pro-blocks/tree/master/NbeLogin",
       "path": "NbeLogin",
       "features": [
         "antd"
       ],
-      "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/NbeLogin/snapshot.png",
+      "img": "https://raw.githubusercontent.com/machinaai/pro-blocks/master/NbeLogin/snapshot.png?raw=true",
       "tags": [
         "nbe",
-        "login"
+        "Iniciar sesión"
       ],
       "previewUrl": "https://preview.pro.ant.design/nbe/login"
     },
     {
       "key": "NbeRecovery",
-      "name": "Nbe-Recovery",
       "description": "This block is the recovery flow",
-      "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/NbeRecovery",
+      "url": "https://github.com/machinaai/pro-blocks/tree/master/NbeRecovery",
       "path": "NbeRecovery",
       "features": [
         "antd",
         "i18n",
         "dva"
       ],
-      "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/NbeRecovery/snapshot.png",
+      "img": "https://raw.githubusercontent.com/machinaai/pro-blocks/master/NbeRecovery/snapshot.png?raw=true",
       "tags": [
         "nbe",
         "recovery"
@@ -51,16 +49,15 @@
     },
     {
       "key": "NbeRegistry",
-      "name": "Nbe-Registry",
       "description": "This block is the registry flow",
-      "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/NbeRegistry",
+      "url": "https://github.com/machinaai/pro-blocks/tree/master/NbeRegistry",
       "path": "NbeRegistry",
       "features": [
         "antd",
         "i18n",
         "dva"
       ],
-      "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/NbeRegistry/snapshot.png",
+      "img": "https://raw.githubusercontent.com/machinaai/pro-blocks/master/NbeRegistry/snapshot.png?raw=true",
       "tags": [
         "nbe",
         "registry"
