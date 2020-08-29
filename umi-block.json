@@ -16,6 +16,22 @@
       "previewUrl": "https://preview.pro.ant.design"
     },
     {
+      "name": "Editor de procesos",
+      "key": "EditorFlow",
+      "description": "Un diagrama de flujo para representar el flujo de pantallas",
+      "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/EditorFlow",
+      "path": "EditorFlow",
+      "features": [
+        "antd",
+        "i18n"
+      ],
+      "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/EditorFlow/snapshot.png",
+      "tags": [
+        "Editor gráfico"
+      ],
+      "previewUrl": "https://preview.pro.ant.design/editor/flow"
+    },
+    {
       "key": "NbeLogin",
       "description": "Template for login nbe flow",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/NbeLogin",
