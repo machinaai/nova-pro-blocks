@@ -1,9 +1,8 @@
-/* eslint-disable jsx-a11y/label-has-for */
 import React, { useState, useEffect } from 'react';
 import { Input } from 'antd';
-import { InputProps } from './input-auto-label.interface';
+import { InputProps } from '../../interfaces/input-auto-label.interface';
 
-import styles from './index.less';
+import styles from '../index.less';
 
 const InputPassword = Input.Password;
 /*
@@ -33,7 +32,7 @@ const InputAuto: React.FC<InputProps> = (props) => {
     } else {
       setValue(inValue);
     }
-    if (inValue?.length > 0) {
+    if (inValue && inValue?.length > 0) {
       setLabelState(true);
     }
   }, [inValue]);
@@ -45,7 +44,8 @@ const InputAuto: React.FC<InputProps> = (props) => {
     const { value } = e.target;
     if (value === '') {
       setLabelState(false);
-    } else if (value.length > 0) {
+    }
+    if (value.length > 0) {
       setLabelState(true);
     }
     if (upperCase) {
@@ -79,7 +79,7 @@ const InputAuto: React.FC<InputProps> = (props) => {
         <InputPassword
           onPaste={disableCopyPaste}
           onCopy={disableCopyPaste}
-          onInput={eventsInputs}
+          onChange={eventsInputs}
           {...restProps}
           value={ValueState}
         />
@@ -87,7 +87,7 @@ const InputAuto: React.FC<InputProps> = (props) => {
         <Input
           onPaste={disableCopyPaste}
           onCopy={disableCopyPaste}
-          onInput={eventsInputs}
+          onChange={eventsInputs}
           {...restProps}
           value={ValueState}
         />

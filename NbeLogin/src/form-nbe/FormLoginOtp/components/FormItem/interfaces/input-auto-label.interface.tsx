@@ -80,7 +80,6 @@ export interface InputProps extends Partial<FormItemProps> {
    * Disabled copy on Input
    */
   onCopyDisabled?: boolean;
-
   /*
    * Blur input event
    */
@@ -93,4 +92,8 @@ export interface InputProps extends Partial<FormItemProps> {
    * Flag when there is an error
    */
   error?: boolean;
+  /**
+   * Choose true if upperCase is needed
+   */
+  upperCase?: boolean;
 }
