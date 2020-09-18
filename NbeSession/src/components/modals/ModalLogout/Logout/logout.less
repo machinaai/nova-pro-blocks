@@ -1,0 +1,73 @@
+@import '~antd/es/style/themes/default.less';
+@import '../../../../assets/less/base/_main.less';
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  > .title {
+    margin: 0;
+    color: rgba(0, 0, 0, 0.85);
+    font-size: 16px;
+    font-family: Roboto-Bold, Arial;
+    line-height: 24px;
+  }
+
+  > .ico {
+    color: rgba(0, 0, 0, 0.45);
+  }
+}
+
+.subtitle {
+  color: rgba(0, 0, 0, 0.65);
+  font-family: Roboto-Regular, Arial;
+}
+
+.container {
+  margin-top: 29px;
+
+  > .operations {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 45px;
+
+    > .colum {
+      width: 50%;
+
+      > .operation {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border-bottom-color: rgba(151, 151, 151, 0.25);
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+
+        > .number {
+          margin-right: 16px;
+        }
+      }
+    }
+  }
+}
+
+:global {
+  .logoutmodal___1ZCJf .ant-modal-confirm-btns {
+    display: none;
+  }
+
+  .logoutmodal___1ZCJf .ant-modal-body {
+    padding: 16px 24px 24px 56px;
+  }
+
+  @media (max-width: 640px) {
+    .ant-modal-confirm-content {
+      width: 97%;
+    }
+  }
+}
+
+.logoutmodal {
+  padding-bottom: 0;
+}

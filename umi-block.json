@@ -79,6 +79,22 @@
         "registry"
       ],
       "previewUrl": "https://preview.pro.ant.design/nbe/registry"
+    },
+    {
+      "key": "NbeSession",
+      "description": "This block is the registry flow",
+      "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/NbeSession",
+      "path": "NbeSession",
+      "features": [
+        "antd",
+        "dva"
+      ],
+      "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/NbeSession/snapshot.png",
+      "tags": [
+        "nbe",
+        "session"
+      ],
+      "previewUrl": "https://preview.pro.ant.design/nbe/session"
     }
   ]
 }
