@@ -7,7 +7,7 @@ import { ErrorEnum } from './error.enum';
 
 const { Option } = Select;
 
-interface props {
+interface PropsInterface {
   data?: ComboInterface[],
   title?: string,
   error?: number,
@@ -16,7 +16,7 @@ interface props {
   search?: Function
 }
 
-const ComboBlock: React.FC<props> =  ({data, title, error, retry, selected, search }) => {
+const ComboBlock: React.FC<PropsInterface> =  ({data, title, error, retry, selected, search }) => {
   const [header, setHeader] = useState(title);
   const int = useIntl();
   let valueFilter: string = '';
