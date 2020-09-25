@@ -9,7 +9,7 @@ export const formatAccounts = (data: AccountResponseInterface | AccountsResponse
     return [...accounts.map((account: AccountFieldsInterface) => {
         return {
             value: account.idAccount,
-            text: `${account.account_routings.accountType} ${account.label} ${account.balance.currency} ${account.balance.balance || ''}`,
+            text: `${account.account_routings.accountType} ${account.label} ${account.balance.currency} $${account.balance.balance || ''}`,
         }
     })];
 }

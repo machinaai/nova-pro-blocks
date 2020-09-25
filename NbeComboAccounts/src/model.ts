@@ -5,7 +5,8 @@ import { getOriginAccounts, getOriginQuery } from './service';
 
 export interface StateModel {
   accounts?:  AccountResponseInterface | AccountsResponseQueryInterface,
-  error?: ErrorResponseEnum
+  error?: ErrorResponseEnum,
+  page?: number,
 }
 
 interface Model {
@@ -17,13 +18,16 @@ interface Model {
   },
   reducers: {
     setAccount: Reducer<StateModel>,
-    setError: Reducer<StateModel>
+    setError: Reducer<StateModel>,
+    setPage: Reducer<StateModel>,
   }
 }
 
 const Model: Model = {
   namespace: 'nbeComboAccounts',
-  state: {},
+  state: {
+    page: 1
+  },
   effects: {
     *getAccounts({payload}, {call, put}) {
       const res = yield call(getOriginAccounts, payload);
@@ -32,6 +36,7 @@ const Model: Model = {
     *getAccountsQuery({payload}, {call, put}) {
       const res = yield call(getOriginQuery, payload);
       yield put({type: res.status? 'setError':'setAccount', payload: res.status? res.status : {...res}});
+      yield put({type: res.status? 'setError':'setPage', payload: res.status? res.status : res.pagination.pageNumber});
     }
   },
   reducers: {
@@ -45,6 +50,12 @@ const Model: Model = {
       return{
         ...state,
         error: payload
+      }
+    },
+    setPage(state, {payload}) {
+      return {
+        ...state,
+        page: payload
       }
     }
   }

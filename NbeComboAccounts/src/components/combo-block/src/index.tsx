@@ -7,7 +7,7 @@ import { ErrorEnum } from './error.enum';
 
 const { Option } = Select;
 
-interface PropsInterface {
+interface props {
   data?: ComboInterface[],
   title?: string,
   error?: number,
@@ -16,10 +16,10 @@ interface PropsInterface {
   search?: Function
 }
 
-const ComboBlock: React.FC<PropsInterface> =  ({data, title, error, retry, selected, search }) => {
+const ComboBlock: React.FC<props> =  ({data, title, error, retry, selected, search }) => {
   const [header, setHeader] = useState(title);
+  const [valueFilter, setValueFilter] = useState('');
   const int = useIntl();
-  let valueFilter: string = '';
 
   const open = error? {open: false} : {}; 
 
@@ -38,15 +38,17 @@ const ComboBlock: React.FC<PropsInterface> =  ({data, title, error, retry, selec
     if(value.length < 3) {
       return true;
     } else {
-      valueFilter = value;
+      setValueFilter(value);
       search && search(value);
     }
   } 
 
   const onScroll = (event: any) => {
-    const {target} = event; 
-    (target.scrollTop + target.offsetHeight) === (target.scrollHeight) && search && search(valueFilter);
-    !target.scrollTop && search && search(valueFilter);
+    if(valueFilter.length >= 3) {
+      const {target} = event;
+      (target.scrollTop + target.offsetHeight) === (target.scrollHeight) && search && search(valueFilter, true);
+      !target.scrollTop && search && search(valueFilter, false);
+    }
   }
 
   useEffect(() => {
@@ -69,14 +71,14 @@ const ComboBlock: React.FC<PropsInterface> =  ({data, title, error, retry, selec
         {...open}
         showSearch
         onSearch={filterOptions}
-        listHeight={32}
+        listHeight={160}
         onSelect={(value) => {selected && selected(value)}}
         filterOption={false}
         onPopupScroll={onScroll}
         getPopupContainer={triggerNode => {
-          //console.log(triggerNode);
           return triggerNode;
         }}
+        onBlur={() => {setValueFilter('')}}
         >
         {data?.map(opt => (<Option key={opt.value} value={opt.value}>{opt.text}</Option>))}
       </Select>
