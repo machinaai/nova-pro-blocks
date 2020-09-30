@@ -100,6 +100,24 @@
         "registry"
       ],
       "previewUrl": "https://preview.pro.ant.design/nbe/registry"
+    },
+    {
+      "key": "NbeBalanceSummary",
+      "name": "NbeBalanceSummary",
+      "description": "This block is the registry flow",
+      "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/NbeBalanceSummary",
+      "path": "NbeBalanceSummary",
+      "features": [
+        "antd",
+        "i18n",
+        "dva"
+      ],
+      "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/NbeBalanceSummary/snapshot.png",
+      "tags": [
+        "nbe",
+        "balancesummary"
+      ],
+      "previewUrl": "https://preview.pro.ant.design/nbe/balancesummary"
     }
   ]
 }
