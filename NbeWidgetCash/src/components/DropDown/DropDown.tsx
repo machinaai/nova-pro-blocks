@@ -1,11 +1,10 @@
 import React from 'react';
 import { Menu, Dropdown } from 'antd';
 import { useIntl } from 'umi';
-import { ClickParam } from 'antd/lib/menu/index';
 import './Dropdown.css';
 
 const DropDown: React.FC<any> = ({ setDrop }) => {
-  const handleKey = ({ key }: ClickParam) => {
+  const handleKey = ({ key }: any) => {
     setDrop(key);
   };
   const intl = useIntl();

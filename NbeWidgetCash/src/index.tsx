@@ -4,7 +4,7 @@ import AddContent from './AddContent';
 import { StateModel } from './model';
 import { cash } from './fixures/cashDetail.fixture';
 import { dataDebugged } from './helpers/dataDebugged';
-import { ModalReload } from '../modal/ModalReload/modalReload';
+import { ModalReload } from './modal/ModalReload/modalReload';
 
 interface Props {
   details: StateModel['details'];
