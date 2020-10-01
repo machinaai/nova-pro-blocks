@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AlertMessage Should render alert Message 1`] = `
+<Alert
+  closable={true}
+  showIcon={true}
+  type="error"
+/>
+`;

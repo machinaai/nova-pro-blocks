@@ -1,0 +1,48 @@
+.normal {
+  /* height: 196px;
+  width: 262px; */
+
+  height: 296px;
+  width: 362px;
+  padding: 22px;
+  background-color: white;
+}
+
+.header {
+  display: flex;
+  height: 25px;
+}
+
+.title{
+  height: 22px;
+  width: 75%;
+  color: rgba(0,0,0,0.45);
+  font-family: "PingFang SC";
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 22px;
+}
+
+.view{
+  padding: 0;
+  /* margin-top: 7%; */
+  margin-top: 0%;
+}
+
+/* .grafic {
+  box-sizing: border-box;
+  height: 25.2px;
+  width: 218px;
+  border: 2px solid #5B8FF9;
+} */
+.description{
+  height: 38px;
+  width: 218px;
+  color: rgba(0,0,0,0.85);
+  font-family: "Helvetica Neue";
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: 38px;
+  /* margin-bottom: 0; */
+  margin-bottom: 20px;
+}
