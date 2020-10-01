@@ -1,5 +1,5 @@
 import moment from 'moment';
-import { AccountResponse } from '../../interfaces/accountResponse';
+import { AccountResponse } from '../interfaces/accountResponse';
 import { getDataGrafics } from './getDataGrafics';
 import {
   getLastBimester,
