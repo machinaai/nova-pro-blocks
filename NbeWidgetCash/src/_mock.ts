@@ -7,24 +7,24 @@ export default {
         {
           balance: {
             currency: 'MXN',
-            balance: 0,
-            // balance: 25487000000.01
+            // balance:0
+            balance: 25487000000.01,
           },
           period: '2020-09-05',
         },
         {
           balance: {
             currency: 'MXN',
-            // balance: 60000300010.01
-            balance: 0,
+            balance: 60000300010.01,
+            // balance:0
           },
           period: '2020-09-01',
         },
         {
           balance: {
             currency: 'MXN',
-            // balance: 75115182698
-            balance: 9999999999999998,
+            balance: 75115182698,
+            // balance:9999999999999998
           },
           period: '2020-09-06',
         },

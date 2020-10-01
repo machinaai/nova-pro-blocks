@@ -1,4 +1,4 @@
-import { AccountResponse } from '../../interfaces/accountResponse';
+import { AccountResponse } from '../interfaces/accountResponse';
 import { getDataFilter } from './getDataFilter';
 
 export const dataDebugged = (details: AccountResponse | undefined, drop: any) => {

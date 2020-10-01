@@ -21,7 +21,10 @@ export const getDataGrafics = (data: any, drop: any) => {
       const fecha = period.split('-');
       const [year, month, day] = fecha;
 
-      cleanData = [...cleanData, { year, month, day, balance: por, totalBalance: balance }];
+      cleanData = [
+        ...cleanData,
+        { year, month, day, balance: Math.round(por), totalBalance: balance },
+      ];
     });
   } else {
     let dataFilter: any = [];
@@ -49,7 +52,10 @@ export const getDataGrafics = (data: any, drop: any) => {
       totalBalance = [...totalBalance, total];
       const max = Math.max(...totalBalance);
       const por = (Number(total) * 100) / max;
-      cleanData = [...cleanData, { year: newYear, month: m, balance: por, totalBalance: total }];
+      cleanData = [
+        ...cleanData,
+        { year: newYear, month: m, balance: Math.round(por), totalBalance: total },
+      ];
     });
   }
 

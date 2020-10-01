@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useIntl } from 'umi';
 import { Button, Card } from 'antd';
 import styles from './index.css';
-import DropDown from './components/DropDown';
-import Grafics from './components/Grafics';
+import DropDown from './components/DropDown/DropDown';
+import Grafics from './components/Grafics/Grafics';
 import { getBalanceFormat } from './helpers/getBalanceFormat';
 
 const AddContent: React.FC<any> = ({ setDropNew, data }) => {

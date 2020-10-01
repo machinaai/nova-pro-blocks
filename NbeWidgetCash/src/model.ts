@@ -1,7 +1,7 @@
 import { ErrorResponseEnum } from '@/pages/NbeComboAccounts/enums/error.enum';
 import { Effect, Reducer } from 'umi';
-import { AccountResponse } from '../interfaces/accountResponse';
-import { cashRequest } from '../services/show-cash-request';
+import { AccountResponse } from './interfaces/accountResponse';
+import { cashRequest } from './services/show-cash-request';
 
 export interface StateModel {
   details?: AccountResponse;
