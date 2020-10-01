@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useIntl } from 'umi';
-import { Button } from 'antd';
+import { Button, Card } from 'antd';
 import styles from './index.css';
 import DropDown from './components/DropDown';
 import Grafics from './components/Grafics';
@@ -16,7 +16,7 @@ const AddContent: React.FC<any> = ({ setDropNew, data }) => {
   const balance = getBalanceFormat(data);
 
   return (
-    <div className={styles.normal}>
+    <Card>
       <div className={styles.header}>
         <div className={styles.title}>
           {intl.formatMessage({
@@ -30,7 +30,7 @@ const AddContent: React.FC<any> = ({ setDropNew, data }) => {
       <div>
         <p className={styles.description}>{`${balance}`}</p>
       </div>
-      <div className={styles.grafic}>
+      <div>
         <Grafics item={data} drop={drop} />
       </div>
       <div>
@@ -40,7 +40,7 @@ const AddContent: React.FC<any> = ({ setDropNew, data }) => {
           })}
         </Button>
       </div>
-    </div>
+    </Card>
   );
 };
 export default AddContent;
