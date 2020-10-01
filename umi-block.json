@@ -118,6 +118,24 @@
         "balancesummary"
       ],
       "previewUrl": "https://preview.pro.ant.design/nbe/balancesummary"
+    },
+    {
+      "key": "NbeWidgetCreditCard",
+      "name": "NbeWidgetCreditCard",
+      "description": "Pro-block for widget for credit-card",
+      "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/NbeWidgetCreditCard",
+      "path": "NbeWidgetCreditCard",
+      "features": [
+        "antd",
+        "i18n",
+        "dva"
+      ],
+      "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/NbeWidgetCreditCard/snapshot.png",
+      "tags": [
+        "nbe",
+        "widgetcreditcard"
+      ],
+      "previewUrl": "https://preview.pro.ant.design/nbe/widgetcreditcard"
     }
   ]
 }
