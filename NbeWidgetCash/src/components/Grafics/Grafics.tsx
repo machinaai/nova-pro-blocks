@@ -47,7 +47,7 @@ const Grafics: React.FC<any> = ({ item, drop }) => {
               yearValue = year;
             });
             return `
-          <div class="g2-tooltip" style='position:absolute; background-color: white; padding:4px; height:70px;'>
+          <div class="g2-tooltip" style='position:absolute;'>
           <div class="g2-tooltip-title">
           <p>${
             drop === '1'
@@ -60,13 +60,12 @@ const Grafics: React.FC<any> = ({ item, drop }) => {
                 } ${yearValue}`
           }</p>
           </div>
-          <div style='position:absolute;left:35%'>${value}%</div>
+          <div >${value}%</div>
           </div>`;
           }}
         />
         <Geom type="line" position={`${valX}*balance`} size={2} />
         <Geom type="point" position={`${valX}*balance`} shape="circle" size={3} />
-        {/* <Geom type="area" tooltip={false} position={`${valX}*balance`}/> */}
       </Chart>
     </div>
   );

@@ -28,13 +28,13 @@ const AddContent: React.FC<any> = ({ setDropNew, data }) => {
         </div>
       </div>
       <div>
-        <p className={styles.description}>{`${balance}`}</p>
+        <p>{`${balance}`}</p>
       </div>
       <div>
         <Grafics item={data} drop={drop} />
       </div>
       <div>
-        <Button type="text" className={styles.view} href="/account/users">
+        <Button href="/account/users">
           {intl.formatMessage({
             id: 'cash.viewAccounts',
           })}
