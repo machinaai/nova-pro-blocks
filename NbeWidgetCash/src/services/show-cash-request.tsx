@@ -4,12 +4,9 @@ import { ComponentsDefinition } from '../interfaces/componentsDefinition.interfa
 const errorHandler = (error: { response: Response }): Response => {
   return error.response;
 };
-export async function cashRequest(token: string, params: ComponentsDefinition) {
+export async function cashRequest( params: ComponentsDefinition) {
   return request('/private/v1/corporate/widgets', {
     method: 'POST',
-    headers: {
-      Authorization: token,
-    },
     data: params,
     errorHandler,
   });

@@ -1,5 +1,5 @@
 export default {
-  'cash.title': 'Efectivo MXN',
+  'cash.title': 'Efectivo ',
   'cash.month': 'Último mes',
   'cash.bimester': 'Último bimestre',
   'cash.trimester': 'Último trimestre',

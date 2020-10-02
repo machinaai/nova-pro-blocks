@@ -1,5 +1,5 @@
 export default {
-  'cash.title': 'Cash MXN',
+  'cash.title': 'Cash ',
   'cash.month': 'Last month',
   'cash.bimester': 'Last bimester',
   'cash.trimester': 'Last trimester',
