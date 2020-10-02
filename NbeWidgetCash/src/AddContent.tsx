@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useIntl } from 'umi';
-import { Button, Card } from 'antd';
+import { Card } from 'antd';
 import styles from './index.css';
 import DropDown from './components/DropDown/DropDown';
 import Grafics from './components/Grafics/Grafics';
@@ -34,11 +34,12 @@ const AddContent: React.FC<any> = ({ setDropNew, data }) => {
         <Grafics item={data} drop={drop} />
       </div>
       <div>
-        <Button href="/account/users">
+        <a href="/account/users">
+          {' '}
           {intl.formatMessage({
             id: 'cash.viewAccounts',
           })}
-        </Button>
+        </a>
       </div>
     </Card>
   );
