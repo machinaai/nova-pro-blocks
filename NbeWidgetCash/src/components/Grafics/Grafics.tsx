@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { Chart, Tooltip, Geom, Axis, Legend } from 'bizcharts';
+import React, {useState, useEffect} from 'react';
+import {Chart, Tooltip, Geom, Axis, Legend} from 'bizcharts';
 import moment from 'moment';
 
-const Grafics: React.FC<any> = ({ item, drop }) => {
+const Grafics: React.FC<any> = ({item, drop}) => {
   const [charData, setCharData] = useState(item);
 
   useEffect(() => {
@@ -28,20 +28,44 @@ const Grafics: React.FC<any> = ({ item, drop }) => {
         scale={cols}
         forceFit
       >
-        <Axis name={valX} />
-        <Axis name="balance" label={{ formatter: (val) => `${val}%` }} />
-        <Legend />
+        <Axis name={valX}/>
+        <Axis name="balance" label={{formatter: (val) => `${val}%`}}/>
+        <Legend/>
         <Tooltip
           useHtml
-          htmlContent={(title) => {
-            return `<div class="g2-tooltip" style='position:absolute;'>
-          <div class="g2-tooltip-title">${drop === '1' ? title : moment.months(Number(title) - 1)} 
+          htmlContent={(title, items) => {
+            let value;
+            let yearValue;
+            let monthh;
+            items?.forEach((val: any) => {
+              const {
+                point: {_origin: origin},
+              } = val;
+              const {year, month, balance} = origin;
+              value = balance;
+              monthh = month;
+              yearValue = year;
+            });
+            return `
+          <div class="g2-tooltip" style='position:absolute;'>
+          <div class="g2-tooltip-title">
+          <p>${
+              drop === '1'
+                ? `${title} ${moment.months(Number(monthh) - 1)}`
+                : `${
+                  moment
+                    .months(Number(title) - 1)
+                    .charAt(0)
+                    .toUpperCase() + moment.months(Number(title) - 1).slice(1)
+                } ${yearValue}`
+            }</p>
           </div>
+          <div style='position:absolute;left:35%'>${value}%</div>
           </div>`;
           }}
         />
-        <Geom type="line" position={`${valX}*balance`} size={2} />
-        <Geom type="point" position={`${valX}*balance`} shape="circle" size={3} />
+        <Geom type="line" position={`${valX}*balance`} size={2}/>
+        <Geom type="point" position={`${valX}*balance`} shape="circle" size={3}/>
         {/* <Geom type="area" tooltip={false} position={`${valX}*balance`}/> */}
       </Chart>
     </div>

@@ -1,8 +1,9 @@
 export const cash = {
-  account_routings: {
-    accountType: 'CHECKING',
-  },
-  balance: {
-    currency: 'MXN',
-  },
+  "dataAccount": [
+    {
+      "account_type": "CHECKING",
+      "currency": "MXN",
+      "startDate": "2020-10-31"
+    }
+  ]
 };

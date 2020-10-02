@@ -53,7 +53,6 @@ export const getDataFilter = (details: AccountResponse | undefined, drop: any) =
       break;
   }
 
-  // console.log(date);
   const result = cash?.filter((per: any) => {
     return date.find((value: string) => {
       return value === per.period;
