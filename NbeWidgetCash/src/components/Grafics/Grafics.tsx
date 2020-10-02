@@ -33,10 +33,34 @@ const Grafics: React.FC<any> = ({ item, drop }) => {
         <Legend />
         <Tooltip
           useHtml
-          htmlContent={(title) => {
-            return `<div class="g2-tooltip" style='position:absolute;'>
-          <div class="g2-tooltip-title">${drop === '1' ? title : moment.months(Number(title) - 1)} 
+          htmlContent={(title, items) => {
+            let value;
+            let yearValue;
+            let monthh;
+            items?.forEach((val: any) => {
+              const {
+                point: { _origin: origin },
+              } = val;
+              const { year, month, balance } = origin;
+              value = balance;
+              monthh = month;
+              yearValue = year;
+            });
+            return `
+          <div class="g2-tooltip" style='position:absolute; background-color: white; padding:4px; height:70px;'>
+          <div class="g2-tooltip-title">
+          <p>${
+            drop === '1'
+              ? `${title} ${moment.months(Number(monthh) - 1)}`
+              : `${
+                  moment
+                    .months(Number(title) - 1)
+                    .charAt(0)
+                    .toUpperCase() + moment.months(Number(title) - 1).slice(1)
+                } ${yearValue}`
+          }</p>
           </div>
+          <div style='position:absolute;left:35%'>${value}%</div>
           </div>`;
           }}
         />
