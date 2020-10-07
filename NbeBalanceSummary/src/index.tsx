@@ -1,10 +1,11 @@
 import React, { useCallback, useEffect } from 'react';
 import { connect, useDispatch, useIntl } from 'umi';
-import WidgetBalanceSummary from './components/widget-balance-summary';
 import { StateType } from './model';
-import styles from './style.less';
 import { transactions } from './fixtures/request.fixture';
 import { formatBalance } from './helpers/formatBalance.helper';
+import WidgetLayoutNbe from './blocks/layout-widget';
+import PieGraph from './blocks/pie-graph';
+import RetryBlock from './blocks/retry-block';
 
 interface FormStepFormProps {
   data: StateType['data'];
@@ -21,7 +22,7 @@ const NbeBalanceSummary: React.FC<FormStepFormProps> = ({ data, status }) => {
       type: 'bneBalanceSummary/getDataBalance',
       payload: transactions,
     });
-  },[]);
+  }, []);
 
   useEffect(() => {
     getDataBalance();
@@ -29,19 +30,29 @@ const NbeBalanceSummary: React.FC<FormStepFormProps> = ({ data, status }) => {
 
   return (
     <>
-      
-        <WidgetBalanceSummary
-          data={formatBalance(data)}
-          detail={{
-            legend: intl.formatMessage({
-              id: 'bneBalanceSummary.details.legend',
-            }),
-            action: '#',
-          }}
-          status={status}
-          onRetry={getDataBalance}
-        />
-
+      <WidgetLayoutNbe
+        title={intl.formatMessage({
+          id: 'bneBalanceSummary.tittle',
+        })}
+        detail={{
+          legend: intl.formatMessage({
+            id: 'bneBalanceSummary.details.legend',
+          }),
+          action: '#',
+          align: 'right',
+        }}
+      >
+        {status !== 200 ? (
+          <RetryBlock
+            message={intl.formatMessage({
+              id: 'bneBalanceSummary.retry',
+            })}
+            onClick={getDataBalance}
+          />
+        ) : (
+          <PieGraph data={formatBalance(data)} />
+        )}
+      </WidgetLayoutNbe>
     </>
   );
 };
