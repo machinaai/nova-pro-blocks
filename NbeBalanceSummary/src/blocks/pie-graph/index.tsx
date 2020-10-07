@@ -1,35 +1,23 @@
 import React, { useCallback, useState } from 'react';
-import { Link, useIntl } from 'umi';
-
 import { Chart, Geom, Tooltip, Coord, Guide, Legend } from 'bizcharts';
-import { RedoOutlined } from '@ant-design/icons';
 import styles from './index.less';
-import { DataInterface } from './interfaces/dataInterface.interface';
+import { PieGraphInterfaceProps } from './interfaces/dataInterface.interface';
+import { dataFixture } from './fixtures/balance-summary.fixture';
+import { currencyHelper } from './helper/currency.helper';
 
 const { Text } = Guide;
-
-interface WidgetBalanceSummaryInterface {
-  data?: DataInterface[];
-  status?: number;
-  detail?: {
-    legend: string;
-    action: string;
-  };
-  onRetry?: Function;
-}
-
-const WidgetBalanceSummary: React.FC<WidgetBalanceSummaryInterface> = ({
-  data,
-  detail,
-  status,
-  onRetry,
-}) => {
-  const intl = useIntl();
+/**
+ * PieGraph 
+ *
+ * @param {*} { data = dataFixture, height = 285 }
+ * @return {*} 
+ */
+const PieGraph: React.FC<PieGraphInterfaceProps> = ({ data = dataFixture, height = 285 }) => {
 
   const [index, setIndex] = useState(0);
 
   const onClickAccount = useCallback(
-    (event) => {
+    (event: { data: { _origin: any; }; }) => {
       if (data && event.data) {
         const { _origin: Origin } = event.data;
         const indexSelected = data.indexOf(
@@ -41,23 +29,16 @@ const WidgetBalanceSummary: React.FC<WidgetBalanceSummaryInterface> = ({
     [data],
   );
 
-  const onClickRetry = useCallback(() => {
-    if (onRetry) {
-      onRetry();
-    }
-  }, [onRetry]);
-
   const widget = (
     <div className={styles.widget}>
       <Chart
         forceUpdate
-        height={285}
-        width={276}
+        height={height}
         data={data}
         forceFit
         padding={['auto', 190, 'auto', -30]}
-        onGetG2Instance={(chart) => {
-          const geom = chart.get("geoms")[0];
+        onGetG2Instance={(chart: { get: (arg0: string) => any[]; on: (arg0: string, arg1: () => void) => void; }) => {
+          const geom = chart.get('geoms')[0];
           const items = geom.get('data');
           geom.setSelected(items[index]);
           chart.on('afterrender', () => {
@@ -93,7 +74,7 @@ const WidgetBalanceSummary: React.FC<WidgetBalanceSummaryInterface> = ({
             />
             <Text
               position={['50%', '50%']}
-              content={data && data[index]?.balance?.toString()}
+              content={data && currencyHelper(Number(data[index]?.balance?.toString()))}
               style={{
                 fontSize: '30',
                 fill: '#262626',
@@ -111,25 +92,10 @@ const WidgetBalanceSummary: React.FC<WidgetBalanceSummaryInterface> = ({
   return (
     <>
       <div className={styles.container}>
-        <p className={styles.tittle}>{intl.formatMessage({ id: 'widgetBalanceSummary.tittle' })}</p>
-        {status !== 200 ? (
-          <div className={styles.error} onClick={onClickRetry}>
-            <RedoOutlined />
-            <p className={styles.legend}>
-              {intl.formatMessage({ id: 'widgetBalanceSummary.retry' })}
-            </p>
-          </div>
-        ) : (
-          <>{data && widget}</>
-        )}
-        {detail && (
-          <Link to={detail?.action} className={styles.detail}>
-            {detail?.legend}
-          </Link>
-        )}
+        {data && widget}
       </div>
     </>
   );
 };
 
-export default WidgetBalanceSummary;
+export default PieGraph;
