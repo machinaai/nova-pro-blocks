@@ -1,42 +1,46 @@
+import { PeriodFields } from '../interfaces/accountResponse';
 import { getTotalBalance } from './getTotalBalance';
 
-export const getDataGrafics = (data: any, drop: any) => {
-  let arr: any = [];
+export const getDataGrafics = (data: PeriodFields[] | undefined, drop: string | undefined) => {
+  let arr: number[] = [];
   let cleanData: any = [];
 
   if (drop === '1') {
     data?.forEach((val: any) => {
       const {
-        balance: { balance },
+        specific_balance: { balance_per_day: balance },
       } = val;
       arr = [...arr, balance];
     });
     data?.forEach((value: any) => {
       const {
-        balance: { balance },
-        period,
+        specific_balance: { balance_per_day: balance },
+        time: { date },
       } = value;
       const max = Math.max(...arr);
       const por = (balance * 100) / max;
-      const fecha = period.split('-');
+      const fecha = date.split('-');
       const [year, month, day] = fecha;
 
       cleanData = [
         ...cleanData,
         { year, month, day, balance: Math.round(por), totalBalance: balance },
       ];
+      cleanData.sort((a: any, b: any) => {
+        return a.day - b.day;
+      });
     });
   } else {
-    let dataFilter: any = [];
+    let dataFilter: object[] = [];
     let arrMonth: string[] = [];
     let totalBalance: any[] = [];
 
     data?.forEach((value: any) => {
       const {
-        balance: { balance },
-        period,
+        specific_balance: { balance_per_day: balance },
+        time: { date },
       } = value;
-      const fecha = period.split('-');
+      const fecha = date.split('-');
       const [yearr, month] = fecha;
       arrMonth = [...arrMonth, month];
       dataFilter = [...dataFilter, { year: yearr, month, balance }];

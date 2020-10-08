@@ -1,5 +1,6 @@
 import moment from 'moment';
-import { AccountResponse } from '../interfaces/accountResponse';
+import { PeriodFields } from '../interfaces/accountResponse';
+import { CleanData } from '../interfaces/cleanData.interface';
 import { getDataGrafics } from './getDataGrafics';
 import {
   getLastBimester,
@@ -8,9 +9,8 @@ import {
   getLastTrimester,
 } from './getTotalBalance';
 
-export const getDataFilter = (details: AccountResponse | undefined, drop: any) => {
-  const cash = details?.cash;
-  let cleanData: any = [];
+export const getDataFilter = (details: PeriodFields[] | undefined, drop: string | undefined) => {
+  let cleanData: CleanData[] = [];
   const today = new Date();
   let lastDate;
   let finalDate;
@@ -53,9 +53,9 @@ export const getDataFilter = (details: AccountResponse | undefined, drop: any) =
       break;
   }
 
-  const result = cash?.filter((per: any) => {
+  const result = details?.filter(({ time }) => {
     return date.find((value: string) => {
-      return value === per.period;
+      return value === time.date;
     });
   });
 
@@ -63,7 +63,7 @@ export const getDataFilter = (details: AccountResponse | undefined, drop: any) =
 
   if (drop === '1') {
     cleanData.sort((a: any, b: any) => {
-      return a.day - b.day;
+      return a.month - b.month;
     });
   } else {
     cleanData.sort((a: any, b: any) => {
