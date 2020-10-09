@@ -1,9 +1,9 @@
 import React from 'react';
 import { Chart, Geom } from 'bizcharts';
-import './index.less';
 import { DataInterface } from './data.interface';
+import { dataFixture } from './data.fixture';
 
-interface props {
+interface Props {
   data?: DataInterface[],
   height?: number,
   firstColor?: string,
@@ -11,17 +11,9 @@ interface props {
   selected?: Function,
 }
 
-const BarGraph: React.FC<props> =  ({data, height = 100, firstColor = '#ffeeee', lastColor = '#ff6565', selected}) => {
+const BarGraph: React.FC<Props> = ({data = dataFixture, height = 100, firstColor = '#ffeeee', lastColor = '#ff6565', selected}) => {
 
-  const onClickInterval = (event: any) => {
-    event.data && selected && selected(event.data._origin);
-    return [true, {
-      mode: 'single',
-        style: { 
-          fill: 'red',
-        }
-    }];
-  }
+  const onClickInterval = (event: any) => (event.data && selected && selected(event.data._origin));
 
   return (
     <>
@@ -29,7 +21,7 @@ const BarGraph: React.FC<props> =  ({data, height = 100, firstColor = '#ffeeee',
         <Geom select={[true, {
             mode: 'single',
               style: { 
-                fill: 'black',
+                fill: 'blue',
               }
           }]} color={["text",`${firstColor}-${lastColor}`]} type="interval" position="text*value" />
       </Chart>

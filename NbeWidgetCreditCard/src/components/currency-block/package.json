@@ -1,5 +1,5 @@
 {
-  "name": "@umi-block/bar-graph",
+  "name": "@umi-block/currency-block",
   "version": "0.0.1",
   "description": "",
   "main": "src/index.js",
@@ -7,12 +7,11 @@
     "name": "",
     "email": ""
   },
-  "repository": "umijs/umi-blocks/bar-graph",
+  "repository": "umijs/umi-blocks/currency-block",
   "scripts": {
     "dev": "umi dev"
   },
   "dependencies": {
-    "bizcharts": "^3.5.9",
     "react": ">=16.0.0"
   },
   "devDependencies": {

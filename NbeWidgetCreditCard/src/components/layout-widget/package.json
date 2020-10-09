@@ -1,19 +1,15 @@
 {
-  "name": "@umi-block/bar-graph",
+  "name": "@nova-blocks/layout-widget",
   "version": "0.0.1",
-  "description": "",
+  "description": "Layout widget container",
   "main": "src/index.js",
-  "authors": {
-    "name": "",
-    "email": ""
-  },
-  "repository": "umijs/umi-blocks/bar-graph",
+  "repository": "umijs/umi-blocks/layout-widget",
   "scripts": {
     "dev": "umi dev"
   },
   "dependencies": {
-    "bizcharts": "^3.5.9",
-    "react": ">=16.0.0"
+    "react": ">=16.0.0",
+    "@ant-design/icons": "^4.0.0"
   },
   "devDependencies": {
     "umi": "^2.9.0",

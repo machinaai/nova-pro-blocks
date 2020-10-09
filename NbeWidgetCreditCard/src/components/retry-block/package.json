@@ -1,5 +1,5 @@
 {
-  "name": "@umi-block/bar-graph",
+  "name": "@umi-block/retry-block",
   "version": "0.0.1",
   "description": "",
   "main": "src/index.js",
@@ -7,18 +7,18 @@
     "name": "",
     "email": ""
   },
-  "repository": "umijs/umi-blocks/bar-graph",
+  "repository": "umijs/umi-blocks/retry-block",
   "scripts": {
     "dev": "umi dev"
   },
   "dependencies": {
-    "bizcharts": "^3.5.9",
-    "react": ">=16.0.0"
+    "@ant-design/icons": "^4.2.2",
+    "react": ">=16.0.0",
+    "umi-plugin-react": "^1.15.8"
   },
   "devDependencies": {
     "umi": "^2.9.0",
     "umi-plugin-block-dev": "^2.0.0",
-    "umi-plugin-react": "^1.15.8",
     "umi-types": "^0.3.0"
   },
   "license": "MIT"
