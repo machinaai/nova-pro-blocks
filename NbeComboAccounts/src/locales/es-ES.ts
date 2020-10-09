@@ -1,3 +1,3 @@
 export default {
-    "NbeComboAccounts.title": "Cuentas origne",
-}
+  'NbeComboAccounts.title': 'Cuentas origen',
+};
