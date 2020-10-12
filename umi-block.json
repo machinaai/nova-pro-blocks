@@ -158,6 +158,25 @@
         "credit"
       ],
       "previewUrl": "https://preview.pro.ant.design/nbe/widget/credit/card"
+    },
+    {
+      "key": "NbeWidgetInvestments",
+      "name": "NbeWidgetInvestments",
+      "description": "Pro-block for widget for investments",
+      "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/NbeWidgetInvestments",
+      "path": "NbeWidgetInvestments",
+      "features": [
+        "antd",
+        "i18n",
+        "dva"
+      ],
+      "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/NbeWidgetInvestments/snapshot.png",
+      "tags": [
+        "nbe",
+        "widget",
+        "credit"
+      ],
+      "previewUrl": "https://preview.pro.ant.design/nbe/widget/credit/card"
     }
   ]
 }
