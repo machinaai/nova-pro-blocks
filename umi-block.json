@@ -33,7 +33,6 @@
     },
     {
       "key": "NbeBalanceSummary",
-      "name": "NbeBalanceSummary",
       "description": "Pro-block for widget balance summary",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/NbeBalanceSummary",
       "path": "NbeBalanceSummary",
@@ -52,7 +51,6 @@
     },
     {
       "key": "NbeComboAccounts",
-      "name": "NbeComboAccounts",
       "description": "Template for Combo Accounts",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/NbeComboAccounts",
       "path": "NbeComboAccounts",
@@ -71,7 +69,6 @@
     },
     {
       "key": "NbeLogin",
-      "name": "NbeLogin",
       "description": "Template for login nbe flow",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/NbeLogin",
       "path": "NbeLogin",
@@ -87,7 +84,6 @@
     },
     {
       "key": "NbeRecovery",
-      "name": "NbeRecovery",
       "description": "This block is the recovery flow",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/NbeRecovery",
       "path": "NbeRecovery",
@@ -105,7 +101,6 @@
     },
     {
       "key": "NbeRegistry",
-      "name": "NbeRegistry",
       "description": "This block is the registry flow",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/NbeRegistry",
       "path": "NbeRegistry",
@@ -123,7 +118,6 @@
     },
     {
       "key": "NbeWidgetCash",
-      "name": "NbeWidgetCash",
       "description": "Pro-block for cash widget",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/NbeWidgetCash",
       "path": "NbeWidgetCash",
@@ -142,7 +136,6 @@
     },
     {
       "key": "NbeWidgetCreditCard",
-      "name": "NbeWidgetCreditCard",
       "description": "Pro-block for widget for credit-card",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/NbeWidgetCreditCard",
       "path": "NbeWidgetCreditCard",
@@ -161,7 +154,6 @@
     },
     {
       "key": "NbeWidgetInvestments",
-      "name": "NbeWidgetInvestments",
       "description": "Pro-block for widget for investments",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/NbeWidgetInvestments",
       "path": "NbeWidgetInvestments",
@@ -174,9 +166,29 @@
       "tags": [
         "nbe",
         "widget",
-        "credit"
+        "investments"
       ],
-      "previewUrl": "https://preview.pro.ant.design/nbe/widget/credit/card"
+      "previewUrl": "https://preview.pro.ant.design/nbe/widget/investments"
+    },
+    {
+      "key": "NbeWidgetPendingToAuthorize",
+      "description": "Pro-block for Widget for Pending To Authorize",
+      "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/NbeWidgetPendingToAuthorize",
+      "path": "NbeWidgetPendingToAuthorize",
+      "features": [
+        "antd",
+        "i18n",
+        "dva"
+      ],
+      "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/NbeWidgetPendingToAuthorize/snapshot.png",
+      "tags": [
+        "nbe",
+        "widget",
+        "pending",
+        "to",
+        "authorize"
+      ],
+      "previewUrl": "https://preview.pro.ant.design/nbe/widget/pending/to/authorize"
     }
   ]
 }
