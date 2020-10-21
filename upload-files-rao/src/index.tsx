@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Upload, Button } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 import IframeComm from 'react-iframe-comm';
+import { useDispatch } from 'umi';
 import { UploadFixture } from './fixtures/fixture';
 // import { UploadFieldsInterface } from './interfaces/interface';
 import styles from './index.less';
@@ -39,6 +40,8 @@ const UploadInfo: React.FC<UploadInfoProps> = ({
   linkTitle = UploadFixture.UploadSecondView.options.linkTitle,
 }) => {
   let typeFile: any;
+  const multiple = typeFlowProp === TypeFlow.INE;
+  const dispatch = useDispatch();
 
   const propsUpload = {
     action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
@@ -47,9 +50,6 @@ const UploadInfo: React.FC<UploadInfoProps> = ({
   };
 
   const [filesSelected, setFilesSelected] = useState({
-    previewVisible: false,
-    previewImage: '',
-    previewTitle: '',
     fileList: [],
   });
 
@@ -64,7 +64,12 @@ const UploadInfo: React.FC<UploadInfoProps> = ({
   };
 
   const handleChange = ({ fileList }) => {
-    setFilesSelected({ ...filesSelected, fileList });
+    if (fileList.length > 2) {
+      fileList = fileList.slice(-2);
+      setFilesSelected({ fileList });
+    } else {
+      setFilesSelected({ fileList });
+    }
   };
 
   const handlePreview = async (file: any) => {
@@ -90,10 +95,32 @@ const UploadInfo: React.FC<UploadInfoProps> = ({
         typeFile = 'pdf';
       }
     });
+    // if (filesSelected.fileList.length > 2) {
+    //   console.log('es mayor a 2...');
+    //   let datos: any = [];
+    //   for (let i = 0; i < 2; i++) {
+    //     datos.push(filesSelected.fileList[i]);
+    //   }
+    //   console.log('DATOS: ', datos);
+    //   // fileList = fileList.slice(-2);
+    //   filesSelected.fileList = datos;
+    // }
+    // // filesSelected.fileList = filesSelected.fileList.slice(-1);
+    // console.log('element: ', filesSelected.fileList);
+  };
+
+  const save = () => {
+    dispatch({
+      type: 'requestModel/getData',
+      payload: '',
+    });
   };
 
   progressFunction();
 
+  const reloadFiles = () => {
+    setFilesSelected({ fileList: [] });
+  };
 
   return (
     <div>
@@ -138,11 +165,12 @@ const UploadInfo: React.FC<UploadInfoProps> = ({
         ) : (
           <Upload
             {...propsUpload}
-            accept=".pdf, .png, .jgp"
+            accept=".pdf, .png, .jpg"
             onChange={handleChange}
+            fileList={filesSelected.fileList}
             onPreview={handlePreview}
             listType="picture"
-            multiple={typeFlowProp === TypeFlow.INE}
+            multiple={multiple}
             beforeUpload={(file) => {
               const reader = new FileReader();
               reader.onload = (e) => {
@@ -185,9 +213,14 @@ const UploadInfo: React.FC<UploadInfoProps> = ({
         <div className={styles.container}>
           <div className={styles.options}>
             <div>
-              <Button className={styles.btnUpload}> {bntNextTitle} </Button>
+              <Button className={styles.btnUpload} onClick={save}>
+                {' '}
+                {bntNextTitle}{' '}
+              </Button>
             </div>
-            <div className={styles.again}>{linkTitle}</div>
+            <div className={styles.again} onClick={reloadFiles}>
+              {linkTitle}
+            </div>
           </div>
         </div>
       ) : null}
