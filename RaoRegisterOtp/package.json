@@ -1,7 +1,7 @@
 {
   "name": "@nova-pro-blocks/rao-register-otp",
   "version": "0.0.1",
-  "description": "Template for Combo Accounts",
+  "description": "Pro-block for register otp",
   "license": "ISC",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/machinaai"
