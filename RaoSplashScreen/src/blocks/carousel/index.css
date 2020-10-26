@@ -1,0 +1,22 @@
+
+@media (min-width: 876px) and (max-width: 5000px) {
+  .frameRobot {
+    float: right;
+    margin-top: -45px;
+    margin-right: -10px;
+  }
+}
+@media (min-width: 360px) and (max-width: 720px) {
+  .frameRobot {
+    margin-top: 15px;
+  }
+}
+@media (min-width: 721px) and (max-width: 875px) {
+    .frameRobot {
+      position: relative;
+      float: right;
+      margin-top: -1.5em;
+      margin-right: 15%;
+    }
+  }
+  
