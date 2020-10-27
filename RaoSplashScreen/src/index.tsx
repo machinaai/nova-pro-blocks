@@ -27,24 +27,24 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC<PAGE_NAME_UPPER_CAMEL_CASEProps> = (p
     options: [
       {
         img: imagesCarousel[0],
-        valH1: <h1> {intl.formatMessage({ id: 'splash-screen.val1-h1' })}
-          <br />{intl.formatMessage({ id: 'splash-screen.val1-h1-br' })}</h1>,
-        valH3: <h3> {intl.formatMessage({ id: 'splash-screen.val1-h3' })}
-          <br /> {intl.formatMessage({ id: 'splash-screen.val1-h3-br' })}</h3>
+        valH1: <h1> {intl.formatMessage({ id: 'BLOCK_NAME.val1-h1' })}
+          <br />{intl.formatMessage({ id: 'BLOCK_NAME.val1-h1-br' })}</h1>,
+        valH3: <h3> {intl.formatMessage({ id: 'BLOCK_NAME.val1-h3' })}
+          <br /> {intl.formatMessage({ id: 'BLOCK_NAME.val1-h3-br' })}</h3>
       },
       {
         img: imagesCarousel[1],
-        valH1: <h1> {intl.formatMessage({ id: 'splash-screen.val2-h1' })}
-          <br />{intl.formatMessage({ id: 'splash-screen.val2-h1-br' })}</h1>,
-        valH3: <h3> {intl.formatMessage({ id: 'splash-screen.val2-h3' })}
-          <br /> {intl.formatMessage({ id: 'splash-screen.val2-h3-br' })}</h3>
+        valH1: <h1> {intl.formatMessage({ id: 'BLOCK_NAME.val2-h1' })}
+          <br />{intl.formatMessage({ id: 'BLOCK_NAME.val2-h1-br' })}</h1>,
+        valH3: <h3> {intl.formatMessage({ id: 'BLOCK_NAME.val2-h3' })}
+          <br /> {intl.formatMessage({ id: 'BLOCK_NAME.val2-h3-br' })}</h3>
       },
       {
         img: imagesCarousel[2],
-        valH1: <h1> {intl.formatMessage({ id: 'splash-screen.val3-h1' })}
-          <br />{intl.formatMessage({ id: 'splash-screen.val3-h1-br' })}</h1>,
-        valH3: <h3> {intl.formatMessage({ id: 'splash-screen.val3-h3' })}
-          <br /> {intl.formatMessage({ id: 'splash-screen.val3-h3-br' })}</h3>
+        valH1: <h1> {intl.formatMessage({ id: 'BLOCK_NAME.val3-h1' })}
+          <br />{intl.formatMessage({ id: 'BLOCK_NAME.val3-h1-br' })}</h1>,
+        valH3: <h3> {intl.formatMessage({ id: 'BLOCK_NAME.val3-h3' })}
+          <br /> {intl.formatMessage({ id: 'BLOCK_NAME.val3-h3-br' })}</h3>
       },
     ],
     redirect: '/account-opening',
