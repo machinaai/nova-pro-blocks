@@ -197,7 +197,7 @@
         "to",
         "authorize"
       ],
-      "previewUrl": "https://preview.pro.ant.design/nbe/widget/pending/to/authorize"
+      "previewUrl": "https://preview.pro.ant.design/nbe/widget/credit/card"
     },
     {
       "key": "RaoRegisterOtp",
@@ -214,7 +214,24 @@
       "tags": [
         "rao"
       ],
-      "previewUrl": "https://preview.pro.ant.design/nbe/widget/pending/to/authorize"
+      "previewUrl": "https://preview.pro.ant.design/nbe/widget/credit/card"
+    },
+    {
+      "key": "RaoSplashScreen",
+      "name": "RaoSplashScreen",
+      "description": "Pro-block for splash screen",
+      "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/RaoSplashScreen",
+      "path": "RaoSplashScreen",
+      "features": [
+        "antd",
+        "i18n",
+        "dva"
+      ],
+      "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/RaoSplashScreen/snapshot.png",
+      "tags": [
+        "rao"
+      ],
+      "previewUrl": "https://preview.pro.ant.design/nbe/widget/credit/card"
     }
   ]
 }
