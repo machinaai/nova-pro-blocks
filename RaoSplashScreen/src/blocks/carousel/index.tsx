@@ -39,11 +39,11 @@ const CarouselBlock: React.FC<PropsCarousel> = (props = dataFixture) => {
     :
     <Button onClick={handleNext} type='text'>
       {intl.formatMessage({ id: 'carousel.next' })}
-      <Button shape="circle" icon={<ArrowRightOutlined />} />
+      <Button size='large' shape="circle" icon={<ArrowRightOutlined />} />
     </Button>
   return (
     <>
-      <Carousel ref={carousel} afterChange={() => { onChange(slideNumberBtn) }}>
+      <Carousel ref={carousel} afterChange={() => { onChange(slideNumberBtn) }} >
         {options.map((option) => (
           <div>
             <Image src={option.img} className={`${styles.frameRobot}`} />
