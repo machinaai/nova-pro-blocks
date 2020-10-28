@@ -1,206 +1,96 @@
-import React, { useState, useEffect } from 'react';
-import { Upload, Button } from 'antd';
-import { PlusOutlined } from '@ant-design/icons';
+import React, { useState, useEffect, useCallback } from 'react';
+import UploadAdress from './components/UploadAdress';
+import UploadIne from './components/UploadIne';
+import { UploadBlockProps } from './interfaces/interface';
 import { UploadFixture } from './fixtures/fixture';
-import { UploadInfoProps } from './interfaces/interface';
-import IframeComm from 'react-iframe-comm';
-import styles from './index.less';
 import { TypeFlow } from './enum/emun';
+import UploadTitles from './components/UploadTitles';
+import { Button } from 'antd';
+import styles from './index.less';
 
-
-
-const UploadInfo: React.FC<UploadInfoProps> = (
+const UploadBlock: React.FC<UploadBlockProps> = (
   {
     typeFlowProp = UploadFixture.typeFlow,
-    firtsView = UploadFixture.UploadFirstView,
+    firstView = UploadFixture.UploadFirstView,
     secondView = UploadFixture.UploadSecondView,
-    onClick,
   }
 ) => {
 
-  let typeFile: any;
-  const multiple = typeFlowProp === TypeFlow.INE;
+  // State para Adress
+  const [addressFileList, setAdressList] = useState({ fileList: [] });
 
-  let propsUpload = {
-    action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
-    className: "upload-list-inline",
-  };
-
-  const [filesSelected, setFilesSelected] = useState({
-    fileList: [],
-  });
-
-  const send = () => (onClick && onClick());
-
-  //pdf
-  const [ejemplo, setEjemplo] = useState<any>();
-
-  const attributesPdf = {
-    src: ejemplo,
-    width: "100%",
-    height: "100%",
-    frameBorder: 0,
-  };
-
-  const handleChange = ({ fileList }) => {
-    if (fileList.length > 2) {
-      fileList = fileList.slice(-2);
-      setFilesSelected({
-        fileList
-      });
-    } else {
-      setFilesSelected({  fileList });
+  // State para Adress
+  const [filesIne, setFilesIne] = useState(
+    {
+      ineFront : false,
+      ineBack : false,
+      pdfFile : false,
     }
-  };
+  );
 
-  const handlePreview = async (file: any) => {
-    let src = file.url;
-    if (!src) {
-      src = await new Promise((resolve) => {
-        const reader = new FileReader();
-        reader.readAsDataURL(file.originFileObj);
-        reader.onload = () => resolve(reader.result);
-      });
+  // change view
+  const [changeview, setChangeView] = useState<boolean>(false);
+  const [reload, setReload] = useState(false);
+
+  useEffect(() => {    
+    if (addressFileList.fileList) {
+      if (addressFileList.fileList.length === 1) {
+        setChangeView(true);
+      } else {
+        setChangeView(false);
+      }
     }
-    const image = new Image();
-    image.src = src;
-    const imgWindow = window.open(src);
-    imgWindow?.document.write(image.outerHTML);
-  };
+  }, [addressFileList]);
 
   useEffect(() => {
-    console.log(filesSelected, 'filesss despues del click')
-  }, [filesSelected]);
+  },[changeview]);
 
-  const progressFunction = () => {
-    filesSelected?.fileList.forEach((element) => {
-      if (element.type === "application/pdf") {
-        typeFile = "pdf";
-      }
-    });
-  };
+  useEffect(() => {
+    if(filesIne.ineFront && filesIne.ineBack) {
+      setChangeView(true);
+    } else if(filesIne.pdfFile) {
+      setChangeView(true);
+    } else {
+      setChangeView(false);
+    }
+  },[filesIne]);
 
-  progressFunction();
-
-  const reloadFiles = () => {
-    setFilesSelected({
-      fileList: []
+  const getIneFiles = (type:'ineFront' | 'ineBack' | 'pdfFile', value:boolean) => {
+    setFilesIne({
+      ...filesIne,
+      [type]: value,
     });
   }
 
+  const reloadFiles = () => {
+    setReload(true);
+  };
 
+  console.log(filesIne)
   return (
-    <div>
-      {filesSelected.fileList.length >= 1 ? (
-        <div className={styles.container}>
-          <div className={styles.header}>
-            <div className={styles.optional}>{secondView.secondHeaderTitle}</div>
-            <div className={styles.title}>{secondView.secondTitle}</div>
-            <div className={styles.subtitle}>
-              {secondView.secondSubtitle}
-            </div>
-          </div>
-        </div>
-      ) : (
-          <div className={styles.firtsView}>
-            <div className={styles.header}>
-              <div className={styles.optional}>{firtsView.firstHeaderTitle}</div>
-              <div className={styles.title}>{firtsView.firstTitle}</div>
-              <div className={styles.subtitle}>
-                {firtsView.firstSubtitle}
-              </div>
-            </div>
-            <div className={styles.details}>
-              <div className={styles.secondHeader}>{firtsView.detailsTitle}</div>
-              <div className={styles.list}>
-                <ul>
-                  <li>{firtsView.detailsElement1}</li>
-                  <li>{firtsView.detailsElement2}</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        )}
-
+    <div className={styles.container}>
+      <UploadTitles changeview={changeview} firstView={firstView} secondView={secondView} />
+      {typeFlowProp === TypeFlow.ADDRESS ?
+        <UploadIne getIneFiles={getIneFiles} changeview={changeview} reload={reload} />
+        :
+        <UploadAdress setAdressList={setAdressList} reload={reload} />
+      }
       <div>
-        {
-          typeFile ?
-            (
-              <div className={styles.uploadPdf}>
-                <div className={styles.pdf}>
-                  <IframeComm attributes={attributesPdf} />
-                </div>
-                <div className={styles.pdfName}>
-                  {filesSelected.fileList[0].name}
-                </div>
-              </div>
-            )
-            :
-            <Upload {...propsUpload}
-              accept=".pdf, .png, .jgp"
-              onChange={handleChange}
-              fileList={filesSelected.fileList}
-              onPreview={handlePreview}
-              listType="picture"
-              multiple={multiple}
-              beforeUpload={file => {
-                const reader = new FileReader();
-                reader.onload = e => {
-                  let stringData = String(e.target?.result)
-                  setEjemplo(stringData);
-                };
-                // // reader.readAsText(file);
-                reader.readAsDataURL(file);
-                return false;
-
-              }}
-            >
-              {typeFlowProp === TypeFlow.INE ?
-                filesSelected.fileList.length >= 2 ? null :
-                  filesSelected.fileList.length === 1 ? (
-                    <div className={styles.upload}>
-                      <div>
-                        <PlusOutlined />
-                      </div>
-                      <div>{UploadFixture.UploadStyle.title}</div>
-                    </div>
-                  )
-                    :
-                    (
-                      <div className={styles.uploadBtn}>
-                        <Button className={styles.btnUpload} size="large">
-                          {firtsView.bntUploadTitle}
-                        </Button>
-                      </div>
-                    )
-                :
-                typeFlowProp === TypeFlow.ADDRESS ? filesSelected.fileList.length === 1 ? null
-                  :
-                  (
-                    <div className={styles.uploadBtn}>
-                      <Button className={styles.btnUpload} size="large">
-                        {firtsView.bntUploadTitle}
-                      </Button>
-                    </div>
-                  )
-                  : null
-              }
-
-            </Upload>
-        }
-      </div>
-      {filesSelected.fileList.length >= 1 ? (
-        <div className={styles.container}>
+        { changeview ? 
+        (
+          <div className={styles.container}>
           <div className={styles.options}>
             <div>
-              <Button className={styles.btnUpload} onClick={send} > {secondView.bntNextTitle} </Button>
+              <Button  className={styles.btnUpload} > {secondView.bntNextTitle} </Button>
             </div>
-            <div className={styles.again} onClick={reloadFiles}>{secondView.linkTitle}</div>
+            <div className={styles.again} onClick={reloadFiles} >{secondView.linkTitle}</div>
           </div>
         </div>
-      ) : null}
+      ) : null
+      }
+      </div>
     </div>
   );
-};
+}
 
-export default UploadInfo;
+export default UploadBlock;
