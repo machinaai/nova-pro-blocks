@@ -7,6 +7,8 @@ import { UploadFixture } from './fixtures/fixture';
 const Upload: React.FC<UploadInfoProps> = ({
   typeFlowProp = UploadFixture.typeFlow,
   phoneNumber = UploadFixture.phoneNumber,
+  firstView,
+  secondView,
 }) => {
   const dispatch = useDispatch();
 
@@ -119,6 +121,8 @@ const Upload: React.FC<UploadInfoProps> = ({
         fileListIneBack={fileListIneBack}
         srcPdf={srcPdf}
         fileListPdf={fileListPdf}
+        firstView={firstView}
+        secondView={secondView}
       />
     </div>
   );
