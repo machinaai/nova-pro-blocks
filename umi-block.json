@@ -198,6 +198,26 @@
         "authorize"
       ],
       "previewUrl": "https://preview.pro.ant.design/nbe/widget/pending/to/authorize"
+    },
+    {
+      "key": "RaoUploadFiles",
+      "name": "RaoUploadFiles",
+      "description": "Pro-block upload files",
+      "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/NbeWidgetPendingToAuthorize",
+      "path": "RaoUploadFiles",
+      "features": [
+        "antd",
+        "i18n",
+        "dva"
+      ],
+      "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/RaoUploadFiles/snapshot.png",
+      "tags": [
+        "rao",
+        "component",
+        "upload",
+        "files"
+      ],
+      "previewUrl": "https://preview.pro.ant.design/rao/upload/files"
     }
   ]
 }

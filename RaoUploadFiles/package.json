@@ -1,22 +1,19 @@
 {
   "name": "@nova-pro-blocks/upload-files-rao",
   "version": "0.0.1",
-  "description": "Upload Files Pro-block to RAO",
-  "repository": {
-    "type": "git",
-    "url": ""
-  },
-  "license": "ISC",
+  "description": "Upload-files-rao",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/machinaai"
   },
   "main": "src/index.js",
   "scripts": {
-    "dev": "umi dev"
+    "start": "umi dev"
   },
   "dependencies": {
+    "react": "^16.12.0",
     "@ant-design/icons": "^4.0.0",
-    "umi-request": "^1.0.0"
+    "umi-request": "^1.0.0",
+    "antd": "^4.7.2"
   },
   "peerDependencies": {
     "@ant-design/pro-layout": "^4.5.5"
@@ -25,6 +22,9 @@
     "specVersion": "0.1"
   },
   "devDependencies": {
-    "@types/express": "^4.17.0"
+    "@types/express": "^4.17.0",
+    "umi": "^3.2.23",
+    "@umijs/preset-react": "1.x",
+    "umi-types": "^0.3.0"
   }
 }

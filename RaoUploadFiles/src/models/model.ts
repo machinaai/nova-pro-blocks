@@ -1,5 +1,5 @@
 import { Effect } from '@@/core/umiExports';
-import { sendData } from './service';
+import { sendData } from './../service';
 
 export interface StateType {}
 
