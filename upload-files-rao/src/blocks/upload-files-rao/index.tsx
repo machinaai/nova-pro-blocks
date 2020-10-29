@@ -8,31 +8,27 @@ import UploadTitles from './components/UploadTitles';
 import { Button } from 'antd';
 import styles from './index.less';
 
-const UploadBlock: React.FC<UploadBlockProps> = (
-  {
-    typeFlowProp = UploadFixture.typeFlow,
-    firstView = UploadFixture.UploadFirstView,
-    secondView = UploadFixture.UploadSecondView,
-  }
-) => {
-
+const UploadBlock: React.FC<UploadBlockProps> = ({
+  typeFlowProp = UploadFixture.typeFlow,
+  firstView = UploadFixture.UploadFirstView,
+  secondView = UploadFixture.UploadSecondView,
+  onClick,
+}) => {
   // State para Adress
   const [addressFileList, setAdressList] = useState({ fileList: [] });
 
   // State para Adress
-  const [filesIne, setFilesIne] = useState(
-    {
-      ineFront : false,
-      ineBack : false,
-      pdfFile : false,
-    }
-  );
+  const [filesIne, setFilesIne] = useState({
+    ineFront: false,
+    ineBack: false,
+    pdfFile: false,
+  });
 
   // change view
   const [changeview, setChangeView] = useState<boolean>(false);
   const [reload, setReload] = useState(false);
 
-  useEffect(() => {    
+  useEffect(() => {
     if (addressFileList.fileList) {
       if (addressFileList.fileList.length === 1) {
         setChangeView(true);
@@ -42,55 +38,62 @@ const UploadBlock: React.FC<UploadBlockProps> = (
     }
   }, [addressFileList]);
 
-  useEffect(() => {
-  },[changeview]);
+  useEffect(() => {}, [changeview]);
 
   useEffect(() => {
-    if(filesIne.ineFront && filesIne.ineBack) {
+    if (filesIne.ineFront && filesIne.ineBack) {
       setChangeView(true);
-    } else if(filesIne.pdfFile) {
+    } else if (filesIne.pdfFile) {
       setChangeView(true);
     } else {
       setChangeView(false);
     }
-  },[filesIne]);
+  }, [filesIne]);
 
-  const getIneFiles = (type:'ineFront' | 'ineBack' | 'pdfFile', value:boolean) => {
+  const getIneFiles = (type: 'ineFront' | 'ineBack' | 'pdfFile', value: boolean) => {
     setFilesIne({
       ...filesIne,
       [type]: value,
     });
-  }
+  };
 
   const reloadFiles = () => {
     setReload(true);
   };
 
-  console.log(filesIne)
+  useEffect(() => {
+    setReload(false);
+  }, [reload]);
+
+  const send = () => onClick && onClick();
+
   return (
     <div className={styles.container}>
       <UploadTitles changeview={changeview} firstView={firstView} secondView={secondView} />
-      {typeFlowProp === TypeFlow.ADDRESS ?
+      {typeFlowProp === TypeFlow.ADDRESS ? (
         <UploadIne getIneFiles={getIneFiles} changeview={changeview} reload={reload} />
-        :
+      ) : (
         <UploadAdress setAdressList={setAdressList} reload={reload} />
-      }
+      )}
       <div>
-        { changeview ? 
-        (
+        {changeview ? (
           <div className={styles.container}>
-          <div className={styles.options}>
-            <div>
-              <Button  className={styles.btnUpload} > {secondView.bntNextTitle} </Button>
+            <div className={styles.options}>
+              <div>
+                <Button className={styles.btnUpload} onClick={send}>
+                  {' '}
+                  {secondView.bntNextTitle}{' '}
+                </Button>
+              </div>
+              <div className={styles.again} onClick={reloadFiles}>
+                {secondView.linkTitle}
+              </div>
             </div>
-            <div className={styles.again} onClick={reloadFiles} >{secondView.linkTitle}</div>
           </div>
-        </div>
-      ) : null
-      }
+        ) : null}
       </div>
     </div>
   );
-}
+};
 
 export default UploadBlock;
