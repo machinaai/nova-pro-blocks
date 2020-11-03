@@ -39,7 +39,6 @@ const Upload: React.FC<UploadInfoProps> = ({
 
   const getData = () => {
     let saveDispatch = objectIneFront.type || objectIneBack.type ? true : false;
-    console.log(saveDispatch,'save')
     if(saveDispatch) {
       dispatch({
         type: 'requestModel/ineFrontData',
@@ -120,9 +119,6 @@ const Upload: React.FC<UploadInfoProps> = ({
     });
   };
 
-  
-  console.log(objectIneFront, 'object ine');
-  console.log(objectpdF, 'objeto pdf')
   return (
     <div>
       <UploadBlock
