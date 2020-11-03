@@ -87,7 +87,6 @@ const Upload: React.FC<UploadInfoProps> = ({
   const getUrlImg = (e: string) => {
     if (e !== undefined) {
       const urlString = e.split('base64,');
-      console.log(urlString[urlString.length - 1]);
       return urlString[urlString.length - 1];
     }
   };
