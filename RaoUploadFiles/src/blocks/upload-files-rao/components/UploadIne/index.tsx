@@ -8,9 +8,15 @@ export interface UploadIneProps {
   getIneFiles?: any;
   changeview?: boolean;
   reload?: boolean;
+  setIneFrontFileList?: any;
+  setDataIneFront?: any;
+  setIneBackFileList?: any;
+  setDataIneBack?:any;
+  setPdfFileList?:any;
+  setSrcPdf?: any;
 }
 
-const UploadIne: React.FC<UploadIneProps> = ({ getIneFiles, changeview, reload }) => {
+const UploadIne: React.FC<UploadIneProps> = ({ getIneFiles, changeview, setIneFrontFileList, setDataIneFront, setIneBackFileList, setDataIneBack, setPdfFileList, setSrcPdf, reload }) => {
   //pdf
   const [file, setFile] = useState<any>();
 
@@ -21,6 +27,8 @@ const UploadIne: React.FC<UploadIneProps> = ({ getIneFiles, changeview, reload }
     frameBorder: 0,
   };
 
+  // state to save data INE FRONT -> Ejemplo  de INE
+  const [dataIneFront, setDataFront ] = useState<any>();
   //INE FRONT
   const [ineFrontSelected, setIneFront] = useState({ fileList: [] });
   // Change on ine front
@@ -32,12 +40,16 @@ const UploadIne: React.FC<UploadIneProps> = ({ getIneFiles, changeview, reload }
     if (check) {
       setPdfSelected({ fileList });
       getIneFiles('pdfFile', true);
+      setPdfFileList({fileList});
     } else {
       setIneFront({ fileList });
       getIneFiles('ineFront', true);
+      setIneFrontFileList({ fileList });
     }
   };
 
+  // state to save data INE BACK -> Ejemplo  de INE BACK
+  const [dataIneBack, setDataBack ] = useState<any>();
   //INE BACK
   const [ineBackSelected, setIneBack] = useState({ fileList: [] });
   // Change on ine front
@@ -49,9 +61,11 @@ const UploadIne: React.FC<UploadIneProps> = ({ getIneFiles, changeview, reload }
     if (check) {
       setPdfSelected({ fileList });
       getIneFiles('pdfFile', true);
+      setPdfFileList({fileList});
     } else {
       setIneBack({ fileList });
       getIneFiles('ineBack', true);
+      setIneBackFileList({fileList});
     }
   };
 
@@ -108,6 +122,35 @@ const UploadIne: React.FC<UploadIneProps> = ({ getIneFiles, changeview, reload }
     }
   }, [reload]);
 
+  useEffect(() => {
+    if(ineFrontSelected.fileList.length === 0) {
+      setDataIneFront('');
+    } else {
+      setDataIneFront(dataIneFront)
+    }
+  }, [dataIneFront, ineFrontSelected])
+
+  useEffect(() => {
+    if(ineBackSelected.fileList.length === 0) {
+      setDataIneBack('');
+    } else {
+      setDataIneBack(dataIneBack)
+    }
+  }, [dataIneBack, ineBackSelected])
+
+  const getUrlDataPdf = () => {
+    if(dataIneBack?.includes('data:application/pdf')) {
+      setSrcPdf(dataIneBack)
+    };
+    if(dataIneFront?.includes('data:application/pdf')) {
+      setSrcPdf(dataIneFront)
+    };
+  }
+
+  useEffect(() => {
+    getUrlDataPdf();
+  }, [dataIneFront,dataIneBack])
+  
   return (
     <div>
       {inePdfSelected.fileList.length === 1 ? (
@@ -136,6 +179,7 @@ const UploadIne: React.FC<UploadIneProps> = ({ getIneFiles, changeview, reload }
                   reader.onload = (e) => {
                     let stringData = String(e.target?.result);
                     setFile(stringData);
+                    setDataFront(stringData);
                   };
                   reader.readAsDataURL(file);
                   return false;
@@ -162,6 +206,7 @@ const UploadIne: React.FC<UploadIneProps> = ({ getIneFiles, changeview, reload }
                   reader.onload = (e) => {
                     let stringData = String(e.target?.result);
                     setFile(stringData);
+                    setDataBack(stringData);
                   };
                   reader.readAsDataURL(file);
                   return false;

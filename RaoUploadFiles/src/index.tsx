@@ -38,8 +38,8 @@ const Upload: React.FC<UploadInfoProps> = ({
 
   const getData = useCallback(() => {
     dispatch({
-      type: 'requestModel/getData',
-      payload: '',
+      type: 'requestModel/ineFrontData',
+      payload: objectIneFront,
     });
   }, []);
 
