@@ -16,21 +16,21 @@ const errorHandler = (error: { response: Response }): Response => {
 // }
 
 export async function ineFromDataService(params: any) {
-  return request('services/flowproxyml/api/upload-front', {
+  return request(enviromentEndPoints.ineFront, {
     method: 'POST',
     data: params,
     errorHandler,
   });
 }
 export async function ineBackDataService(params: any) {
-  return request('services/flowproxyml/api/upload-back', {
+  return request(enviromentEndPoints.ineBack, {
     method: 'POST',
     data: params,
     errorHandler,
   });
 }
 export async function pdfDataService(params: any) {
-  return request('services/flowproxyml/api/upload-document', {
+  return request(enviromentEndPoints.ineDocument, {
     method: 'POST',
     data: params,
     errorHandler,

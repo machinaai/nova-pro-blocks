@@ -36,16 +36,27 @@ const Upload: React.FC<UploadInfoProps> = ({
   // // STATE PARA EL OBJETO DEL SERVICIO PDF
   const [objectpdF, setObjectPdf] = useState<any>({});
 
-  const getData = useCallback(() => {
-    dispatch({
-      type: 'requestModel/ineFrontData',
-      payload: objectIneFront,
-    });
-  }, []);
 
-  useEffect(() => {
-    getData();
-  }, []);
+  const getData = () => {
+    let saveDispatch = objectIneFront.type || objectIneBack.type ? true : false;
+    console.log(saveDispatch,'save')
+    if(saveDispatch) {
+      dispatch({
+        type: 'requestModel/ineFrontData',
+        payload: objectIneFront,
+      });
+      dispatch({
+        type: 'requestModel/ineBackData',
+        payload: objectIneBack,
+      });
+    } else 
+    {
+      dispatch({
+        type: 'requestModel/pdfData',
+        payload: objectpdF,
+      });
+    }
+  };
 
   useEffect(() => {
     if (ineFrontFileList.fileList) {
@@ -109,7 +120,9 @@ const Upload: React.FC<UploadInfoProps> = ({
     });
   };
 
+  
   console.log(objectIneFront, 'object ine');
+  console.log(objectpdF, 'objeto pdf')
   return (
     <div>
       <UploadBlock
