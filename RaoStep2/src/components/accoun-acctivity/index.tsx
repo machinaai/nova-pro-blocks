@@ -77,16 +77,16 @@ export const AccountActivity: React.FC<Props> = ({
             <p className={styles.clock}>
                 <ClockCircleOutlined />{` 30 seg.`}
             </p>
-            <h1 style={{ fontFamily: `${font.fontTitle}` }}>{intl.formatMessage({ id: 'account_activity.title' })}</h1>
-            <p className={styles.subtitle} style={{ fontFamily: `${font.fontSubtitle}` }}>{intl.formatMessage({ id: 'account_activity.subtitle' })}</p>
-            <CheckBoxOptions {...props} ></CheckBoxOptions>
+            <h1 style={{ fontFamily: `${font.fontTitle}` }}>{intl.formatMessage({ id: 'BLOCK_NAME.title' })}</h1>
+            <p className={styles.subtitle} style={{ fontFamily: `${font.fontSubtitle}` }}>{intl.formatMessage({ id: 'BLOCK_NAME.subtitle' })}</p>
+            <CheckBoxOptions {...props} />
             <div className={styles.buttons}>
                 <Checkbox
                     checked={stateCheck.checked}
                     disabled={valDis}
                     onChange={onChange}
                 >
-                    {intl.formatMessage({ id: 'account_activity.terms-conditions' })}
+                    {intl.formatMessage({ id: 'BLOCK_NAME.terms-conditions' })}
                 </Checkbox>
                 <br />
                 <Button
@@ -95,7 +95,7 @@ export const AccountActivity: React.FC<Props> = ({
                     shape="round"
                     disabled={valDisBut}
                     onClick={onValidateFlow}>
-                    {intl.formatMessage({ id: 'account_activity.continue_button' })}
+                    {intl.formatMessage({ id: 'BLOCK_NAME.continue_button' })}
                 </Button>
             </div>
         </div>

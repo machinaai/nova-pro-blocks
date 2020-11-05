@@ -9,5 +9,9 @@ export default {
   'BLOCK_NAME.drawerUploadTitle':'Subir documento',
   'BLOCK_NAME.drawerUploadSubtitle':'Formatos válidos',
   'BLOCK_NAME.drawerUploadOp1':'Fotos',
-  'BLOCK_NAME.drawerUploadOp2':'Explorar'
+  'BLOCK_NAME.drawerUploadOp2':'Explorar',
+  'BLOCK_NAME.title': 'Actividad de la cuenta',
+  'BLOCK_NAME.subtitle': '¿Cuánto estimas depositar mensualmente a tu cuenta?',
+  'BLOCK_NAME.terms-conditions': 'Acepto los términos y condiciones',
+  'BLOCK_NAME.continue_button': 'Continuar'
 };
