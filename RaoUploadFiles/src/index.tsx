@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { useDispatch } from 'umi';
+import { useDispatch, connect, useIntl } from "umi";
+import { ModelType } from "./models/model";
 import UploadBlock from './blocks/upload-files-rao';
 import { UploadInfoProps } from './interface/interface';
 import { UploadFixture } from './fixtures/fixture';
@@ -9,6 +10,8 @@ const Upload: React.FC<UploadInfoProps> = ({
   phoneNumber = UploadFixture.phoneNumber,
   firstView,
   secondView,
+  onComplete,
+  flagFlowComplete,
 }) => {
   const dispatch = useDispatch();
 
@@ -145,6 +148,14 @@ const Upload: React.FC<UploadInfoProps> = ({
     }
   }, [resetObject]);
 
+  useEffect(() => {
+    if (flagFlowComplete && onComplete) {
+      onComplete(flagFlowComplete);
+    }
+  }, [flagFlowComplete]);
+
+
+console.log(flagFlowComplete, 'flow para paco')
   return (
     <div>
       <UploadBlock
@@ -164,4 +175,6 @@ const Upload: React.FC<UploadInfoProps> = ({
   );
 };
 
-export default Upload;
+export default connect(({ requestModel }: { requestModel: ModelType }) => ({
+  flagFlowComplete: requestModel.flowComplete,
+}))(Upload);

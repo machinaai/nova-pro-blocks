@@ -3,5 +3,5 @@
  */
 export const UploadFixture = {
   typeFlow: 0,
-  phoneNumber: '5570371829',
+  phoneNumber: '5570104986',
 };
