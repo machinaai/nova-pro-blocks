@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import IframeComm from 'react-iframe-comm';
-import { Upload, Modal } from 'antd';
-import { PlusOutlined } from '@ant-design/icons';
-import styles from './index.less';
+import React, { useState, useEffect } from "react";
+import IframeComm from "react-iframe-comm";
+import { Upload, Modal } from "antd";
+import { PlusOutlined } from "@ant-design/icons";
+import styles from "./index.less";
 
 export interface UploadAdressProps {
   setAdressList?: any;
@@ -10,7 +10,11 @@ export interface UploadAdressProps {
   reload?: boolean;
 }
 
-const UploadAdress: React.FC<UploadAdressProps> = ({ setAdressList, resetFiles, reload }) => {
+const UploadAdress: React.FC<UploadAdressProps> = ({
+  setAdressList,
+  resetFiles,
+  reload,
+}) => {
   const [filesSelected, setFilesSelected] = useState({ fileList: [] });
 
   let typeFile: any;
@@ -20,8 +24,8 @@ const UploadAdress: React.FC<UploadAdressProps> = ({ setAdressList, resetFiles, 
 
   const attributesPdf = {
     src: file,
-    width: '100%',
-    height: '100%',
+    width: "100%",
+    height: "100%",
     frameBorder: 0,
   };
 
@@ -39,8 +43,8 @@ const UploadAdress: React.FC<UploadAdressProps> = ({ setAdressList, resetFiles, 
 
   const progressFunction = () => {
     filesSelected?.fileList.forEach((element) => {
-      if (element.type === 'application/pdf') {
-        typeFile = 'pdf';
+      if (element.type === "application/pdf") {
+        typeFile = "pdf";
       }
     });
   };
@@ -56,9 +60,9 @@ const UploadAdress: React.FC<UploadAdressProps> = ({ setAdressList, resetFiles, 
 
   const [change, setChange] = useState({
     previewVisible: false,
-    previewImage: '',
+    previewImage: "",
     fileList: [],
-    previewTitle: '',
+    previewTitle: "",
   });
 
   const handleCancel = () => {
@@ -76,6 +80,7 @@ const UploadAdress: React.FC<UploadAdressProps> = ({ setAdressList, resetFiles, 
 
   if (reload) {
     filesSelected.fileList = [];
+    typeFile = undefined;
   }
 
   return (
@@ -83,7 +88,7 @@ const UploadAdress: React.FC<UploadAdressProps> = ({ setAdressList, resetFiles, 
       <div className={styles.title}>
         {filesSelected.fileList.length === 1
           ? null
-          : 'Sube tu comprobante de domicilio (jpg, png o pdf).'}
+          : "Sube tu comprobante de domicilio (jpg, png o pdf)."}
       </div>
       <div>
         {typeFile ? (
@@ -91,7 +96,9 @@ const UploadAdress: React.FC<UploadAdressProps> = ({ setAdressList, resetFiles, 
             <div className={styles.pdf}>
               <IframeComm attributes={attributesPdf} />
             </div>
-            <div className={styles.pdfName}>{filesSelected.fileList[0].name}</div>
+            <div className={styles.pdfName}>
+              {filesSelected.fileList[0].name}
+            </div>
           </div>
         ) : (
           <div>
@@ -121,7 +128,11 @@ const UploadAdress: React.FC<UploadAdressProps> = ({ setAdressList, resetFiles, 
               onCancel={handleCancel}
               title={change.previewTitle}
             >
-              <img alt="preview" style={{ width: '100%' }} src={change.previewImage} />
+              <img
+                alt="preview"
+                style={{ width: "100%" }}
+                src={change.previewImage}
+              />
             </Modal>
           </div>
         )}
