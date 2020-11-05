@@ -36,6 +36,8 @@ const Upload: React.FC<UploadInfoProps> = ({
   // // STATE PARA EL OBJETO DEL SERVICIO PDF
   const [objectpdF, setObjectPdf] = useState<any>({});
 
+  const [resetObject, setResetObject] = useState(false);
+
   const getData = () => {
     let saveDispatch = objectIneFront.type || objectIneBack.type ? true : false;
     if (saveDispatch) {
@@ -96,6 +98,14 @@ const Upload: React.FC<UploadInfoProps> = ({
       phone: phoneNumber,
       image: getUrlImg(dataIneFront),
     });
+    if (resetObject) {
+      setObjectIneFront({
+        type: '',
+        phone: '',
+        image: '',
+      });
+      setResetObject(false);
+    }
   };
 
   //FUNCTION TO MAKE OBJECT INE BACK
@@ -105,6 +115,14 @@ const Upload: React.FC<UploadInfoProps> = ({
       phone: phoneNumber,
       image: getUrlImg(dataIneback),
     });
+    if (resetObject) {
+      setObjectIneBack({
+        type: '',
+        phone: '',
+        image: '',
+      });
+      setResetObject(false);
+    }
   };
 
   //FUNCTION TO MAKE OBJECT PDF INES
@@ -114,11 +132,18 @@ const Upload: React.FC<UploadInfoProps> = ({
       phone: phoneNumber,
       image: getUrlImg(dataPdf),
     });
+    if (resetObject) {
+      setResetObject(false);
+    }
   };
 
-  console.log(objectIneFront, 'objeto de ine front');
-  console.log(objectIneBack, 'objeto de ine back');
-  console.log(objectpdF, 'objeto del Pdf');
+  useEffect(() => {
+    if (resetObject) {
+      setObjectPdf({});
+      setObjectIneBack({});
+      setObjectIneFront({});
+    }
+  }, [resetObject]);
 
   return (
     <div>
@@ -133,6 +158,7 @@ const Upload: React.FC<UploadInfoProps> = ({
         fileListPdf={fileListPdf}
         firstView={firstView}
         secondView={secondView}
+        setResetObject={setResetObject}
       />
     </div>
   );

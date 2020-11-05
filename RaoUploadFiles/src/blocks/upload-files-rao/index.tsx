@@ -19,6 +19,7 @@ const UploadBlock: React.FC<UploadBlockProps> = ({
   srcPdf,
   fileListPdf,
   onClick,
+  setResetObject,
 }) => {
   // states para INE  FRONT
   // STATE PARA DATA
@@ -91,6 +92,7 @@ const UploadBlock: React.FC<UploadBlockProps> = ({
 
   const reloadFiles = (e: any) => {
     setReload(true);
+    setResetObject(true);
   };
 
   useEffect(() => {
