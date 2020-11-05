@@ -45,17 +45,19 @@ const Upload: React.FC<UploadInfoProps> = ({
     let saveDispatch = objectIneFront.type || objectIneBack.type ? true : false;
     if (saveDispatch) {
       dispatch({
-        type: 'requestModel/ineFrontData',
-        payload: objectIneFront,
-      });
-      dispatch({
-        type: 'requestModel/ineBackData',
-        payload: objectIneBack,
+        type: 'requestModel/prueba',
+        payload: {objectIneFront, objectIneBack},
       });
     } else {
       dispatch({
         type: 'requestModel/pdfData',
         payload: objectpdF,
+      });
+    }
+    if(dispatch) {
+      dispatch({
+        type: 'requestModel/setFlowStatus',
+        payload: false,
       });
     }
   };
@@ -145,6 +147,10 @@ const Upload: React.FC<UploadInfoProps> = ({
       setObjectPdf({});
       setObjectIneBack({});
       setObjectIneFront({});
+      dispatch({
+        type: 'requestModel/setFlowStatus',
+        payload: false,
+      });
     }
   }, [resetObject]);
 
@@ -154,8 +160,6 @@ const Upload: React.FC<UploadInfoProps> = ({
     }
   }, [flagFlowComplete]);
 
-
-console.log(flagFlowComplete, 'flow para paco')
   return (
     <div>
       <UploadBlock

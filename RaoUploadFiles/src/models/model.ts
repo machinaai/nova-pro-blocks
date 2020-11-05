@@ -8,7 +8,8 @@ export interface ModelType {
     // getData: Effect;
     ineFrontData: Effect;
     ineBackData: Effect;
-    pdfData: Effect
+    pdfData: Effect;
+    prueba: Effect;
   };
   flowComplete?: boolean;
   reducers: {
@@ -23,28 +24,24 @@ export const Model: ModelType = {
     data: {},
   },
   effects: {
-    *ineFrontData({ payload }: any, { call, put }: any) {
-      const response = yield call(ineFromDataService, payload);
-      const { status } = response;
-      console.log('responde ine front', response)
-      if (status) {
+    *prueba({ payload }: any, { call, put }: any) {
+      const responseFront = yield call(ineFromDataService, payload.objectIneFront);
+      const responseBack = yield call(ineBackDataService, payload.objectIneBack);
+
+      const { status: statusFront } = responseFront;
+      const { status: statusBack } = responseBack;
+
+
+      if (statusFront || statusBack) {
         yield put({ type: 'setStatus', payload: status });
       } else {
         yield put({ type: 'setFlowStatus', payload: true });
         yield put({ type: 'setStatus', payload: 200 });
+        yield put({ type: 'setFlowStatus', payload: false });
       }
+
     },
-    *ineBackData({ payload }: any, { call, put }: any) {
-      const response = yield call(ineBackDataService, payload)
-      console.log('responde ine back', response)
-      const { status } = response;
-      if (status) {
-        yield put({ type: 'setStatus', payload: status });
-      } else {
-        yield put({ type: 'setFlowStatus', payload: true });
-        yield put({ type: 'setStatus', payload: 200 });
-      }
-    },
+
     *pdfData({ payload }: any, { call, put }: any) {
       const response = yield call(pdfDataService, payload)
       console.log('responde pdf', response);
@@ -54,6 +51,7 @@ export const Model: ModelType = {
       } else {
         yield put({ type: 'setFlowStatus', payload: true });
         yield put({ type: 'setStatus', payload: 200 });
+        yield put({ type: 'setFlowStatus', payload: false });
       }
     },
   },
