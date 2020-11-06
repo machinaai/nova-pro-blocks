@@ -16,16 +16,12 @@ export const ButtonsSubmit: React.FC<PropsBlock> = (
 ) => {
   return (
     <div >
-      <div>
-        <Button type="primary" shape="round" size='large' style={{ color: colorOp1 }} htmlType={typeBtn1} onClick={actionOp1}>
+        <Button type="primary" shape="round" size='large' style={{ color: colorOp1 }} htmlType={typeBtn1} onClick={actionOp1} block>
           {but_option1}
         </Button>
-      </div>
-      <div>
-        <Button type="text" size='large' style={{ color: colorOp2 }} htmlType={typeBtn2} onClick={actionOp2}>
+        <Button type="text" size='large' style={{ color: colorOp2 }} htmlType={typeBtn2} onClick={actionOp2} block>
           {but_option2}
         </Button>
-      </div>
     </div>
   )
 }

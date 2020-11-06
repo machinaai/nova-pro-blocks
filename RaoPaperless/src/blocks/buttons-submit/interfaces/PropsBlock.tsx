@@ -8,14 +8,3 @@ export interface PropsBlock {
     actionOp2?: Function | any,
     typeBtn2?: any,
 }
-
-//   export interface PropsBlock {
-//     OptBtn1?: Btn,
-//     OptBtn2?: Btn
-// }
-// interface Btn {
-//     btnName?: string | undefined,
-//     colorBtn?: string | undefined,
-//     actionBtn?: Function | any,
-//     typeBtn?: any
-// }
