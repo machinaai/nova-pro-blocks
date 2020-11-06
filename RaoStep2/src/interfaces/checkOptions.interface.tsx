@@ -8,5 +8,6 @@ export interface PropsCheck{
 }
 export interface Fonts {
     fontTitle:string,
-    fontSubtitle:string
+    fontSubtitle:string,
+    fontTextTerms:string
 }

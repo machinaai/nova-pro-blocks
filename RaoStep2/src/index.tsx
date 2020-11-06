@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch, connect, useIntl} from 'umi';
+import { useDispatch, connect, useIntl } from 'umi';
 import OptionsBlock from './blocks/m-d-block-options/src/index';
 import { AccountActivity } from './components/accoun-acctivity';
 import { StepEnum } from './enums/step.enum';
@@ -7,6 +7,7 @@ import { dataFixture, dataFontFixture } from './fixture/dataFixture';
 import { Fonts, PropsCheck } from './interfaces/checkOptions.interface';
 import { ElementProps } from './interfaces/modal.interface';
 import { StateModel } from './models/model';
+import styles from './index.less';
 
 interface PAGE_NAME_UPPER_CAMEL_CASEProps {
     imgOptions?: string[];
@@ -60,7 +61,8 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC<PAGE_NAME_UPPER_CAMEL_CASEProps> = (
         setFlow,
         fontFamily: {
             fontTitle: dataFontFixture.fontTitle,
-            fontSubtitle: dataFontFixture.fontSubtitle
+            fontSubtitle: dataFontFixture.fontSubtitle,
+            fontTextTerms: dataFontFixture.fontTextTerms
         },
         setOnClose,
         setShowModal,
@@ -70,10 +72,10 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC<PAGE_NAME_UPPER_CAMEL_CASEProps> = (
         setShowModal(true);
         setShowDrawer(true);
     }
-    useEffect(() => {        
+    useEffect(() => {
         if (flow === 'n2') {
             validateElement()
-        } else if(flow === 'n4'){
+        } else if (flow === 'n4') {
             dispatch({
                 type: "BLOCK_NAME_CAMEL_CASE/setDetails",
                 payload: {
@@ -81,9 +83,13 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC<PAGE_NAME_UPPER_CAMEL_CASEProps> = (
                     step: StepEnum.verificarIdentidad,
                     numberPhone
                 },
+            });
+            dispatch({
+                type: "BLOCK_NAME_CAMEL_CASE/setFlowStatus",
+                payload: true
             })
         }
-    }, [onClose,flow]);
+    }, [onClose, flow]);
 
     useEffect(() => {
         if (flowComplete && onComplete) {
@@ -131,10 +137,10 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC<PAGE_NAME_UPPER_CAMEL_CASEProps> = (
     }
 
     return (
-        <>
+        <div className={styles.container}>
             <AccountActivity {...optionsCheck} />
             <OptionsBlock {...optionsElement} />
-        </>
+        </div>
     )
 }
 export default connect(({ BLOCK_NAME_CAMEL_CASE }: { BLOCK_NAME_CAMEL_CASE: StateModel }) => ({
