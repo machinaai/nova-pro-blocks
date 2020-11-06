@@ -1,50 +1,66 @@
-h1 {
-    width: auto;
+.buttons {
+  margin-top: 4%;
+}
+
+@media (min-width: 876px) and (max-width: 5000px) {
+  h2{
+    color:#212529;
+    font-size: 32px;
+    font-weight: 1000;
+    font-weight: bold;
     margin-top: 0.5em;
     margin-left: 1px;
-    color: black;
-    font-size: 32px;
-    // font-family: 'Frutiger_bold', sans-serif;
-    line-height: 1.2;
+    width: auto;        
   }
   .clock {
     font-size: 16px;
     font-family: 'Frutiger', sans-serif;
   }
-  
-  .subtitle {
-    color: rgb(33, 37, 41);
+
+  .btnContinue {
+    max-width: 30%;
+  }
+  .textTerms {
+    color: #212529;;
     font-size: 18px;
-    font-family: 'Frutiger', sans-serif;
-  }
- 
-  @media (min-width: 100px) and (max-width: 767px) {
-    .container {
-      margin: 18px 18px 0;
-    }
-    h1{
-        width: auto;
-        margin-top: 0.5em;
-        margin-left: 1px;
-        color: black;
-        font-size: 32px;
-        line-height: 1.2;
-    }
-    .subtitle {
-        color: rgb(33, 37, 41);
-        font-size: 18px;
-      }
-    .clock {
-      display: none;
-    }
-  }
-  @media only screen and (max-width: 767px) {
-    .buttons {
-      bottom: 0;
-      margin-top: 150px;
-    }
-
+    margin: 44px 0 32px;
+    font-weight: bold;
   }
 
-  
-  
+  .subtitle {
+    color: #212529;
+    font-size: 18px;
+  }
+}
+@media (min-width: 100px) and (max-width: 767px) {
+  .container {
+    margin: 18px 18px 0;
+  }
+  h2 {
+    width: auto;
+    margin-top: 0.5em;
+    margin-left: 1px;
+    color: #212529;
+    text-align: left;
+    font-size: 32px;
+    font-weight: bold;
+  }
+  .subtitle {
+    color: #212529;
+    font-size: 18px;
+    line-height: 1.5;    
+    text-align: left;
+  }
+  .textTerms {
+    color: #212529;;
+    font-size: 14px;
+    margin: 44px 0 32px;
+    font-weight: bold;
+  }
+  .clock {
+    display: none;
+  }
+  .btnContinue {
+    font-size: 18px;
+  }
+}

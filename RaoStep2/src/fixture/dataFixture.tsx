@@ -3,7 +3,8 @@ import { ExpandOutlined, InsertRowBelowOutlined, UploadOutlined } from '@ant-des
 
 export const dataFixture= [<ExpandOutlined />,<UploadOutlined />,<InsertRowBelowOutlined />];
 export const dataFontFixture={
-    fontTitle:'Frutiger_bold',
-    fontSubtitle:'Frutiger'
+    fontTitle:'"signikaregular", sans-serif',
+    fontSubtitle:'signikaregular',
+    fontTextTerms:'signikaregular,sans-serif'
 }
 

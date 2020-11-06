@@ -1,4 +1,4 @@
-import React, {useState } from 'react'
+import React, { useState } from 'react'
 import { Checkbox, Button } from 'antd';
 import { useIntl } from 'umi'
 import { ClockCircleOutlined } from '@ant-design/icons';
@@ -10,13 +10,14 @@ interface Props {
     optionsCheck: string[],
     setFlow: Function,
     fontFamily: Font,
-    setOnClose:Function,
+    setOnClose: Function,
     setShowModal: Function,
     setShowDrawer: Function
 }
 interface Font {
     fontTitle: string,
-    fontSubtitle: string
+    fontSubtitle: string,
+    fontTextTerms: string
 }
 
 export const AccountActivity: React.FC<Props> = ({
@@ -64,9 +65,9 @@ export const AccountActivity: React.FC<Props> = ({
         const { defValue } = props;
         if (defValue.includes('Menos') || defValue.includes('less')) {
             setFlow('n2');
-            setOnClose(true);   
+            setOnClose(true);
             setShowModal(false),
-            setShowDrawer(false)      
+                setShowDrawer(false)
         } else {
             setFlow('n4')
         }
@@ -77,7 +78,7 @@ export const AccountActivity: React.FC<Props> = ({
             <p className={styles.clock}>
                 <ClockCircleOutlined />{` 30 seg.`}
             </p>
-            <h1 style={{ fontFamily: `${font.fontTitle}` }}>{intl.formatMessage({ id: 'BLOCK_NAME.title' })}</h1>
+            <h2 style={{ fontFamily: `${font.fontTitle}` }}>{intl.formatMessage({ id: 'BLOCK_NAME.title' })}</h2>
             <p className={styles.subtitle} style={{ fontFamily: `${font.fontSubtitle}` }}>{intl.formatMessage({ id: 'BLOCK_NAME.subtitle' })}</p>
             <CheckBoxOptions {...props} />
             <div className={styles.buttons}>
@@ -85,16 +86,19 @@ export const AccountActivity: React.FC<Props> = ({
                     checked={stateCheck.checked}
                     disabled={valDis}
                     onChange={onChange}
+                    className={styles.textTerms}
+                    style={{ fontFamily: `${font.fontTextTerms}` }}
                 >
                     {intl.formatMessage({ id: 'BLOCK_NAME.terms-conditions' })}
                 </Checkbox>
                 <br />
                 <Button
                     type="primary"
-                    size="small"
+                    size='large'
                     shape="round"
                     disabled={valDisBut}
-                    onClick={onValidateFlow}>
+                    className={styles.btnContinue}
+                    onClick={onValidateFlow} block>
                     {intl.formatMessage({ id: 'BLOCK_NAME.continue_button' })}
                 </Button>
             </div>
