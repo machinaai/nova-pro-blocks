@@ -12,5 +12,6 @@ export interface ElementProps {
 interface ItemOptions {
     icon: React.ReactNode,
     valOption: string,
-    action: any
+    action: any,
+    color:string
 }

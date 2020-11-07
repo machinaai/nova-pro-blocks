@@ -11,6 +11,7 @@ export interface ItemOptions {
     icon: any,
     valOption: string
     action:Function|any
+    color?:string
 }
 interface Fonts{
     fontTitle:string,
