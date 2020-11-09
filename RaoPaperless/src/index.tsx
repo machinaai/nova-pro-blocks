@@ -17,16 +17,27 @@ interface PAGE_NAME_UPPER_CAMEL_CASEProps {
   colorBtn1?: string,
   colorBtn2?: string,
   font?: Fonts
+  redirect?:string
 
   cardNumber?: StateModel['cardNumber'];
   error: StateModel['error'];
-  emailVal?:StateModel['emailVal'];
+  emailVal?: StateModel['emailVal'];
   flowComplete?: StateModel['flowComplete'];
   onComplete?: Function;
   onReturn?: Function;
 }
 const PAGE_NAME_UPPER_CAMEL_CASE: React.FC<PAGE_NAME_UPPER_CAMEL_CASEProps> = (props) => {
-  const { image = imagePaper, colorBtn1, colorBtn2, font = fontFixture, cardNumber,error,emailVal, flowComplete, onComplete, onReturn } = props;
+  const { image = imagePaper,
+    colorBtn1,
+    colorBtn2,
+    font = fontFixture,
+    redirect,
+    cardNumber,
+    error,
+    emailVal,
+    flowComplete,
+    onComplete,
+    onReturn } = props;
   const intl = useIntl();
   const dispatch = useDispatch();
 
@@ -44,8 +55,8 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC<PAGE_NAME_UPPER_CAMEL_CASEProps> = (p
   }
   const history = useHistory();
 
-  const onFinish = ({user:{email}}:any) => {
-    console.log(email);    
+  const onFinish = ({ user: { email } }: any) => {
+    console.log(email);
     dispatch({
       type: "BLOCK_NAME_CAMEL_CASE/saveCardNumber",
       payload: cardNumber,
@@ -60,7 +71,7 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC<PAGE_NAME_UPPER_CAMEL_CASEProps> = (p
     })
 
     setTimeout(() => {
-      history.push("/account-screen");
+      history.push(`${redirect}`);
     }, 1000);
   };
 
@@ -99,10 +110,8 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC<PAGE_NAME_UPPER_CAMEL_CASEProps> = (p
         <div className={styles.image}>
           <img className={styles.img} src={image} alt="notification" />
         </div>
-        <div className={styles.content}>
-          <h1 style={{ fontFamily: font?.fontTitle }}>{intl.formatMessage({ id: 'BLOCK_NAME.paperless_title' })}</h1>
-          <p style={{ fontFamily: font?.fontSubtitle }}>{intl.formatMessage({ id: 'BLOCK_NAME.paperless_subtitle' })}</p>
-        </div>
+        <h1 style={{ fontFamily: font?.fontTitle }}>{intl.formatMessage({ id: 'BLOCK_NAME.paperless_title' })}</h1>
+        <p style={{ fontFamily: font?.fontSubtitle }}>{intl.formatMessage({ id: 'BLOCK_NAME.paperless_subtitle' })}</p>
         <div className={styles.btnWrapper}>
           <FormBlock {...PropsForm} />
         </div>
