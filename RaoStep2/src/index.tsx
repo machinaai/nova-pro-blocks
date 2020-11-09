@@ -8,10 +8,12 @@ import { Fonts, PropsCheck } from './interfaces/checkOptions.interface';
 import { ElementProps } from './interfaces/modal.interface';
 import { StateModel } from './models/model';
 import styles from './index.less';
+import { Color } from 'chalk';
 
 interface PAGE_NAME_UPPER_CAMEL_CASEProps {
     imgOptions?: string[];
     fontFamily?: Fonts;
+    colorProblock?:string;
 
     numberPhone?: StateModel['numberPhone'];
     details: StateModel['details'];
@@ -23,6 +25,7 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC<PAGE_NAME_UPPER_CAMEL_CASEProps> = (
     {
         imgOptions = dataFixture,
         fontFamily = dataFontFixture,
+        colorProblock = 'purple',
         details,
         numberPhone = '55 2039 3401',
         flowComplete,
@@ -114,17 +117,20 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC<PAGE_NAME_UPPER_CAMEL_CASEProps> = (
             {
                 icon: imgOptions[0],
                 valOption: `${intl.formatMessage({ id: 'BLOCK_NAME.modalOption1' })}`,
-                action: () => { setStep(StepEnum.scanDoc) }
+                action: () => { setStep(StepEnum.scanDoc) },
+                color:colorProblock
             },
             {
                 icon: imgOptions[1],
                 valOption: `${intl.formatMessage({ id: 'BLOCK_NAME.modalOption2' })}`,
-                action: () => { setStep(StepEnum.uploadDoc) }
+                action: () => { setStep(StepEnum.uploadDoc) },
+                color:colorProblock
             },
             {
                 icon: imgOptions[2],
                 valOption: `${intl.formatMessage({ id: 'BLOCK_NAME.modalOption3' })}`,
-                action: () => { setStep(StepEnum.loadData) }
+                action: () => { setStep(StepEnum.loadData) },
+                color:colorProblock
             },
         ]
     }
