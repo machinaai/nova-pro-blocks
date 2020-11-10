@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import IframeComm from "react-iframe-comm";
 import { Upload, Modal } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
+import { useIntl } from 'umi';
 import styles from "./index.less";
 
 export interface UploadAdressProps {
@@ -19,6 +20,8 @@ const UploadAdress: React.FC<UploadAdressProps> = ({
 
   let typeFile: any;
 
+  const useInt = useIntl();
+
   //pdf
   const [file, setFile] = useState<any>();
 
@@ -32,7 +35,7 @@ const UploadAdress: React.FC<UploadAdressProps> = ({
   const uploadButton = (
     <div>
       <PlusOutlined />
-      <div style={{ marginTop: 8 }}>Selecciona</div>
+      <div style={{ marginTop: 8 }}>{useInt.formatMessage({ id: 'BLOCK_NAME.uploadBtn.title' })}</div>
     </div>
   );
 

@@ -5,6 +5,7 @@ import { UploadBlockProps } from './interfaces/interface';
 import { UploadFixture } from './fixtures/fixture';
 import { TypeFlow } from './enum/emun';
 import UploadTitles from './components/UploadTitles';
+import { useIntl } from 'umi';
 import { Button, Spin} from 'antd';
 import styles from './index.less';
 
@@ -61,6 +62,8 @@ const UploadBlock: React.FC<UploadBlockProps> = ({
   const [changeview, setChangeView] = useState<boolean>(false);
   const [reload, setReload] = useState(false);
 
+  const useInt = useIntl();
+
   useEffect(() => {
     if (addressFileList.fileList) {
       if (addressFileList.fileList.length === 1) {
@@ -116,7 +119,7 @@ const UploadBlock: React.FC<UploadBlockProps> = ({
     <div className={styles.container}>
       <UploadTitles changeview={changeview} firstView={firstView} secondView={secondView} />
       {showSpin ? <div className={styles.containerSpin}>
-          <Spin tip="Cargando..." />
+          <Spin tip={useInt.formatMessage({ id: 'BLOCK_NAME.spin.title' })}/>
       </div> 
       : typeFlowProp === TypeFlow.INE ? (
         <UploadIne

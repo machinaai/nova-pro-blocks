@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Modal, Upload } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
 import IframeComm from "react-iframe-comm";
+import { useIntl } from 'umi';
 import styles from "./index.less";
 
 export interface UploadIneProps {
@@ -36,6 +37,8 @@ const UploadIne: React.FC<UploadIneProps> = ({
     height: "100%",
     frameBorder: 0,
   };
+
+  const useInt = useIntl();
 
   // state to save data INE FRONT -> file  de INE
   const [dataIneFront, setDataFront] = useState<any>();
@@ -83,7 +86,7 @@ const UploadIne: React.FC<UploadIneProps> = ({
   const uploadButton = (
     <div>
       <PlusOutlined />
-      <div style={{ marginTop: 8 }}>Upload</div>
+      <div style={{ marginTop: 8 }}>{useInt.formatMessage({ id: 'BLOCK_NAME.uploadBtn.title' })}</div>
     </div>
   );
 
