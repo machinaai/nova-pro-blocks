@@ -142,12 +142,11 @@ const UploadBlock: React.FC<UploadBlockProps> = ({
             <div className={styles.options}>
               <div>
                 <Button className={styles.btnUpload} onClick={send}>
-                  {' '}
-                  {secondView.bntNextTitle}{' '}
+                {useInt.formatMessage({ id: 'BLOCK_NAME.upload.btn.continue' })}
                 </Button>
               </div>
               <div className={styles.again} onClick={reloadFiles}>
-                {secondView.linkTitle}
+                {useInt.formatMessage({ id: 'BLOCK_NAME.upload.linkTitle' })}
               </div>
             </div>
           </div>

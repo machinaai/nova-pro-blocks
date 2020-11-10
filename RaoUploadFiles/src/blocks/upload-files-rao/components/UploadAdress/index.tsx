@@ -88,11 +88,10 @@ const UploadAdress: React.FC<UploadAdressProps> = ({
 
   return (
     <div>
-      <div className={styles.title}>
-        {filesSelected.fileList.length === 1
+       {filesSelected.fileList.length === 1
           ? null
-          : "Sube tu comprobante de domicilio (jpg, png o pdf)."}
-      </div>
+          : <div className={styles.title}> {useInt.formatMessage({ id: 'BLOCK_NAME.upload.adress.text' })}</div>
+      }
       <div>
         {typeFile ? (
           <div className={styles.uploadPdf}>

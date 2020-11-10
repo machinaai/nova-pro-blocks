@@ -177,7 +177,7 @@ const UploadIne: React.FC<UploadIneProps> = ({
         <div className={changeview ? styles.uploadContainerChange : null}>
           <div className={styles.firtsUpload}>
             <div className={styles.title}>
-              Sube la parte delantera de tu INE/IFE (jpg, png o pdf).{" "}
+              {useInt.formatMessage({ id: 'BLOCK_NAME.upload.ine.front' })}
             </div>
             <div>
               <Upload
@@ -204,7 +204,7 @@ const UploadIne: React.FC<UploadIneProps> = ({
           </div>
           <div className={styles.secondUpload}>
             <div className={styles.title}>
-              Sube la parte trasera de tu INE/IFE (jpg, png o pdf).
+              {useInt.formatMessage({ id: 'BLOCK_NAME.upload.ine.back' })}
             </div>
             <div>
               <Upload

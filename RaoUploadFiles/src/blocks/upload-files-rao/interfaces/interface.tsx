@@ -2,8 +2,8 @@ import { TypeFlow } from '../enum/emun';
 
 export interface UploadBlockProps {
   typeFlowProp: TypeFlow;
-  firstView: FirstViewInterface;
-  secondView: SecondViewInterface;
+  firstView?: FirstViewInterface;
+  secondView?: SecondViewInterface;
   srcIneFront: any;
   fileListIneFront: any;
   srcIneBack: any;
@@ -17,7 +17,6 @@ export interface UploadBlockProps {
 
 export interface FirstViewInterface {
   firstHeaderTitle?: string;
-  firstTitle?: string;
   firstSubtitle?: string;
   detailsTitle?: string;
   detailsElement1?: string;
@@ -27,8 +26,4 @@ export interface FirstViewInterface {
 
 export interface SecondViewInterface {
   secondHeaderTitle?: string;
-  secondTitle?: string;
-  secondSubtitle?: string;
-  bntNextTitle?: string;
-  linkTitle?: string;
 }
