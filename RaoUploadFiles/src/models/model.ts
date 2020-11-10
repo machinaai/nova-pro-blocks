@@ -1,6 +1,12 @@
 import { Effect, Reducer } from '@@/core/umiExports';
 import { ineFromDataService, ineBackDataService, pdfDataService } from './../service';
 
+export interface StateModel {
+  data?: any;
+  dataUpload?: any;
+  flowComplete?: boolean;
+}
+
 export interface ModelType {
   namespace: string;
   state: any;
@@ -11,11 +17,11 @@ export interface ModelType {
     pdfData: Effect;
     prueba: Effect;
   };
-  flowComplete?: boolean;
   reducers: {
-    setStatus: Reducer<ModelType>;
-    setStep: Reducer<ModelType>;
-    setFlowStatus: Reducer<ModelType>;
+    setStatus: Reducer<StateModel>;
+    setStep: Reducer<StateModel>;
+    setFlowStatus: Reducer<StateModel>;
+    setDataUpload: Reducer<StateModel>;
   }
 }
 export const Model: ModelType = {
@@ -32,14 +38,14 @@ export const Model: ModelType = {
       const { status: statusBack } = responseBack;
 
 
-      if (statusFront || statusBack) {
+      if (statusFront && statusBack) {
         yield put({ type: 'setStatus', payload: status });
       } else {
         yield put({ type: 'setFlowStatus', payload: true });
         yield put({ type: 'setStatus', payload: 200 });
+        yield put({ type: 'setDataUpload', payload: responseFront });
         yield put({ type: 'setFlowStatus', payload: false });
       }
-
     },
 
     *pdfData({ payload }: any, { call, put }: any) {
@@ -51,6 +57,7 @@ export const Model: ModelType = {
       } else {
         yield put({ type: 'setFlowStatus', payload: true });
         yield put({ type: 'setStatus', payload: 200 });
+        yield put({ type: 'setDataUpload', payload: response });
         yield put({ type: 'setFlowStatus', payload: false });
       }
     },
@@ -72,6 +79,12 @@ export const Model: ModelType = {
       return {
         ...state,
         flowComplete: payload
+      }
+    },
+    setDataUpload(state: any, { payload }: any) {
+      return {
+        ...state,
+        dataUpload: payload
       }
     }
   }

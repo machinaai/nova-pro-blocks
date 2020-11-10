@@ -12,6 +12,7 @@ const Upload: React.FC<UploadInfoProps> = ({
   secondView,
   onComplete,
   flagFlowComplete,
+  dataUpload,
 }) => {
   const dispatch = useDispatch();
 
@@ -41,6 +42,18 @@ const Upload: React.FC<UploadInfoProps> = ({
 
   const [resetObject, setResetObject] = useState(false);
 
+
+  // show spin 
+  const [ showSpin, setShowSpin] = useState(false);
+
+
+  useEffect(() => {
+    console.log(dataUpload, 'data del servicio')
+    if(dataUpload==={}) {
+      setShowSpin(false);
+    }
+  }, [dataUpload]);
+
   const getData = () => {
     let saveDispatch = objectIneFront.type || objectIneBack.type ? true : false;
     if (saveDispatch) {
@@ -54,6 +67,11 @@ const Upload: React.FC<UploadInfoProps> = ({
         payload: objectpdF,
       });
     }
+
+    if(!flagFlowComplete) {
+      setShowSpin(true)
+    }
+
     if(dispatch) {
       dispatch({
         type: 'requestModel/setFlowStatus',
@@ -160,6 +178,9 @@ const Upload: React.FC<UploadInfoProps> = ({
     }
   }, [flagFlowComplete]);
 
+
+  console.log(flagFlowComplete, 'valor del flow')
+
   return (
     <div>
       <UploadBlock
@@ -174,11 +195,14 @@ const Upload: React.FC<UploadInfoProps> = ({
         firstView={firstView}
         secondView={secondView}
         setResetObject={setResetObject}
+        showSpin={showSpin}
+        setShowSpin={setShowSpin}
       />
     </div>
   );
 };
 
-export default connect(({ requestModel }: { requestModel: ModelType }) => ({
+export default connect(({ requestModel }: { requestModel: StateModel }) => ({
   flagFlowComplete: requestModel.flowComplete,
+  dataUpload: requestModel.dataUpload,
 }))(Upload);

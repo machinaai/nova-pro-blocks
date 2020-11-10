@@ -11,6 +11,8 @@ export interface UploadBlockProps {
   srcPdf: any;
   fileListPdf: any;
   setResetObject: any;
+  showSpin: any;
+  setShowSpin?: any;
 }
 
 export interface FirstViewInterface {

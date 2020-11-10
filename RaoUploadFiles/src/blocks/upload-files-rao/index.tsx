@@ -5,7 +5,7 @@ import { UploadBlockProps } from './interfaces/interface';
 import { UploadFixture } from './fixtures/fixture';
 import { TypeFlow } from './enum/emun';
 import UploadTitles from './components/UploadTitles';
-import { Button } from 'antd';
+import { Button, Spin} from 'antd';
 import styles from './index.less';
 
 const UploadBlock: React.FC<UploadBlockProps> = ({
@@ -20,6 +20,8 @@ const UploadBlock: React.FC<UploadBlockProps> = ({
   fileListPdf,
   onClick,
   setResetObject,
+  showSpin,
+  setShowSpin,
 }) => {
   // states para INE  FRONT
   // STATE PARA DATA
@@ -93,6 +95,7 @@ const UploadBlock: React.FC<UploadBlockProps> = ({
   const reloadFiles = (e: any) => {
     setReload(true);
     setResetObject(true);
+    setShowSpin(false)
   };
 
   useEffect(() => {
@@ -112,7 +115,10 @@ const UploadBlock: React.FC<UploadBlockProps> = ({
   return (
     <div className={styles.container}>
       <UploadTitles changeview={changeview} firstView={firstView} secondView={secondView} />
-      {typeFlowProp === TypeFlow.INE ? (
+      {showSpin ? <div className={styles.containerSpin}>
+          <Spin tip="Cargando..." />
+      </div> 
+      : typeFlowProp === TypeFlow.INE ? (
         <UploadIne
           getIneFiles={getIneFiles}
           changeview={changeview}
