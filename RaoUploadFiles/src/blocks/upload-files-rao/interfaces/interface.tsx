@@ -13,6 +13,7 @@ export interface UploadBlockProps {
   setResetObject: any;
   showSpin: any;
   setShowSpin?: any;
+  btnContinue?: any;
 }
 
 export interface FirstViewInterface {

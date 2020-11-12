@@ -5,6 +5,7 @@ export interface StateModel {
   data?: any;
   dataUpload?: any;
   flowComplete?: boolean;
+  status?: any;
 }
 
 export interface ModelType {
@@ -22,6 +23,7 @@ export interface ModelType {
     setStep: Reducer<StateModel>;
     setFlowStatus: Reducer<StateModel>;
     setDataUpload: Reducer<StateModel>;
+    emptyStatus: Reducer<StateModel>;
   }
 }
 export const Model: ModelType = {
@@ -39,10 +41,10 @@ export const Model: ModelType = {
 
 
       if (statusFront && statusBack) {
-        yield put({ type: 'setStatus', payload: status });
+        yield put({ type: 'setStatus', payload: { front: statusFront, back: statusBack } });
       } else {
         yield put({ type: 'setFlowStatus', payload: true });
-        yield put({ type: 'setStatus', payload: 200 });
+        yield put({ type: 'setStatus', payload: { front: 200, back: 200} });
         yield put({ type: 'setDataUpload', payload: responseFront });
         yield put({ type: 'setFlowStatus', payload: false });
       }
@@ -53,10 +55,10 @@ export const Model: ModelType = {
       console.log('responde pdf', response);
       const { status } = response;
       if (status) {
-        yield put({ type: 'setStatus', payload: status });
+        yield put({ type: 'setStatus', payload: { document: status } });
       } else {
         yield put({ type: 'setFlowStatus', payload: true });
-        yield put({ type: 'setStatus', payload: 200 });
+        yield put({ type: 'setStatus', payload: { document: status } });
         yield put({ type: 'setDataUpload', payload: response });
         yield put({ type: 'setFlowStatus', payload: false });
       }
@@ -70,6 +72,7 @@ export const Model: ModelType = {
       }
     },
     setStatus(state: any, { payload }: any) {
+      console.log('payload: ', payload);
       return {
         ...state,
         status: payload
@@ -85,6 +88,12 @@ export const Model: ModelType = {
       return {
         ...state,
         dataUpload: payload
+      }
+    },
+    emptyStatus(state: any, { payload }: any) {
+      return {
+        ...state,
+        status: payload
       }
     }
   }

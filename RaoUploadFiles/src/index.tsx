@@ -1,11 +1,12 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useDispatch, connect, useIntl } from "umi";
-import { ModelType } from "./models/model";
+import { ModelType, StateModel } from "./models/model";
 import UploadBlock from './blocks/upload-files-rao';
-import { UploadInfoProps } from './interface/interface';
+import { PAGE_NAME_UPPER_CAMEL_CASEProps } from './interface/interface';
 import { UploadFixture } from './fixtures/fixture';
+import { Alert } from 'antd';
 
-const Upload: React.FC<UploadInfoProps> = ({
+const PAGE_NAME_UPPER_CAMEL_CASE: React.FC<PAGE_NAME_UPPER_CAMEL_CASEProps> = ({
   typeFlowProp = UploadFixture.typeFlow,
   phoneNumber = UploadFixture.phoneNumber,
   firstView,
@@ -13,6 +14,7 @@ const Upload: React.FC<UploadInfoProps> = ({
   onComplete,
   flagFlowComplete,
   dataUpload,
+  status,
 }) => {
   const dispatch = useDispatch();
 
@@ -45,6 +47,9 @@ const Upload: React.FC<UploadInfoProps> = ({
 
   // show spin 
   const [ showSpin, setShowSpin] = useState(false);
+  let messageError: string = '';
+  const [btnContinue, setContinue] = useState(false);
+  const [error, setError] = useState(false);
 
 
   useEffect(() => {
@@ -179,10 +184,37 @@ const Upload: React.FC<UploadInfoProps> = ({
   }, [flagFlowComplete]);
 
 
-  console.log(flagFlowComplete, 'valor del flow')
+  console.log(flagFlowComplete, 'valor del flow');
+
+  useEffect(() => {
+    
+    if (status) {
+      setContinue(true);
+      if(status.document) {
+        if (status.document != 200) {
+          messageError = 'Hubo un error en la carga, intenta nuevamente';
+          setError(true);
+          }
+      }
+      else if (status.front !== 200 || status.back !== 200) {
+        messageError = 'Hubo un error en la carga, intenta nuevamente';
+        setError(true);
+      }
+    } else {
+      setContinue(false);
+      setError(false);
+    }
+  }, [status]);
+
+  let data: any = <Alert message="Error" type="error" showIcon description="Hubo un error en la carga, intenta nuevamente" />;
+
 
   return (
     <div>
+      <br />
+      <>
+        {error ? data : null}
+        <>
       <UploadBlock
         onClick={getData}
         typeFlowProp={typeFlowProp}
@@ -197,7 +229,10 @@ const Upload: React.FC<UploadInfoProps> = ({
         setResetObject={setResetObject}
         showSpin={showSpin}
         setShowSpin={setShowSpin}
-      />
+        btnContinue={btnContinue}
+        />
+        </>
+      </>
     </div>
   );
 };
@@ -205,4 +240,5 @@ const Upload: React.FC<UploadInfoProps> = ({
 export default connect(({ requestModel }: { requestModel: StateModel }) => ({
   flagFlowComplete: requestModel.flowComplete,
   dataUpload: requestModel.dataUpload,
-}))(Upload);
+  status: requestModel.status,
+}))(PAGE_NAME_UPPER_CAMEL_CASE);

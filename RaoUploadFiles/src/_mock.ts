@@ -17,6 +17,6 @@ export default {
         res.status(200).send({ status: 'ok' });
     },
     'POST /services/flowproxyml/api/upload-document': (req: Request, res: Response) => {
-        res.status(200).send({ status: 'ok' });
+        res.status(200).send({ status: 200 });
     },
 };

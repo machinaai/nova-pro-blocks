@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import IframeComm from "react-iframe-comm";
 import { Upload, Modal } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
-import { useIntl } from 'umi';
+import { useIntl, useDispatch } from 'umi';
 import styles from "./index.less";
 
 export interface UploadAdressProps {
@@ -31,6 +31,8 @@ const UploadAdress: React.FC<UploadAdressProps> = ({
     height: "100%",
     frameBorder: 0,
   };
+
+  const dispatch = useDispatch();
 
   const uploadButton = (
     <div>
@@ -84,6 +86,10 @@ const UploadAdress: React.FC<UploadAdressProps> = ({
   if (reload) {
     filesSelected.fileList = [];
     typeFile = undefined;
+    dispatch({
+      type: 'requestModel/emptyStatus',
+      payload: undefined,
+    });
   }
 
   return (

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Modal, Upload } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
 import IframeComm from "react-iframe-comm";
-import { useIntl } from 'umi';
+import { useIntl, useDispatch } from 'umi';
 import styles from "./index.less";
 
 export interface UploadIneProps {
@@ -30,6 +30,8 @@ const UploadIne: React.FC<UploadIneProps> = ({
 }) => {
   //pdf
   const [file, setFile] = useState<any>();
+
+  const dispatch = useDispatch();
 
   const attributesPdf = {
     src: file,
@@ -159,6 +161,10 @@ const UploadIne: React.FC<UploadIneProps> = ({
       setIneBack({ fileList: [] });
       setPdfSelected({ fileList: [] });
       getIneFiles("pdfFile", false);
+      dispatch({
+        type: 'requestModel/emptyStatus',
+        payload: undefined
+      });
     }
   }, [reload]);
 

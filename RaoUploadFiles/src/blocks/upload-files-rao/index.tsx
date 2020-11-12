@@ -23,6 +23,7 @@ const UploadBlock: React.FC<UploadBlockProps> = ({
   setResetObject,
   showSpin,
   setShowSpin,
+  btnContinue,
 }) => {
   // states para INE  FRONT
   // STATE PARA DATA
@@ -141,7 +142,7 @@ const UploadBlock: React.FC<UploadBlockProps> = ({
           <div className={styles.container}>
             <div className={styles.options}>
               <div>
-                <Button className={styles.btnUpload} onClick={send}>
+                <Button className={styles.btnUpload} onClick={send} disabled={btnContinue ? true : false} >
                 {useInt.formatMessage({ id: 'BLOCK_NAME.upload.btn.continue' })}
                 </Button>
               </div>
