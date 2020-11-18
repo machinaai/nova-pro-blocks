@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { useDispatch, connect, useIntl } from "umi";
-import { ModelType, StateModel } from "./models/model";
+import { useDispatch, connect, useIntl } from 'umi';
+import { ModelType, StateModel } from './models/model';
 import UploadBlock from './blocks/upload-files-rao';
 import { PAGE_NAME_UPPER_CAMEL_CASEProps } from './interface/interface';
 import { UploadFixture } from './fixtures/fixture';
@@ -15,6 +15,7 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC<PAGE_NAME_UPPER_CAMEL_CASEProps> = ({
   flagFlowComplete,
   dataUpload,
   status,
+  onSetUserData,
 }) => {
   const dispatch = useDispatch();
 
@@ -44,17 +45,15 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC<PAGE_NAME_UPPER_CAMEL_CASEProps> = ({
 
   const [resetObject, setResetObject] = useState(false);
 
-
-  // show spin 
-  const [ showSpin, setShowSpin] = useState(false);
+  // show spin
+  const [showSpin, setShowSpin] = useState(false);
   let messageError: string = '';
   const [btnContinue, setContinue] = useState(false);
   const [error, setError] = useState(false);
 
-
   useEffect(() => {
-    console.log(dataUpload, 'data del servicio')
-    if(dataUpload==={}) {
+    console.log(dataUpload, 'data del servicio');
+    if (dataUpload === {}) {
       setShowSpin(false);
     }
   }, [dataUpload]);
@@ -63,8 +62,8 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC<PAGE_NAME_UPPER_CAMEL_CASEProps> = ({
     let saveDispatch = objectIneFront.type || objectIneBack.type ? true : false;
     if (saveDispatch) {
       dispatch({
-        type: 'requestModel/prueba',
-        payload: {objectIneFront, objectIneBack},
+        type: 'requestModel/ine',
+        payload: { objectIneFront, objectIneBack },
       });
     } else {
       dispatch({
@@ -73,11 +72,11 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC<PAGE_NAME_UPPER_CAMEL_CASEProps> = ({
       });
     }
 
-    if(!flagFlowComplete) {
-      setShowSpin(true)
+    if (!flagFlowComplete) {
+      setShowSpin(true);
     }
 
-    if(dispatch) {
+    if (dispatch) {
       dispatch({
         type: 'requestModel/setFlowStatus',
         payload: false,
@@ -183,20 +182,17 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC<PAGE_NAME_UPPER_CAMEL_CASEProps> = ({
     }
   }, [flagFlowComplete]);
 
-
   console.log(flagFlowComplete, 'valor del flow');
 
   useEffect(() => {
-    
     if (status) {
       setContinue(true);
-      if(status.document) {
+      if (status.document) {
         if (status.document != 200) {
           messageError = 'Hubo un error en la carga, intenta nuevamente';
           setError(true);
-          }
-      }
-      else if (status.front !== 200 || status.back !== 200) {
+        }
+      } else if (status.front !== 200 || status.back !== 200) {
         messageError = 'Hubo un error en la carga, intenta nuevamente';
         setError(true);
       }
@@ -206,8 +202,14 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC<PAGE_NAME_UPPER_CAMEL_CASEProps> = ({
     }
   }, [status]);
 
-  let data: any = <Alert message="Error" type="error" showIcon description="Hubo un error en la carga, intenta nuevamente" />;
-
+  let data: any = (
+    <Alert
+      message="Error"
+      type="error"
+      showIcon
+      description="Hubo un error en la carga, intenta nuevamente"
+    />
+  );
 
   return (
     <div>
@@ -215,22 +217,22 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC<PAGE_NAME_UPPER_CAMEL_CASEProps> = ({
       <>
         {error ? data : null}
         <>
-      <UploadBlock
-        onClick={getData}
-        typeFlowProp={typeFlowProp}
-        srcIneFront={srcIneFront}
-        fileListIneFront={fileListIneFront}
-        srcIneBack={srcIneBack}
-        fileListIneBack={fileListIneBack}
-        srcPdf={srcPdf}
-        fileListPdf={fileListPdf}
-        firstView={firstView}
-        secondView={secondView}
-        setResetObject={setResetObject}
-        showSpin={showSpin}
-        setShowSpin={setShowSpin}
-        btnContinue={btnContinue}
-        />
+          <UploadBlock
+            onClick={getData}
+            typeFlowProp={typeFlowProp}
+            srcIneFront={srcIneFront}
+            fileListIneFront={fileListIneFront}
+            srcIneBack={srcIneBack}
+            fileListIneBack={fileListIneBack}
+            srcPdf={srcPdf}
+            fileListPdf={fileListPdf}
+            firstView={firstView}
+            secondView={secondView}
+            setResetObject={setResetObject}
+            showSpin={showSpin}
+            setShowSpin={setShowSpin}
+            btnContinue={btnContinue}
+          />
         </>
       </>
     </div>

@@ -16,7 +16,7 @@ export interface ModelType {
     ineFrontData: Effect;
     ineBackData: Effect;
     pdfData: Effect;
-    prueba: Effect;
+    ine: Effect;
   };
   reducers: {
     setStatus: Reducer<StateModel>;
@@ -24,7 +24,7 @@ export interface ModelType {
     setFlowStatus: Reducer<StateModel>;
     setDataUpload: Reducer<StateModel>;
     emptyStatus: Reducer<StateModel>;
-  }
+  };
 }
 export const Model: ModelType = {
   namespace: 'requestModel',
@@ -32,26 +32,26 @@ export const Model: ModelType = {
     data: {},
   },
   effects: {
-    *prueba({ payload }: any, { call, put }: any) {
+    *ine({ payload }: any, { call, put }: any) {
       const responseFront = yield call(ineFromDataService, payload.objectIneFront);
       const responseBack = yield call(ineBackDataService, payload.objectIneBack);
 
       const { status: statusFront } = responseFront;
       const { status: statusBack } = responseBack;
 
-
       if (statusFront && statusBack) {
         yield put({ type: 'setStatus', payload: { front: statusFront, back: statusBack } });
       } else {
+        payload.onSetUserData(responseFront);
         yield put({ type: 'setFlowStatus', payload: true });
-        yield put({ type: 'setStatus', payload: { front: 200, back: 200} });
+        yield put({ type: 'setStatus', payload: { front: 200, back: 200 } });
         yield put({ type: 'setDataUpload', payload: responseFront });
         yield put({ type: 'setFlowStatus', payload: false });
       }
     },
 
     *pdfData({ payload }: any, { call, put }: any) {
-      const response = yield call(pdfDataService, payload)
+      const response = yield call(pdfDataService, payload);
       console.log('responde pdf', response);
       const { status } = response;
       if (status) {
@@ -68,36 +68,34 @@ export const Model: ModelType = {
     setStep(state: any, { payload }: any) {
       return {
         ...state,
-        step: payload
-      }
+        step: payload,
+      };
     },
     setStatus(state: any, { payload }: any) {
       console.log('payload: ', payload);
       return {
         ...state,
-        status: payload
-      }
+        status: payload,
+      };
     },
     setFlowStatus(state: any, { payload }: any) {
       return {
         ...state,
-        flowComplete: payload
-      }
+        flowComplete: payload,
+      };
     },
     setDataUpload(state: any, { payload }: any) {
       return {
         ...state,
-        dataUpload: payload
-      }
+        dataUpload: payload,
+      };
     },
     emptyStatus(state: any, { payload }: any) {
       return {
         ...state,
-        status: payload
-      }
-    }
-  }
+        status: payload,
+      };
+    },
+  },
 };
 export default Model;
-
-

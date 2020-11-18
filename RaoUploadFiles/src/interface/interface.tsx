@@ -13,6 +13,6 @@ export interface PAGE_NAME_UPPER_CAMEL_CASEProps {
   flagFlowComplete?: StateModel['flowComplete'];
   dataUpload?: StateModel['dataUpload'];
   setUserDates?: any;
+  onSetUserData?: Function;
   status?: StateModel['status'];
 }
-
