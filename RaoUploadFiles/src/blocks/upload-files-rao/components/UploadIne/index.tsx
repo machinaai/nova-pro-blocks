@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Modal, Upload } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
-import IframeComm from "react-iframe-comm";
 import { useIntl, useDispatch } from 'umi';
 import styles from "./index.less";
 
@@ -173,7 +172,7 @@ const UploadIne: React.FC<UploadIneProps> = ({
       {inePdfSelected.fileList.length === 1 ? (
         <div className={styles.uploadPdf}>
           <div className={styles.pdf}>
-            <IframeComm attributes={attributesPdf} />
+            <embed src={attributesPdf.src} type="application/pdf" width="100%" height="100%" />
           </div>
           <div className={styles.pdfName}>
             {inePdfSelected.fileList[0].name}
@@ -187,6 +186,7 @@ const UploadIne: React.FC<UploadIneProps> = ({
             </div>
             <div>
               <Upload
+                className={styles.uploadContainer}
                 accept=".pdf, .png, .jpg"
                 action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
                 listType="picture-card"
@@ -214,6 +214,7 @@ const UploadIne: React.FC<UploadIneProps> = ({
             </div>
             <div>
               <Upload
+                className={styles.uploadContainer}
                 accept=".pdf, .png, .jpg"
                 action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
                 listType="picture-card"

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import IframeComm from "react-iframe-comm";
 import { Upload, Modal } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
 import { useIntl, useDispatch } from 'umi';
@@ -102,7 +101,7 @@ const UploadAdress: React.FC<UploadAdressProps> = ({
         {typeFile ? (
           <div className={styles.uploadPdf}>
             <div className={styles.pdf}>
-              <IframeComm attributes={attributesPdf} />
+              <embed src={attributesPdf.src} type="application/pdf" width="100%" height="100%" />
             </div>
             <div className={styles.pdfName}>
               {filesSelected.fileList[0].name}
