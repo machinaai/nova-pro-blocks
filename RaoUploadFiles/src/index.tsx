@@ -56,6 +56,9 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC<PAGE_NAME_UPPER_CAMEL_CASEProps> = ({
     if (dataUpload === {}) {
       setShowSpin(false);
     }
+    if (dataUpload && onSetUserData) {
+      onSetUserData(dataUpload)
+    }
   }, [dataUpload]);
 
   const getData = () => {
@@ -63,7 +66,7 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC<PAGE_NAME_UPPER_CAMEL_CASEProps> = ({
     if (saveDispatch) {
       dispatch({
         type: 'requestModel/ine',
-        payload: { objectIneFront, objectIneBack },
+        payload: {objectIneFront, objectIneBack},
       });
     } else {
       dispatch({
