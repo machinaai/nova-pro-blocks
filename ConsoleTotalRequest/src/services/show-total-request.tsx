@@ -1,6 +1,6 @@
-import { enviromentEndPoints } from '../enviroments/enviroments.fixture';
-import { ComponentsDefinition } from '@/interfaces/componentsDefinition.interface';
 import request from 'umi-request';
+import { ComponentsDefinition } from '@/interfaces/componentsDefinition.interface';
+import { enviromentEndPoints } from '../enviroments/enviroments.fixture';
 
 const errorHandler = (error: { response: Response }): Response => {
   return error.response;
@@ -24,12 +24,5 @@ export async function RequestService(params: ComponentsDefinition) {
       },
     );
   }
-  // return request(
-  //   `${enviromentEndPoints.totalRequest}?userType=&startDate=&endDate=`,
-  //   {
-  //     method: 'GET',
-  //     errorHandler
-  //   },
-  // )
 }
 

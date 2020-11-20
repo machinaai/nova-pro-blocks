@@ -40,7 +40,7 @@ const TotalRequestCard: React.FC<PropsTotalReq> = ({
             </p>
           </Col>
           <Col span={6}>
-            <img className={styles.imgTitle} src={imgTitle}></img>
+            <img className={styles.imgTitle} src={imgTitle} alt='iconTitle' />
           </Col>
         </Row>
       </div>
