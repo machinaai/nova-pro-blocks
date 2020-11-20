@@ -1,7 +1,7 @@
 export default {
   'BLOCK_NAME.val1-h1': 'Tu cuenta',
   'BLOCK_NAME.val1-h1-br': 'de forma digital',
-  'BLOCK_NAME.val1-h3': 'Dónde y cuando lo',
+  'BLOCK_NAME.val1-h3': 'Dónde y cuándo lo',
   'BLOCK_NAME.val1-h3-br': 'prefieras',
   'BLOCK_NAME.val2-h1': '"En menos"',
   'BLOCK_NAME.val2-h1-br': 'de 5 minutos',
