@@ -33,7 +33,6 @@
     },
     {
       "key": "NbeBalanceSummary",
-      "name": "NbeBalanceSummary",
       "description": "Pro-block for widget balance summary",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/NbeBalanceSummary",
       "path": "NbeBalanceSummary",
@@ -52,7 +51,6 @@
     },
     {
       "key": "NbeComboAccounts",
-      "name": "NbeComboAccounts",
       "description": "Template for Combo Accounts",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/NbeComboAccounts",
       "path": "NbeComboAccounts",
@@ -71,7 +69,6 @@
     },
     {
       "key": "NbeLogin",
-      "name": "NbeLogin",
       "description": "Template for login nbe flow",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/NbeLogin",
       "path": "NbeLogin",
@@ -87,7 +84,6 @@
     },
     {
       "key": "NbeRecovery",
-      "name": "NbeRecovery",
       "description": "This block is the recovery flow",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/NbeRecovery",
       "path": "NbeRecovery",
@@ -105,7 +101,6 @@
     },
     {
       "key": "NbeRegistry",
-      "name": "NbeRegistry",
       "description": "This block is the registry flow",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/NbeRegistry",
       "path": "NbeRegistry",
@@ -123,7 +118,6 @@
     },
     {
       "key": "NbeWidgetCash",
-      "name": "NbeWidgetCash",
       "description": "Pro-block for cash widget",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/NbeWidgetCash",
       "path": "NbeWidgetCash",
@@ -142,7 +136,6 @@
     },
     {
       "key": "NbeWidgetCreditCard",
-      "name": "NbeWidgetCreditCard",
       "description": "Pro-block for widget for credit-card",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/NbeWidgetCreditCard",
       "path": "NbeWidgetCreditCard",
@@ -161,7 +154,6 @@
     },
     {
       "key": "NbeWidgetInvestments",
-      "name": "NbeWidgetInvestments",
       "description": "Pro-block for widget for investments",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/NbeWidgetInvestments",
       "path": "NbeWidgetInvestments",
@@ -174,13 +166,12 @@
       "tags": [
         "nbe",
         "widget",
-        "credit"
+        "investments"
       ],
-      "previewUrl": "https://preview.pro.ant.design/nbe/widget/credit/card"
+      "previewUrl": "https://preview.pro.ant.design/nbe/widget/investments"
     },
-        {
+    {
       "key": "NbeWidgetPendingToAuthorize",
-      "name": "NbeWidgetPendingToAuthorize",
       "description": "Pro-block for Widget for Pending To Authorize",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/NbeWidgetPendingToAuthorize",
       "path": "NbeWidgetPendingToAuthorize",
@@ -197,41 +188,158 @@
         "to",
         "authorize"
       ],
-      "previewUrl": "https://preview.pro.ant.design/nbe/widget/credit/card"
+      "previewUrl": "https://preview.pro.ant.design/nbe/widget/pending/to/authorize"
+    },
+    {
+      "key": "RaoAccountScreen",
+      "description": "Pro-block for finish flow of account opening",
+      "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/RaoAccountScreen",
+      "path": "RaoAccountScreen",
+      "features": [
+        "antd",
+        "i18n"
+      ],
+      "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/RaoAccountScreen/snapshot.png",
+      "tags": [
+        "rao",
+        "screen"
+      ],
+      "previewUrl": "https://preview.pro.ant.design/rao/account/screen"
+    },
+    {
+      "key": "RaoAnotherTimeScreen",
+      "description": "Pro-block for another time screen",
+      "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/RaoAnotherTimeScreen",
+      "path": "RaoAnotherTimeScreen",
+      "features": [
+        "antd",
+        "i18n"
+      ],
+      "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/RaoAnotherTimeScreen/snapshot.png",
+      "tags": [
+        "rao",
+        "another",
+        "time",
+        "screen"
+      ],
+      "previewUrl": "https://preview.pro.ant.design/rao/another/time/screen"
+    },
+    {
+      "key": "RaoPaperless",
+      "description": "Pro-block for paperless in the account opening flow",
+      "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/RaoPaperless",
+      "path": "RaoPaperless",
+      "features": [
+        "antd",
+        "i18n"
+      ],
+      "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/RaoPaperless/snapshot.png",
+      "tags": [
+        "rao",
+        "paperless"
+      ],
+      "previewUrl": "https://preview.pro.ant.design/rao/paperless"
     },
     {
       "key": "RaoRegisterOtp",
-      "name": "RaoRegisterOtp",
       "description": "Pro-block for register otp",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/RaoRegisterOtp",
       "path": "RaoRegisterOtp",
       "features": [
         "antd",
-        "i18n",
-        "dva"
+        "i18n"
       ],
       "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/RaoRegisterOtp/snapshot.png",
       "tags": [
-        "rao"
+        "rao",
+        "Registrar",
+        "otp"
       ],
-      "previewUrl": "https://preview.pro.ant.design/nbe/widget/credit/card"
+      "previewUrl": "https://preview.pro.ant.design/rao/register/otp"
     },
     {
       "key": "RaoSplashScreen",
-      "name": "RaoSplashScreen",
       "description": "Pro-block for splash screen",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/RaoSplashScreen",
       "path": "RaoSplashScreen",
       "features": [
         "antd",
-        "i18n",
-        "dva"
+        "i18n"
       ],
       "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/RaoSplashScreen/snapshot.png",
       "tags": [
-        "rao"
+        "rao",
+        "splash",
+        "screen"
       ],
-      "previewUrl": "https://preview.pro.ant.design/nbe/widget/credit/card"
+      "previewUrl": "https://preview.pro.ant.design/rao/splash/screen"
+    },
+    {
+      "key": "RaoStep2",
+      "description": "Pro-block for step2 of account opening",
+      "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/RaoStep2",
+      "path": "RaoStep2",
+      "features": [
+        "antd",
+        "i18n"
+      ],
+      "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/RaoStep2/snapshot.png",
+      "tags": [
+        "rao",
+        "2"
+      ],
+      "previewUrl": "https://preview.pro.ant.design/rao/step/2"
+    },
+    {
+      "key": "RaoUpdateAddress",
+      "description": "Pro-block for update address",
+      "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/RaoUpdateAddress",
+      "path": "RaoUpdateAddress",
+      "features": [
+        "antd",
+        "i18n"
+      ],
+      "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/RaoUpdateAddress/snapshot.png",
+      "tags": [
+        "rao",
+        "update",
+        "address"
+      ],
+      "previewUrl": "https://preview.pro.ant.design/rao/update/address"
+    },
+    {
+      "key": "RaoUploadFiles",
+      "description": "Rao-upload-files",
+      "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/RaoUploadFiles",
+      "path": "RaoUploadFiles",
+      "features": [
+        "antd",
+        "i18n"
+      ],
+      "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/RaoUploadFiles/snapshot.png",
+      "tags": [
+        "rao",
+        "upload",
+        "files"
+      ],
+      "previewUrl": "https://preview.pro.ant.design/rao/upload/files"
+    },
+    {
+      "key": "RaoValidateAddress",
+      "description": "Pro-block for validate address screen",
+      "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/RaoValidateAddress",
+      "path": "RaoValidateAddress",
+      "features": [
+        "antd",
+        "i18n"
+      ],
+      "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/RaoValidateAddress/snapshot.png",
+      "tags": [
+        "rao",
+        "validate",
+        "address"
+      ],
+      "previewUrl": "https://preview.pro.ant.design/rao/validate/address"
     }
   ]
 }
