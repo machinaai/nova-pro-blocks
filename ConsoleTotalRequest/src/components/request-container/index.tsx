@@ -1,9 +1,10 @@
 import React from 'react';
 import { useIntl } from 'umi';
-import TotalRequestCard from '../../blocks/total-request/src/index';
 import { InfoCircleOutlined } from '@ant-design/icons';
 import { PropsTotalReq } from '@/interfaces/totalReq.interface';
 import { PropsComponent} from '@/interfaces/ProblockProps.interface';
+import TotalRequestCard from '../../blocks/total-request/src/index';
+
 
 export const RequestContainer: React.FC<PropsComponent> = ({
     requestOptions,
@@ -12,13 +13,12 @@ export const RequestContainer: React.FC<PropsComponent> = ({
     actionOpInfo
 }) => {
     const intl = useIntl();
-    const fontTotalReq = fontFam?.fontTotalReq;
 
     const dataTotalReq: PropsTotalReq= {
         title: intl.formatMessage({ id: 'BLOCK_NAME.totalRequest_title' }),
-        fontFam: fontTotalReq,
+        fontFam,
         imgTitle: icons?.iconTotalReq,
-        totalRequest: requestOptions?.totalRequest,
+        totalRequest: requestOptions?.totalRequest === undefined ? 0 : requestOptions?.totalRequest,
         optionInfo: {
             icon: <InfoCircleOutlined style={{ fontSize: '16px' }} />,
             action: actionOpInfo
@@ -27,22 +27,22 @@ export const RequestContainer: React.FC<PropsComponent> = ({
         options: [
             {
                 nameOption: `${intl.formatMessage({ id: 'BLOCK_NAME.totalRequest_op1' })}`,
-                totalRequest: requestOptions?.initiated,
+                totalRequest: requestOptions?.initiated === undefined ? 0 : requestOptions?.initiated,
                 icon: icons?.iconOp1
             },
             {
                 nameOption: intl.formatMessage({ id: 'BLOCK_NAME.totalRequest_op2' }),
-                totalRequest: requestOptions?.inProccess,
+                totalRequest: requestOptions?.inProccess === undefined ? 0 : requestOptions?.inProccess,
                 icon: icons?.iconOp2
             },
             {
                 nameOption: intl.formatMessage({ id: 'BLOCK_NAME.totalRequest_op3' }),
-                totalRequest: requestOptions?.abandoned,
+                totalRequest: requestOptions?.abandoned === undefined ? 0 : requestOptions?.abandoned,
                 icon: icons?.iconOp3
             },
             {
                 nameOption: intl.formatMessage({ id: 'BLOCK_NAME.totalRequest_op4' }),
-                totalRequest: requestOptions?.finished,
+                totalRequest: requestOptions?.finished === undefined ? 0 : requestOptions?.finished,
                 icon: icons?.iconOp4
             }
         ]

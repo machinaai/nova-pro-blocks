@@ -1,4 +1,3 @@
-import { InfoCircleOutlined } from '@ant-design/icons';
 import React from 'react';
 import logoAbandonadas from './ico-abandonadas.svg';
 import logoProceso from './ico-enproceso.svg';
@@ -16,10 +15,10 @@ export const dataFixture = {
   },
   icons: {
     iconTotalReq: logoSolicitudes,
-    iconOp1: <img src={logoIniciadas} />,
-    iconOp2: <img src={logoProceso} />,
-    iconOp3: <img src={logoAbandonadas} />,
-    iconOp4: <img src={logoTerminadas} />
+    iconOp1: <img src={logoIniciadas} alt='option1' />,
+    iconOp2: <img src={logoProceso} alt='option2' />,
+    iconOp3: <img src={logoAbandonadas} alt='option3' />,
+    iconOp4: <img src={logoTerminadas} alt='option4'/>
   },
   request: {
     totalRequest: 54,
