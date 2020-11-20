@@ -62,11 +62,11 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC<PAGE_NAME_UPPER_CAMEL_CASEProps> = ({
   }, [dataUpload]);
 
   const getData = () => {
-    let saveDispatch = objectIneFront.type || objectIneBack.type ? true : false;
+    let saveDispatch = !!(objectIneFront.type || objectIneBack.type);
     if (saveDispatch) {
       dispatch({
         type: 'requestModel/ine',
-        payload: {objectIneFront, objectIneBack},
+        payload: {objectIneFront, objectIneBack, onSetUserData},
       });
     } else {
       dispatch({
