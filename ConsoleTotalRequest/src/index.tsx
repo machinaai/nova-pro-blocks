@@ -4,7 +4,6 @@ import { Fonts, Icons, PropsComponent } from './interfaces/ProblockProps.interfa
 import { StateModel } from './models/model';
 import { RequestContainer } from './components/request-container';
 import { dataFixture } from './fixture/data.fixture';
-import NoFoundPage from './blocks/404';
 
 interface PAGE_NAME_UPPER_CAMEL_CASEProps {
   fontFam?: Fonts,
@@ -43,7 +42,7 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC<PAGE_NAME_UPPER_CAMEL_CASEProps> = (p
 
   return (
     <>
-      {error === undefined ? <RequestContainer {...propsComponent} /> : <NoFoundPage />}
+      {error === undefined && <RequestContainer {...propsComponent} />}
     </>
   );
 };
