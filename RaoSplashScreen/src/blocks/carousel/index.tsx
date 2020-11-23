@@ -14,50 +14,54 @@ const CarouselBlock: React.FC<PropsCarousel> = (props = dataFixture) => {
 
   const [buttonState, setButtonState] = useState({
     isRegistryButton: false,
-    slideNumber: 0
+    slideNumber: 0,
   });
   const onChange = (a: number) => {
-    a === options.length - 1 ? setButtonState({
-      isRegistryButton: true,
-      slideNumber: 0
-    }) : setButtonState({
-      isRegistryButton: false,
-      slideNumber: buttonState.slideNumber + 1
-    });
-  }
+    a === options.length - 1
+      ? setButtonState({
+          isRegistryButton: true,
+          slideNumber: 0,
+        })
+      : setButtonState({
+          isRegistryButton: false,
+          slideNumber: buttonState.slideNumber + 1,
+        });
+  };
 
   const handleNext = () => carousel.current.next();
   const isRegistryBtn = buttonState.isRegistryButton;
   const slideNumberBtn = buttonState.slideNumber + 1;
 
-  const btnReg = isRegistryBtn ?
-    <Button type="primary" shape="round" >
-      <Link to={redirect} >
-        {intl.formatMessage({ id: 'carousel.sign_up' })}
-      </Link>
+  const btnReg = isRegistryBtn ? (
+    <Button type="primary" shape="round">
+      <Link to={redirect}>{intl.formatMessage({ id: 'carousel.sign_up' })}</Link>
     </Button>
-    :
-    <Button onClick={handleNext} type='text'>
+  ) : (
+    <Button onClick={handleNext} type="text">
       {intl.formatMessage({ id: 'carousel.next' })}
-      <Button size='large' shape="circle" icon={<ArrowRightOutlined />} />
+      <Button size="large" shape="circle" icon={<ArrowRightOutlined />} />
     </Button>
+  );
   return (
     <>
-      <Carousel ref={carousel} afterChange={() => { onChange(slideNumberBtn) }} >
+      <Carousel
+        ref={carousel}
+        afterChange={() => {
+          onChange(slideNumberBtn);
+        }}
+        touchMove={false}
+      >
         {options.map((option) => (
           <div>
             <Image src={option.img} className={`${styles.frameRobot}`} />
             {option.valH1}
             {option.valH3}
           </div>
-        ))
-        }
+        ))}
       </Carousel>
-      <div>
-        {btnReg}
-      </div>
+      <div>{btnReg}</div>
     </>
   );
-}
+};
 
 export default CarouselBlock;
