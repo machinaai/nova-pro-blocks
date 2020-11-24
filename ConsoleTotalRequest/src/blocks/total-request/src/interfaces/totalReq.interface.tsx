@@ -13,6 +13,7 @@ export interface PropsTotalReq{
     icon?: string | React.ReactNode
   }
   interface OptionInfo {
+    tooltipTitle:string,
     icon: string | React.ReactNode,
     action: Function | any
   }

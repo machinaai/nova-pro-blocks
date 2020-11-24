@@ -18,7 +18,7 @@ export const dataFixture = {
     iconOp1: <img src={logoIniciadas} alt='option1' />,
     iconOp2: <img src={logoProceso} alt='option2' />,
     iconOp3: <img src={logoAbandonadas} alt='option3' />,
-    iconOp4: <img src={logoTerminadas} alt='option4'/>
+    iconOp4: <img src={logoTerminadas} alt='option4' />
   },
   request: {
     totalRequest: 54,
