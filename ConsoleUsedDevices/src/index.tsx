@@ -1,11 +1,10 @@
 import React, { useEffect } from "react";
 import { connect, useDispatch, useIntl} from 'umi';
-import styles from './index.less';
+import { InfoCircleOutlined } from '@ant-design/icons';
 import { StateModel } from './models/model';
 import { dataFixture } from './fixture/data.fixture';
 import DataRequestBlock from './blocks/card-data-request/src';
 import { Fonts, PropsDataReq } from './interfaces/dataReq.interface';
-import { InfoCircleOutlined } from '@ant-design/icons';
 
 interface PAGE_NAME_UPPER_CAMEL_CASEProps {
   fontFam?: Fonts,
@@ -38,8 +37,8 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC<PAGE_NAME_UPPER_CAMEL_CASEProps> = (p
 
   const dataReq: PropsDataReq = {
     title: intl.formatMessage({ id: 'BLOCK_NAME.usedDevices_title' }),
-    fontFam: fontFam,
-    imgTitle: imgTitle,
+    fontFam,
+    imgTitle,
     optionInfo: {
       tooltipTitle:intl.formatMessage({ id: 'BLOCK_NAME.titleTooltip' }),
       icon: <InfoCircleOutlined style={{ fontSize: '16px' }} />,
