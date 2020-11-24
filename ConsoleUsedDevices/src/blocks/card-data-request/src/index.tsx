@@ -1,4 +1,4 @@
-import { Card, Row, Col, Button } from 'antd';
+import { Card, Row, Col, Button, Tooltip } from 'antd';
 import React from 'react';
 import { dataFixture } from './fixture/data.fixture';
 import styles from './index.less';
@@ -23,13 +23,15 @@ const DataRequestBlock: React.FC<PropsDataReq> = ({
                 <h2 className={styles.title} style={{ fontFamily: fontFam.fontTitle }}>{title}</h2>
               </Col>
               <Col span={3}>
-                <div className={styles.btnInfo}>
-                  <Button type='text' shape="circle" icon={optionInfo.icon} size='large' onClick={optionInfo.action} />
-                </div>
+                <Tooltip placement="top" title={optionInfo.tooltipTitle}>
+                  <div className={styles.btnInfo}>
+                    <Button type='text' shape="circle" icon={optionInfo.icon} size='large' onClick={optionInfo.action} />
+                  </div>
+                </Tooltip>
               </Col>
             </Row>
             {options.map((op: any) => (
-              <div className={styles.options}>
+              <div className={styles.options} key={op.nameOp}>
                 <p className={styles.valOption} style={{ fontFamily: fontFam.fontValOp }}>
                   {op.valOp}
                 </p>
@@ -38,7 +40,9 @@ const DataRequestBlock: React.FC<PropsDataReq> = ({
             ))}
           </Col>
           <Col span={6}>
-            <img className={styles.imgTitle} src={imgTitle}></img>
+            <div className={styles.imgContainer}>
+              <img className={styles.imgTitle} src={imgTitle} />
+            </div>            
           </Col>
         </Row>
       </div>

@@ -3,7 +3,6 @@ import { connect, useDispatch, useIntl} from 'umi';
 import styles from './index.less';
 import { StateModel } from './models/model';
 import { dataFixture } from './fixture/data.fixture';
-import NoFoundPage from './blocks/404';
 import DataRequestBlock from './blocks/card-data-request/src';
 import { Fonts, PropsDataReq } from './interfaces/dataReq.interface';
 import { InfoCircleOutlined } from '@ant-design/icons';
@@ -42,6 +41,7 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC<PAGE_NAME_UPPER_CAMEL_CASEProps> = (p
     fontFam: fontFam,
     imgTitle: imgTitle,
     optionInfo: {
+      tooltipTitle:intl.formatMessage({ id: 'BLOCK_NAME.titleTooltip' }),
       icon: <InfoCircleOutlined style={{ fontSize: '16px' }} />,
       action: actionOpInfo
     },
@@ -58,7 +58,7 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC<PAGE_NAME_UPPER_CAMEL_CASEProps> = (p
   }
   return (
     <>
-    {error === undefined ? <DataRequestBlock {...dataReq}/> : <NoFoundPage /> }
+    {error === undefined && <DataRequestBlock {...dataReq}/> }
       
     </>
   );

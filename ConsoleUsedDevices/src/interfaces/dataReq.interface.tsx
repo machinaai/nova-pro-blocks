@@ -10,6 +10,7 @@ interface ItemOptions {
   nameOp?: string
 }
 interface OptionInfo {
+  tooltipTitle:string,
   icon: string | React.ReactNode,
   action: Function | any
 }

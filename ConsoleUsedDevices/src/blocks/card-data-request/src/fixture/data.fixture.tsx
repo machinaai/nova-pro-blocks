@@ -11,6 +11,7 @@ export const dataFixture = {
     },
     imgTitle: logoCierre,
     optionInfo:{
+        tooltipTitle:'Ayuda',
         icon:<InfoCircleOutlined style={{ fontSize: '16px'}} />,
         action:()=>{console.log('option info');
         }
