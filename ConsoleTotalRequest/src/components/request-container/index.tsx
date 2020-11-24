@@ -20,6 +20,7 @@ export const RequestContainer: React.FC<PropsComponent> = ({
         imgTitle: icons?.iconTotalReq,
         totalRequest: requestOptions?.totalRequest === undefined ? 0 : requestOptions?.totalRequest,
         optionInfo: {
+            tooltipTitle:intl.formatMessage({ id: 'BLOCK_NAME.titleTooltip' }),
             icon: <InfoCircleOutlined style={{ fontSize: '16px' }} />,
             action: actionOpInfo
         },

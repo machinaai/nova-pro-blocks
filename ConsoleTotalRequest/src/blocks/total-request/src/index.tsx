@@ -1,4 +1,4 @@
-import { Card, Row, Col, Button } from 'antd';
+import { Card, Row, Col, Button, Tooltip } from 'antd';
 import React from 'react';
 import { dataFixture } from './fixture/data.fixture';
 import styles from './index.less';
@@ -22,7 +22,6 @@ const TotalRequestCard: React.FC<PropsTotalReq> = ({
 
   return (
     <Card>
-      <div>
         <Row>
           <Col span={18}>
             <Row>
@@ -30,9 +29,11 @@ const TotalRequestCard: React.FC<PropsTotalReq> = ({
                 <h2 className={styles.title} style={{ fontFamily: fontFam.fontTitle }}>{title}</h2>
               </Col>
               <Col span={3}>
-                <div className={styles.btnInfo}>
-                  <Button type='text' shape="circle" icon={optionInfo.icon} size='large' onClick={optionInfo.action} />
-                </div>
+                <Tooltip placement="top" title={optionInfo.tooltipTitle}>
+                  <div className={styles.btnInfo}>
+                    <Button type='text' shape="circle" icon={optionInfo.icon} size='large' onClick={optionInfo.action} />
+                  </div>
+                </Tooltip>
               </Col>
             </Row>
             <p className={styles.totalRequest} style={{ fontFamily: fontFam.fontTotalReq }}>
@@ -40,29 +41,31 @@ const TotalRequestCard: React.FC<PropsTotalReq> = ({
             </p>
           </Col>
           <Col span={6}>
-            <img className={styles.imgTitle} src={imgTitle} alt='iconTitle' />
+            <div className={styles.imgContainer}>
+              <img className={styles.imgTitle} src={imgTitle} alt='iconTitle' />
+            </div>            
           </Col>
         </Row>
-      </div>
-
-      <div className={styles.container} >
-        <p className={styles.subtitle} style={{ fontFamily: fontFam.fontSubtitle }}>{subtitle}</p>
-        {options.map((op: any) => (
-          <div key={op.nameOption} className={styles.options}>
-            <Row>
-              <Col span={18}>
-                <p className={styles.totalRequestOp} style={{ fontFamily: fontFam.fontTotalReqOp }}>
-                  {numberFormat(`${op.totalRequest}`)}
-                </p>
-              </Col>
-              <Col span={6}>
-                {op.icon}
-              </Col>
-            </Row>
-            <p className={styles.nameOptions} style={{ fontFamily: fontFam.fontOptions }}>{op.nameOption}</p>
-          </div>
-        ))}
-      </div>
+        <div className={styles.container} >
+          <p className={styles.subtitle} style={{ fontFamily: fontFam.fontSubtitle }}>{subtitle}</p>
+          {options.map((op: any) => (
+            <div key={op.nameOption} className={styles.options}>
+              <Row>
+                <Col span={18}>
+                  <p className={styles.totalRequestOp} style={{ fontFamily: fontFam.fontTotalReqOp }}>
+                    {numberFormat(`${op.totalRequest}`)}
+                  </p>
+                </Col>
+                <Col span={6}>
+                  <div className={styles.iconContent}>
+                    {op.icon}
+                  </div>                  
+                </Col>
+              </Row>
+              <p className={styles.nameOptions} style={{ fontFamily: fontFam.fontOptions }}>{op.nameOption}</p>
+            </div>
+          ))}
+        </div>
     </Card>
   );
 };

@@ -18,6 +18,7 @@ export const dataFixture={
         imgTitle:logoSolicitudes,
         totalRequest:0,
         optionInfo:{
+            tooltipTitle:'Ayuda',
             icon:<InfoCircleOutlined style={{ fontSize: '16px'}} />,
             action:()=>{console.log('option info');
             }
