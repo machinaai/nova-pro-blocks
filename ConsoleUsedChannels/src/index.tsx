@@ -86,7 +86,7 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC<PAGE_NAME_UPPER_CAMEL_CASEProps> = ({
       {status === undefined && <div>
         <div className={styles.container}>
           <h2 style={{ fontFamily: `${fontTitle}` }}>{intl.formatMessage({ id: 'BLOCK_NAME.title' })}</h2>
-          <Tooltip className={styles.icon} title={intl.formatMessage({ id: 'BLOCK_NAME.titleTooltip' })}>
+          <Tooltip placement="top" className={styles.icon} title={intl.formatMessage({ id: 'BLOCK_NAME.titleTooltip' })}>
             <Button type='text' icon={<InfoCircleOutlined onClick={actionIconHelp} />}/>
           </Tooltip>
         </div>
