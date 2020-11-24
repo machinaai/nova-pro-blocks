@@ -1,19 +1,20 @@
 export interface PropsDataReq {
   title?: string,
-  fontFam?: Fonts | any,
+  fontFam?: Fonts,
   imgTitle?: string | React.ReactNode,
   optionInfo?: OptionInfo,
   options?: ItemOptions[],
 }
 interface ItemOptions {
-  valOp?: string | number,
+  valOp?: number | string,
   nameOp?: string
 }
 interface OptionInfo {
+  tooltipTitle?:string,
   icon: string | React.ReactNode,
   action: Function | any
 }
-export interface Fonts {
+interface Fonts {
   fontTitle: string,
   fontValOp: string,
   fontNameOp: string,
