@@ -7,5 +7,6 @@ export const dataFixture = {
     fontNameOp: 'Signika-Medium'
   },
   imgTitle: logoCierre,
+  tooltipTitle:'Ayuda',
   actionInfo: () => { console.log('Option info') }
 }
