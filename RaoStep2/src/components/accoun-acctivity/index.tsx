@@ -89,7 +89,7 @@ export const AccountActivity: React.FC<Props> = ({
                     className={styles.textTerms}
                     style={{ fontFamily: `${font.fontTextTerms}` }}
                 >
-                    {intl.formatMessage({ id: 'BLOCK_NAME.terms-conditions' })}
+                    {intl.formatMessage({ id: 'BLOCK_NAME.terms-conditions1' })} <a className={styles.termsLikn} href="#">{intl.formatMessage({ id: 'BLOCK_NAME.terms-conditions2' })}</a>
                 </Checkbox>
                 <br />
                 <Button
