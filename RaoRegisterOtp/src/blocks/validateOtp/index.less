@@ -32,8 +32,7 @@
   .subcontainer {
     display: block;
     width: 100%;
-    margin-top: 7rem;
-    padding: 18px;
+
     @media only screen and (min-width: 768px) {
       width: 30%;
       padding: 0;
@@ -52,16 +51,23 @@
   }
 
   .timer {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 12px;
+    padding: 10px;
+  
     @media only screen and (min-width: 768px) {
-      display: block;
-      width: 100%;
-      margin-top: 15px;
+      display: flex;
+      flex-direction: row;
+      margin-top: 22px;
       padding: 10px;
     }
+
     > .alertTimer {
       display: inline-block;
       margin-right: 5px;
+      margin-bottom: 0;
     }
     > .timerCont {
       display: inline-block;
