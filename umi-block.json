@@ -16,6 +16,24 @@
       "previewUrl": "https://preview.pro.ant.design"
     },
     {
+      "key": "ConsoleRequestByStages",
+      "description": "Pro-block to show the request by stages in administration console",
+      "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/ConsoleRequestByStages",
+      "path": "ConsoleRequestByStages",
+      "features": [
+        "antd",
+        "i18n"
+      ],
+      "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/ConsoleRequestByStages/snapshot.png",
+      "tags": [
+        "console",
+        "request",
+        "by",
+        "stages"
+      ],
+      "previewUrl": "https://preview.pro.ant.design/console/request/by/stages"
+    },
+    {
       "name": "Editor de procesos",
       "key": "EditorFlow",
       "description": "Un diagrama de flujo para representar el flujo de pantallas",
