@@ -43,6 +43,7 @@ const GetOtp: React.FC<GetOtpPropsInterface> = ({action}) => {
         value={valor}
         maxLength={10}
         className={styles.input}
+        autoComplete="off"
       />
     </>
   );

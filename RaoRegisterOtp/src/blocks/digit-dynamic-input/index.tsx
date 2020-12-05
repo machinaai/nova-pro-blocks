@@ -65,6 +65,7 @@ const DigitDynamicInput: React.FC<DigitDynamicInputProps> = ({ lengthOtp = 4, ac
           value={number[index]}
           type="text"
           maxLength={1}
+          autoComplete="off"
         />
       );
     }

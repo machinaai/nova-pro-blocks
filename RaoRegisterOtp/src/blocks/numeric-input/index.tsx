@@ -27,6 +27,7 @@ const NumericInput: React.FC = () => {
         value={valor}
         placeholder="Input a number"
         maxLength={10}
+        autoComplete="off"
       />
   );
 };
