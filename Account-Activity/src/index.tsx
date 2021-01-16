@@ -76,7 +76,7 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC<PAGE_NAME_UPPER_CAMEL_CASEProps> = (
      * Props for the account activity component
      */
     const optionsCheck: PropsCheck = {
-        optionsCheck: [`${intl.formatMessage({ id: 'BLOCK_NAME_CAMMEL_CASE.optionCheck1' })} $18,000`, `${intl.formatMessage({ id: 'BLOCK_NAME_CAMMEL_CASE.optionCheck2' })} $18,000`],
+        optionsCheck: [`${intl.formatMessage({ id:'BLOCK_NAME.optionCheck1' })} $18,000`, `${intl.formatMessage({ id:'BLOCK_NAME.optionCheck2' })} $18,000`],
         setFlow,
         fontFamily: {
             fontTitle: dataFontFixture.fontTitle,
@@ -134,24 +134,24 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC<PAGE_NAME_UPPER_CAMEL_CASEProps> = (
     }, [flowComplete]);
 
     const options = {
-        title: `${intl.formatMessage({ id: 'BLOCK_NAME_CAMMEL_CASE.modalTitle' })}`,
-        subtitle: `${intl.formatMessage({ id: 'BLOCK_NAME_CAMMEL_CASE.modalSubtitle' })}`,
+        title: `${intl.formatMessage({ id:'BLOCK_NAME.modalTitle' })}`,
+        subtitle: `${intl.formatMessage({ id:'BLOCK_NAME.modalSubtitle' })}`,
         options: [
             {
                 icon: imgOptions[0],
-                valOption: `${intl.formatMessage({ id: 'BLOCK_NAME_CAMMEL_CASE.modalOption1' })}`,
+                valOption: `${intl.formatMessage({ id:'BLOCK_NAME.modalOption1' })}`,
                 action: () => { setStep(StepEnum.scanDoc) },
                 color:colorProblock
             },
             {
                 icon: imgOptions[1],
-                valOption: `${intl.formatMessage({ id: 'BLOCK_NAME_CAMMEL_CASE.modalOption2' })}`,
+                valOption: `${intl.formatMessage({ id:'BLOCK_NAME.modalOption2' })}`,
                 action: () => { setStep(StepEnum.uploadDoc) },
                 color:colorProblock
             },
             {
                 icon: imgOptions[2],
-                valOption: `${intl.formatMessage({ id: 'BLOCK_NAME_CAMMEL_CASE.modalOption3' })}`,
+                valOption: `${intl.formatMessage({ id:'BLOCK_NAME.modalOption3' })}`,
                 action: () => { setStep(StepEnum.loadData) },
                 color:colorProblock
             },
@@ -163,6 +163,7 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC<PAGE_NAME_UPPER_CAMEL_CASEProps> = (
      */
     const optionsElement: ElementProps = {
         ...options,
+        backColorOp :'#e1ffff',
         fontFamily,
         onlyModal: showModal,
         onlyDrawer: showDrawer,

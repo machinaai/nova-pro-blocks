@@ -44,11 +44,11 @@ export const AccountActivity: React.FC<Props> = ({
 
     if (checkVal.length === 0) {
         if (oldVal[0].includes('Menos') || oldVal[0].includes('less')) {
-            valueCheck = [`${intl.formatMessage({ id: 'BLOCK_NAME_CAMMEL_CASE.optionCheck2' })} $18,000`];
-            setCheck([`${intl.formatMessage({ id: 'BLOCK_NAME_CAMMEL_CASE.optionCheck2' })} $18,000`])
+            valueCheck = [`${intl.formatMessage({ id: 'BLOCK_NAME.optionCheck2' })} $18,000`];
+            setCheck([`${intl.formatMessage({ id: 'BLOCK_NAME.optionCheck2' })} $18,000`])
         } else if (oldVal[0].includes('Má') || oldVal[0].includes('more')) {
-            valueCheck = [`${intl.formatMessage({ id: 'BLOCK_NAME_CAMMEL_CASE.optionCheck1' })} $18,000`]
-            setCheck([`${intl.formatMessage({ id: 'BLOCK_NAME_CAMMEL_CASE.optionCheck1' })} $18,000`]);
+            valueCheck = [`${intl.formatMessage({ id: 'BLOCK_NAME.optionCheck1' })} $18,000`]
+            setCheck([`${intl.formatMessage({ id: 'BLOCK_NAME.optionCheck1' })} $18,000`]);
         }
     } else {
         valueCheck = checkVal.length === 1 ? checkVal[0] : checkVal[1]
@@ -91,8 +91,8 @@ export const AccountActivity: React.FC<Props> = ({
     }
     return (
         <div className={styles.container}>
-            <h2 className={styles.title} style={{ fontFamily: `${font.fontTitle}` }}>{intl.formatMessage({ id: 'BLOCK_NAME_CAMMEL_CASE.title' })}</h2>
-            <p className={styles.subtitle} style={{ fontFamily: `${font.fontSubtitle}` }}>{intl.formatMessage({ id: 'BLOCK_NAME_CAMMEL_CASE.subtitle' })}</p>
+            <h2 className={styles.title} style={{ fontFamily: `${font.fontTitle}` }}>{intl.formatMessage({ id: 'BLOCK_NAME.title' })}</h2>
+            <p className={styles.subtitle} style={{ fontFamily: `${font.fontSubtitle}` }}>{intl.formatMessage({ id: 'BLOCK_NAME.subtitle' })}</p>
             <CheckBoxOptions {...props} />
             <div className={styles.buttons}>
                 <Checkbox
@@ -102,7 +102,7 @@ export const AccountActivity: React.FC<Props> = ({
                     className={styles.textTerms}
                     style={{ fontFamily: `${font.fontTextTerms}` }}
                 >
-                    {intl.formatMessage({ id: 'BLOCK_NAME_CAMMEL_CASE.terms-conditions1' })} <a className={styles.termsLikn} href="#">{intl.formatMessage({ id: 'BLOCK_NAME_CAMMEL_CASE.terms-conditions2' })}</a>
+                    {intl.formatMessage({ id: 'BLOCK_NAME.terms-conditions1' })} <a className={styles.termsLikn} href="#">{intl.formatMessage({ id: 'BLOCK_NAME.terms-conditions2' })}</a>
                 </Checkbox>
                 <br />
                 <Button
@@ -112,7 +112,7 @@ export const AccountActivity: React.FC<Props> = ({
                     disabled={valDisBut}
                     className={styles.btnContinue}
                     onClick={onValidateFlow} block>
-                    {intl.formatMessage({ id: 'BLOCK_NAME_CAMMEL_CASE.continue_button' })}
+                    {intl.formatMessage({ id: 'BLOCK_NAME.continue_button' })}
                 </Button>
             </div>
         </div>
