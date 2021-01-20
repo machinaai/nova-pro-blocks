@@ -356,6 +356,21 @@
         "activity"
       ],
       "previewUrl": "https://preview.pro.ant.design/account/activity"
+    },
+    {
+      "key": "TotalRequest",
+      "description": "Pro-block card to show total request",
+      "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/TotalRequest",
+      "path": "TotalRequest",
+      "features": [
+        "antd",
+        "i18n"
+      ],
+      "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/TotalRequest/snapshot.png",
+      "tags": [
+        "card"
+      ],
+      "previewUrl": "https://preview.pro.ant.design/total/request"
     }
   ]
 }
