@@ -371,6 +371,20 @@
         "card"
       ],
       "previewUrl": "https://preview.pro.ant.design/total/request"
+    },{
+      "key": "RequestByStages",
+      "description": "Pro-block to manage the request by stages in a funnel graph",
+      "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/RequestByStages",
+      "path": "RequestByStages",
+      "features": [
+        "antd",
+        "i18n"
+      ],
+      "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/RequestByStages/snapshot.png",
+      "tags": [
+        "card"
+      ],
+      "previewUrl": "https://preview.pro.ant.design/request/stages"
     }
   ]
 }
