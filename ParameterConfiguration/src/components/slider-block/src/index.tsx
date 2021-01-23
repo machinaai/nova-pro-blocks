@@ -3,7 +3,11 @@ import { Col, InputNumber, Row, Slider } from 'antd';
 import { useIntl } from 'umi';
 import styles from './index.less'
 
-const SliderBlock: React.FC<any> = ({ range = 100 }) => {
+interface SliderBlockProps {
+  range: number;
+}
+
+const SliderBlock: React.FC<SliderBlockProps> = ({ range = 100 }) => {
   const intl = useIntl();
   const [state, setState] = useState(0);
   const marks = {

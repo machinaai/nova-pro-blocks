@@ -4,14 +4,14 @@ import ConfigParamsBlock from '../../config-params-block/src/index';
 import SliderBlock from '../../slider-block/src';
 import ConectionsBlock from '../../connections-block/src';
 
-interface Props {
+interface ConfigParamsContainerProps {
     font?: {
         fontTitle: string
         fontContent: string
     }
 }
 
-export const ConfigParamsContainer: React.FC<Props> = ({font}) => {
+export const ConfigParamsContainer: React.FC<ConfigParamsContainerProps> = ({font}) => {
     const intl = useIntl();
 
     const propsConnectionsBlock = {

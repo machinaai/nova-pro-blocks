@@ -3,7 +3,7 @@ import { Col, Divider, InputNumber, Radio, Row, Slider } from 'antd';
 import styles from './index.less'
 import { dataFixturenNuevos, fontFixture } from './fixture/data.fixture';
 
-interface Props {
+interface ConectionsBlockProps {
   data?: Item[],
   fontFam?: {
     fontTitle: string
@@ -19,7 +19,7 @@ interface Item {
   }
 }
 
-const ConectionsBlock: React.FC<Props> = ({ data = dataFixturenNuevos, fontFam = fontFixture }) => {
+const ConectionsBlock: React.FC<ConectionsBlockProps> = ({ data = dataFixturenNuevos, fontFam = fontFixture }) => {
   return (
     <div style={{ marginBottom: 19 }}>
       {data.map((element: any, index) => (
