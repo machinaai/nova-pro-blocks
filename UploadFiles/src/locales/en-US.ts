@@ -1,0 +1,18 @@
+export default {
+    'BLOCK_NAME.headerTitle': 'INE/IFE',
+    'BLOCK_NAME.firstTitle': 'Upload document',
+    'BLOCK_NAME.firstSubtitle': 'Please select a photo of your INE / IFE on the front and another on the back, check that your data is clear and legible and does not have light reflections.',
+    'BLOCK_NAME.detailsTitle': 'Recommendations:',
+    'BLOCK_NAME.detailsElement1': 'Check that your data is clear and legible.',
+    'BLOCK_NAME.detailsElement2': 'Avoid reflections of light and shadow.',
+    'BLOCK_NAME.bntUploadTitle': 'Upload document',
+    'BLOCK_NAME.secondTitle': 'Validate your document',
+    'BLOCK_NAME.secondSubtitle': 'Check that your data is clear and legible and does not have reflections of light or shadow.',
+    'BLOCK_NAME.bntNextTitle': 'Continue',
+    'BLOCK_NAME.linkTitle': 'Upload document again',
+    'BLOCK_NAME.ine.front': 'Upload the front of your INE / IFE (jpg, png or pdf).',
+    'BLOCK_NAME.ine.back': 'Upload the back of your INE / IFE (jpg, png or pdf).',
+    'BLOCK_NAME.adress': 'Upload your proof of address (jpg, png or pdf).',
+    'BLOCK_NAME.upload.btn': 'Upload',
+    'BLOCK_NAME.spin.title': 'Loading...',
+}

@@ -1,0 +1,18 @@
+export default {
+    'BLOCK_NAME.headerTitle': 'INE/IFE',
+    'BLOCK_NAME.firstTitle': 'Subir documento',
+    'BLOCK_NAME.firstSubtitle': 'Por favor selecciona una foto de tu INE/IFE por el frente y otra por el reverso,revisa que tus datos estén claros y legibles y que no tengan reflejos de luz.',
+    'BLOCK_NAME.detailsTitle': 'Recomendaciones:',
+    'BLOCK_NAME.detailsElement1': 'Revisa que tus datos estén claros y legibles.',
+    'BLOCK_NAME.detailsElement2': 'Evita reflejos de luz y sombra.',
+    'BLOCK_NAME.bntUploadTitle': 'Subir documento',
+    'BLOCK_NAME.secondTitle': 'Valida tu documento',
+    'BLOCK_NAME.secondSubtitle': 'Revisa que tus datos estén claros y legibles y que no tengan reflejos de luz ni sombra.',
+    'BLOCK_NAME.bntNextTitle': 'Continuar',
+    'BLOCK_NAME.linkTitle': 'Subir documento nuevamente',
+    'BLOCK_NAME.ine.front': 'Sube la parte delantera de tu INE/IFE (jpg, png o pdf).',
+    'BLOCK_NAME.ine.back': 'Sube la parte trasera de tu INE/IFE (jpg, png o pdf).',
+    'BLOCK_NAME.adress': 'Sube tu comprobante de domicilio (jpg, png o pdf).',
+    'BLOCK_NAME.upload.btn': 'Seleccionar',
+    'BLOCK_NAME.spin.title': 'Cargando...',
+}
