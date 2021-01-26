@@ -401,6 +401,21 @@
         "configuration"
       ],
       "previewUrl": "https://preview.pro.ant.design/request/stages"
+    },
+    {
+    "key": "UploadFiles",
+    "description": "Pro-block to manage the configuration parameters in a videoconference",
+    "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/UploadFiles",
+    "path": "UploadFiles",
+    "features": [
+      "antd",
+      "i18n"
+    ],
+    "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/UploadFiles/snapshot.png",
+    "tags": [
+      "upload"
+    ],
+    "previewUrl": "https://preview.pro.ant.design/upload/files"
     }
   ]
 }
