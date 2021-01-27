@@ -4,6 +4,6 @@
  */
  const genBlockTags = (name) =>{
    
-   return name.split('/')[0].includes('@nova-template') ? "template" : "pro-block"
+   return name.split('/')[0].includes('@nova-templates') ? "template" : "pro-block"
 }
 export default genBlockTags;
