@@ -33,6 +33,7 @@
     },
     {
       "key": "NbeBalanceSummary",
+      "name": "NbeBalanceSummary",
       "description": "Pro-block for widget balance summary",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/NbeBalanceSummary",
       "path": "NbeBalanceSummary",
@@ -51,6 +52,7 @@
     },
     {
       "key": "NbeComboAccounts",
+      "name": "NbeComboAccounts",
       "description": "Template for Combo Accounts",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/NbeComboAccounts",
       "path": "NbeComboAccounts",
@@ -69,6 +71,7 @@
     },
     {
       "key": "NbeLogin",
+      "name": "NbeLogin",
       "description": "Template for login nbe flow",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/NbeLogin",
       "path": "NbeLogin",
@@ -84,6 +87,7 @@
     },
     {
       "key": "NbeRecovery",
+      "name": "NbeRecovery",
       "description": "This block is the recovery flow",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/NbeRecovery",
       "path": "NbeRecovery",
@@ -101,6 +105,7 @@
     },
     {
       "key": "NbeRegistry",
+      "name": "NbeRegistry",
       "description": "This block is the registry flow",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/NbeRegistry",
       "path": "NbeRegistry",
@@ -118,6 +123,7 @@
     },
     {
       "key": "NbeWidgetCash",
+      "name": "NbeWidgetCash",
       "description": "Pro-block for cash widget",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/NbeWidgetCash",
       "path": "NbeWidgetCash",
@@ -136,6 +142,7 @@
     },
     {
       "key": "NbeWidgetCreditCard",
+      "name": "NbeWidgetCreditCard",
       "description": "Pro-block for widget for credit-card",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/NbeWidgetCreditCard",
       "path": "NbeWidgetCreditCard",
@@ -154,6 +161,7 @@
     },
     {
       "key": "NbeWidgetInvestments",
+      "name": "NbeWidgetInvestments",
       "description": "Pro-block for widget for investments",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/NbeWidgetInvestments",
       "path": "NbeWidgetInvestments",
@@ -172,6 +180,7 @@
     },
     {
       "key": "NbeWidgetPendingToAuthorize",
+      "name": "NbeWidgetPendingToAuthorize",
       "description": "Pro-block for Widget for Pending To Authorize",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/NbeWidgetPendingToAuthorize",
       "path": "NbeWidgetPendingToAuthorize",
@@ -192,6 +201,7 @@
     },
     {
       "key": "RaoAccountScreen",
+      "name": "RaoAccountScreen",
       "description": "Pro-block for finish flow of account opening",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/RaoAccountScreen",
       "path": "RaoAccountScreen",
@@ -208,6 +218,7 @@
     },
     {
       "key": "RaoAnotherTimeScreen",
+      "name": "RaoAnotherTimeScreen",
       "description": "Pro-block for another time screen",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/RaoAnotherTimeScreen",
       "path": "RaoAnotherTimeScreen",
@@ -226,6 +237,7 @@
     },
     {
       "key": "RaoPaperless",
+      "name": "RaoPaperless",
       "description": "Pro-block for paperless in the account opening flow",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/RaoPaperless",
       "path": "RaoPaperless",
@@ -242,6 +254,7 @@
     },
     {
       "key": "RaoRegisterOtp",
+      "name": "RaoRegisterOtp",
       "description": "Pro-block for register otp",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/RaoRegisterOtp",
       "path": "RaoRegisterOtp",
@@ -259,6 +272,7 @@
     },
     {
       "key": "RaoSplashScreen",
+      "name": "RaoSplashScreen",
       "description": "Pro-block for splash screen",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/RaoSplashScreen",
       "path": "RaoSplashScreen",
@@ -276,6 +290,7 @@
     },
     {
       "key": "RaoStep2",
+      "name": "RaoStep2",
       "description": "Pro-block for step2 of account opening",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/RaoStep2",
       "path": "RaoStep2",
@@ -292,6 +307,7 @@
     },
     {
       "key": "RaoUpdateAddress",
+      "name": "RaoUpdateAddress",
       "description": "Pro-block for update address",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/RaoUpdateAddress",
       "path": "RaoUpdateAddress",
@@ -309,6 +325,7 @@
     },
     {
       "key": "RaoUploadFiles",
+      "name": "RaoUploadFiles",
       "description": "Rao-upload-files",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/RaoUploadFiles",
       "path": "RaoUploadFiles",
@@ -326,6 +343,7 @@
     },
     {
       "key": "RaoValidateAddress",
+      "name": "RaoValidateAddress",
       "description": "Pro-block for validate address screen",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/RaoValidateAddress",
       "path": "RaoValidateAddress",
@@ -343,6 +361,7 @@
     },
     {
       "key": "Account-Activity",
+      "name": "Account-Activity",
       "description": "Pro-block about account activity",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/Account-Activity",
       "path": "Account-Activity",
@@ -359,6 +378,7 @@
     },
     {
       "key": "TotalRequest",
+      "name": "TotalRequest",
       "description": "Pro-block card to show total request",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/TotalRequest",
       "path": "TotalRequest",
@@ -374,6 +394,7 @@
     },
     {
       "key": "RequestByStages",
+      "name": "RequestByStages",
       "description": "Pro-block to manage the request by stages in a funnel graph",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/RequestByStages",
       "path": "RequestByStages",
@@ -389,6 +410,7 @@
     }, 
     {
       "key": "ParameterConfiguration",
+      "name": "ParameterConfiguration",
       "description": "Pro-block to manage the configuration parameters in a videoconference",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/ParameterConfiguration",
       "path": "ParameterConfiguration",
@@ -404,6 +426,7 @@
     },
     {
     "key": "UploadFiles",
+    "name": "UploadFiles",
     "description": "Pro-block to manage the configuration parameters in a videoconference",
     "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/UploadFiles",
     "path": "UploadFiles",
@@ -416,6 +439,22 @@
       "upload"
     ],
     "previewUrl": "https://preview.pro.ant.design/upload/files"
-    }
+    },
+    {
+      "key": "AccountOpenning",
+      "name": "AccountOpenning",
+      "description": "Template of account openning RAO",
+      "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/AccountOpenning",
+      "path": "AccountOpenning",
+      "features": [
+        "antd",
+        "i18n"
+      ],
+      "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/AccountOpenning/snapshot.png",
+      "tags": [
+        "templates"
+      ],
+      "previewUrl": "https://preview.pro.ant.design/upload/files"
+      }
   ]
 }
