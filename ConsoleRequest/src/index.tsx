@@ -1,0 +1,85 @@
+import { Col, Row } from 'antd'
+import React, { useEffect, useState } from 'react';
+import { connect, useDispatch, useIntl } from 'umi';
+import RadioButtonBlock from './components/radio-button/index';
+import InputSearchBlock from './components/input-search-block/index';
+import ConsoleRealTimeTable from './pro-blocks/console-real-time-table/src/index';
+import { StateModel } from './pro-blocks/console-real-time-table/src/models/model'
+import styles from './index.less';
+
+const ConsoleRequest: React.FC = () => {
+    const intl = useIntl();
+    const dispatch = useDispatch();
+    const [valRadioBtn, setValRadioBtn] = useState('all');
+    const [valInput, setValInput] = useState('')
+
+    const getValRadio = (val: any) => {
+        setValRadioBtn(val)
+    }
+    const getValInput = (val: any) => {
+        setValInput(val);
+    }
+
+    useEffect(() => {
+        dispatch({
+            type: 'Real_Time_Table/setRoutePath',
+            payload: '/client-detail'
+        });
+    }, [valRadioBtn, valInput]);
+
+
+    const propsRadioBtn = {
+        dataOptions: [
+            {
+                key: '1',
+                label: `${intl.formatMessage({ id: 'consoleRequest.RadioBtn-op1' })}`,
+                value: 'all'
+            },
+            {
+                key: '2',
+                label: `${intl.formatMessage({ id: 'consoleRequest.RadioBtn-op2' })}`,
+                value: 'documentation'
+            },
+            {
+                key: '3',
+                label: `${intl.formatMessage({ id: 'consoleRequest.RadioBtn-op3' })}`,
+                value: 'validation'
+            },
+            {
+                key: '4',
+                label: `${intl.formatMessage({ id: 'consoleRequest.RadioBtn-op4' })}`,
+                value: 'benefit'
+            },
+        ],
+        action: getValRadio,
+    }
+
+    const propsInput = {
+        placeholderVal: `${intl.formatMessage({ id: 'consoleRequest.InputTxt' })}`,
+        actionInput: getValInput
+    }
+
+    const propsRealTime = {
+        valInputSearch: valInput,
+        valueFilter: valRadioBtn,
+    }
+
+    return (
+        <div>
+            <Row className={styles.header}>
+                <Col xs={24} xl={4}>
+                    <p className={styles.title}>{`${intl.formatMessage({ id: 'consoleRequest.titleRequest' })}`}</p>
+                </Col>
+                <Col xs={24} xl={8} className={styles.radioBtn}>
+                    <RadioButtonBlock {...propsRadioBtn} />
+                </Col>
+                <Col xs={24} xl={10}>
+                    <InputSearchBlock {...propsInput} />
+                </Col>
+            </Row>
+            <ConsoleRealTimeTable {...propsRealTime} />
+        </div>
+    )
+}
+export default connect(({ Real_Time_Table }: { Real_Time_Table: StateModel }) => ({
+}))(ConsoleRequest);
