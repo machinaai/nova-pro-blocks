@@ -1,0 +1,57 @@
+@import '~antd/es/style/themes/default.less';
+
+.containerFooter {
+ display: none;
+
+    @media (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px 82.5px;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    background-color: @primary-color;
+    }
+
+    .socialMedia {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+
+        .icons {
+        padding: 0 12px;
+        color: white;
+        font-size: 24px;
+        vertical-align: bottom;
+        }
+
+        .title {
+        margin-right: 16px;
+        margin-bottom: 0;
+        }
+    }
+
+    .copyRight{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 50%;
+    margin-right: 82.5px;
+
+      .derechos {
+        margin-bottom: 0;
+      font-size: 16px;
+      }
+
+      .costos {
+        margin-bottom: 0;
+        color: #ffffffa8;
+        font-size: 16px;
+      }
+
+      .bankName {
+        margin-bottom: 0;
+      }
+    }
+}

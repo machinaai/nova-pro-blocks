@@ -1,0 +1,16 @@
+export default {
+  'splashScreen.val1-h1': 'Tu cuenta',
+  'splashScreen.val1-h1-br': 'de forma digital',
+  'splashScreen.val1-h3': 'Dónde y cuándo lo',
+  'splashScreen.val1-h3-br': 'prefieras',
+  'splashScreen.val2-h1': '"En menos"',
+  'splashScreen.val2-h1-br': 'de 5 minutos',
+  'splashScreen.val2-h3': 'Olvídate del papeleo y',
+  'splashScreen.val2-h3-br': 'de formularios extensos',
+  'splashScreen.val3-h1': 'Rápido,',
+  'splashScreen.val3-h1-br': 'fácil y seguro',
+  'splashScreen.val3-h3': 'Tu cuenta lista para',
+  'splashScreen.val3-h3-br': 'usarse inmediatamente',
+  'carousel.signUp': 'Regístrate',
+  'carousel.next': 'Siguiente',
+};

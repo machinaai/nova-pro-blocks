@@ -1,0 +1,44 @@
+@import '~antd/es/style/themes/default.less';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 17px;
+
+  >.firstContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    >.percent {
+      margin: 0;
+      color: @primary-color;
+      font-weight: bold;
+      font-size: 10px;
+      line-height: 22px;
+    }
+
+    > .textClock {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      color: #6c757d;
+      font-size: 10px;
+      line-height: 22px;
+      letter-spacing: 1px;
+    }
+  }
+
+  >.stepDescription {
+    padding-top: 16px;
+    color: #6c757d;
+    font-weight: bold;
+    font-size: 15px;
+  }
+
+  .clock {
+    margin-right: 3.5px;
+    font-size: 10px;
+  }
+}
