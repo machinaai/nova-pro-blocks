@@ -1,23 +1,40 @@
 {
   "list": [
     {
-      "key": "EmptyPage",
-      "name": "Página en blanco",
-      "description": "Una página en blanco, ¡todo comienza aquí!",
-      "url": "https://github.com/machinaai/pro-blocks/tree/master/EmptyPage",
-      "path": "NewPage",
+      "key": "Account-Activity",
+      "name": "Account-Activity",
+      "description": "Pro-block for account-activity of account opening",
+      "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/Account-Activity",
+      "path": "Account-Activity",
       "features": [
-        "antd"
+        "antd",
+        "i18n"
       ],
-      "img": "https://raw.githubusercontent.com/machinaai/pro-blocks/master/EmptyPage/snapshot.png?raw=true",
+      "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/Account-Activity/snapshot.png",
       "tags": [
-        "página en blanco"
+        "pro-block"
       ],
-      "previewUrl": "https://preview.pro.ant.design"
+      "previewUrl": "https://preview.pro.ant.design/"
     },
     {
-      "name": "Editor de procesos",
+      "key": "AccountOpenning",
+      "name": "AccountOpenning",
+      "description": "Template Account Openning",
+      "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/AccountOpenning",
+      "path": "AccountOpenning",
+      "features": [
+        "antd",
+        "i18n"
+      ],
+      "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/AccountOpenning/snapshot.png",
+      "tags": [
+        "pro-block"
+      ],
+      "previewUrl": "https://preview.pro.ant.design/"
+    },
+    {
       "key": "EditorFlow",
+      "name": "EditorFlow",
       "description": "Un diagrama de flujo para representar el flujo de pantallas",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/EditorFlow",
       "path": "EditorFlow",
@@ -27,9 +44,9 @@
       ],
       "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/EditorFlow/snapshot.png",
       "tags": [
-        "Editor gráfico"
+        "pro-block"
       ],
-      "previewUrl": "https://preview.pro.ant.design/editor/flow"
+      "previewUrl": "https://preview.pro.ant.design/"
     },
     {
       "key": "NbeBalanceSummary",
@@ -39,16 +56,13 @@
       "path": "NbeBalanceSummary",
       "features": [
         "antd",
-        "i18n",
-        "dva"
+        "i18n"
       ],
       "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/NbeBalanceSummary/snapshot.png",
       "tags": [
-        "nbe",
-        "balance",
-        "summary"
+        "pro-block"
       ],
-      "previewUrl": "https://preview.pro.ant.design/nbe/balance/summary"
+      "previewUrl": "https://preview.pro.ant.design/"
     },
     {
       "key": "NbeComboAccounts",
@@ -58,16 +72,13 @@
       "path": "NbeComboAccounts",
       "features": [
         "antd",
-        "i18n",
-        "dva"
+        "i18n"
       ],
       "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/NbeComboAccounts/snapshot.png",
       "tags": [
-        "nbe",
-        "combo",
-        "accounts"
+        "pro-block"
       ],
-      "previewUrl": "https://preview.pro.ant.design/nbe/combo/accounts"
+      "previewUrl": "https://preview.pro.ant.design/"
     },
     {
       "key": "NbeLogin",
@@ -76,14 +87,14 @@
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/NbeLogin",
       "path": "NbeLogin",
       "features": [
-        "antd"
+        "antd",
+        "i18n"
       ],
       "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/NbeLogin/snapshot.png",
       "tags": [
-        "nbe",
-        "Iniciar sesión"
+        "pro-block"
       ],
-      "previewUrl": "https://preview.pro.ant.design/nbe/login"
+      "previewUrl": "https://preview.pro.ant.design/"
     },
     {
       "key": "NbeRecovery",
@@ -93,15 +104,13 @@
       "path": "NbeRecovery",
       "features": [
         "antd",
-        "i18n",
-        "dva"
+        "i18n"
       ],
       "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/NbeRecovery/snapshot.png",
       "tags": [
-        "nbe",
-        "recovery"
+        "pro-block"
       ],
-      "previewUrl": "https://preview.pro.ant.design/nbe/recovery"
+      "previewUrl": "https://preview.pro.ant.design/"
     },
     {
       "key": "NbeRegistry",
@@ -111,15 +120,13 @@
       "path": "NbeRegistry",
       "features": [
         "antd",
-        "i18n",
-        "dva"
+        "i18n"
       ],
       "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/NbeRegistry/snapshot.png",
       "tags": [
-        "nbe",
-        "registry"
+        "pro-block"
       ],
-      "previewUrl": "https://preview.pro.ant.design/nbe/registry"
+      "previewUrl": "https://preview.pro.ant.design/"
     },
     {
       "key": "NbeWidgetCash",
@@ -129,16 +136,13 @@
       "path": "NbeWidgetCash",
       "features": [
         "antd",
-        "i18n",
-        "dva"
+        "i18n"
       ],
       "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/NbeWidgetCash/snapshot.png",
       "tags": [
-        "nbe",
-        "widget",
-        "cash"
+        "pro-block"
       ],
-      "previewUrl": "https://preview.pro.ant.design/nbe/widget/cash"
+      "previewUrl": "https://preview.pro.ant.design/"
     },
     {
       "key": "NbeWidgetCreditCard",
@@ -148,16 +152,13 @@
       "path": "NbeWidgetCreditCard",
       "features": [
         "antd",
-        "i18n",
-        "dva"
+        "i18n"
       ],
       "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/NbeWidgetCreditCard/snapshot.png",
       "tags": [
-        "nbe",
-        "widget",
-        "credit"
+        "pro-block"
       ],
-      "previewUrl": "https://preview.pro.ant.design/nbe/widget/credit/card"
+      "previewUrl": "https://preview.pro.ant.design/"
     },
     {
       "key": "NbeWidgetInvestments",
@@ -167,16 +168,13 @@
       "path": "NbeWidgetInvestments",
       "features": [
         "antd",
-        "i18n",
-        "dva"
+        "i18n"
       ],
       "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/NbeWidgetInvestments/snapshot.png",
       "tags": [
-        "nbe",
-        "widget",
-        "investments"
+        "pro-block"
       ],
-      "previewUrl": "https://preview.pro.ant.design/nbe/widget/investments"
+      "previewUrl": "https://preview.pro.ant.design/"
     },
     {
       "key": "NbeWidgetPendingToAuthorize",
@@ -186,18 +184,29 @@
       "path": "NbeWidgetPendingToAuthorize",
       "features": [
         "antd",
-        "i18n",
-        "dva"
+        "i18n"
       ],
       "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/NbeWidgetPendingToAuthorize/snapshot.png",
       "tags": [
-        "nbe",
-        "widget",
-        "pending",
-        "to",
-        "authorize"
+        "pro-block"
       ],
-      "previewUrl": "https://preview.pro.ant.design/nbe/widget/pending/to/authorize"
+      "previewUrl": "https://preview.pro.ant.design/"
+    },
+    {
+      "key": "ParameterConfiguration",
+      "name": "ParameterConfiguration",
+      "description": "Parameter configuration Pro Block",
+      "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/ParameterConfiguration",
+      "path": "ParameterConfiguration",
+      "features": [
+        "antd",
+        "i18n"
+      ],
+      "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/ParameterConfiguration/snapshot.png",
+      "tags": [
+        "pro-block"
+      ],
+      "previewUrl": "https://preview.pro.ant.design/"
     },
     {
       "key": "RaoAccountScreen",
@@ -211,10 +220,9 @@
       ],
       "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/RaoAccountScreen/snapshot.png",
       "tags": [
-        "rao",
-        "screen"
+        "pro-block"
       ],
-      "previewUrl": "https://preview.pro.ant.design/rao/account/screen"
+      "previewUrl": "https://preview.pro.ant.design/"
     },
     {
       "key": "RaoAnotherTimeScreen",
@@ -228,12 +236,9 @@
       ],
       "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/RaoAnotherTimeScreen/snapshot.png",
       "tags": [
-        "rao",
-        "another",
-        "time",
-        "screen"
+        "pro-block"
       ],
-      "previewUrl": "https://preview.pro.ant.design/rao/another/time/screen"
+      "previewUrl": "https://preview.pro.ant.design/"
     },
     {
       "key": "RaoPaperless",
@@ -247,10 +252,9 @@
       ],
       "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/RaoPaperless/snapshot.png",
       "tags": [
-        "rao",
-        "paperless"
+        "pro-block"
       ],
-      "previewUrl": "https://preview.pro.ant.design/rao/paperless"
+      "previewUrl": "https://preview.pro.ant.design/"
     },
     {
       "key": "RaoRegisterOtp",
@@ -264,11 +268,9 @@
       ],
       "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/RaoRegisterOtp/snapshot.png",
       "tags": [
-        "rao",
-        "Registrar",
-        "otp"
+        "pro-block"
       ],
-      "previewUrl": "https://preview.pro.ant.design/rao/register/otp"
+      "previewUrl": "https://preview.pro.ant.design/"
     },
     {
       "key": "RaoSplashScreen",
@@ -282,11 +284,9 @@
       ],
       "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/RaoSplashScreen/snapshot.png",
       "tags": [
-        "rao",
-        "splash",
-        "screen"
+        "pro-block"
       ],
-      "previewUrl": "https://preview.pro.ant.design/rao/splash/screen"
+      "previewUrl": "https://preview.pro.ant.design/"
     },
     {
       "key": "RaoStep2",
@@ -300,10 +300,9 @@
       ],
       "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/RaoStep2/snapshot.png",
       "tags": [
-        "rao",
-        "2"
+        "pro-block"
       ],
-      "previewUrl": "https://preview.pro.ant.design/rao/step/2"
+      "previewUrl": "https://preview.pro.ant.design/"
     },
     {
       "key": "RaoUpdateAddress",
@@ -317,11 +316,9 @@
       ],
       "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/RaoUpdateAddress/snapshot.png",
       "tags": [
-        "rao",
-        "update",
-        "address"
+        "pro-block"
       ],
-      "previewUrl": "https://preview.pro.ant.design/rao/update/address"
+      "previewUrl": "https://preview.pro.ant.design/"
     },
     {
       "key": "RaoUploadFiles",
@@ -335,11 +332,9 @@
       ],
       "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/RaoUploadFiles/snapshot.png",
       "tags": [
-        "rao",
-        "upload",
-        "files"
+        "pro-block"
       ],
-      "previewUrl": "https://preview.pro.ant.design/rao/upload/files"
+      "previewUrl": "https://preview.pro.ant.design/"
     },
     {
       "key": "RaoValidateAddress",
@@ -353,49 +348,14 @@
       ],
       "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/RaoValidateAddress/snapshot.png",
       "tags": [
-        "rao",
-        "validate",
-        "address"
+        "pro-block"
       ],
-      "previewUrl": "https://preview.pro.ant.design/rao/validate/address"
-    },
-    {
-      "key": "Account-Activity",
-      "name": "Account-Activity",
-      "description": "Pro-block about account activity",
-      "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/Account-Activity",
-      "path": "Account-Activity",
-      "features": [
-        "antd",
-        "i18n"
-      ],
-      "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/Account-Activity/snapshot.png",
-      "tags": [
-        "accout",
-        "activity"
-      ],
-      "previewUrl": "https://preview.pro.ant.design/account/activity"
-    },
-    {
-      "key": "TotalRequest",
-      "name": "TotalRequest",
-      "description": "Pro-block card to show total request",
-      "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/TotalRequest",
-      "path": "TotalRequest",
-      "features": [
-        "antd",
-        "i18n"
-      ],
-      "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/TotalRequest/snapshot.png",
-      "tags": [
-        "card"
-      ],
-      "previewUrl": "https://preview.pro.ant.design/total/request"
+      "previewUrl": "https://preview.pro.ant.design/"
     },
     {
       "key": "RequestByStages",
       "name": "RequestByStages",
-      "description": "Pro-block to manage the request by stages in a funnel graph",
+      "description": "Request by Stages pro block",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/RequestByStages",
       "path": "RequestByStages",
       "features": [
@@ -404,57 +364,41 @@
       ],
       "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/RequestByStages/snapshot.png",
       "tags": [
-        "user experience"
+        "pro-block"
       ],
-      "previewUrl": "https://preview.pro.ant.design/request/stages"
-    }, 
+      "previewUrl": "https://preview.pro.ant.design/"
+    },
     {
-      "key": "ParameterConfiguration",
-      "name": "ParameterConfiguration",
-      "description": "Pro-block to manage the configuration parameters in a videoconference",
-      "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/ParameterConfiguration",
-      "path": "ParameterConfiguration",
+      "key": "TotalRequest",
+      "name": "TotalRequest",
+      "description": "Pro-block for Total Request Card ",
+      "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/TotalRequest",
+      "path": "TotalRequest",
       "features": [
         "antd",
         "i18n"
       ],
-      "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/ParameterConfiguration/snapshot.png",
+      "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/TotalRequest/snapshot.png",
       "tags": [
-        "configuration"
+        "pro-block"
       ],
-      "previewUrl": "https://preview.pro.ant.design/request/stages"
+      "previewUrl": "https://preview.pro.ant.design/"
     },
     {
-    "key": "UploadFiles",
-    "name": "UploadFiles",
-    "description": "Pro-block to manage the configuration parameters in a videoconference",
-    "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/UploadFiles",
-    "path": "UploadFiles",
-    "features": [
-      "antd",
-      "i18n"
-    ],
-    "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/UploadFiles/snapshot.png",
-    "tags": [
-      "upload"
-    ],
-    "previewUrl": "https://preview.pro.ant.design/upload/files"
-    },
-    {
-      "key": "AccountOpenning",
-      "name": "AccountOpenning",
-      "description": "Template of account openning RAO",
-      "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/AccountOpenning",
-      "path": "AccountOpenning",
+      "key": "UploadFiles",
+      "name": "UploadFiles",
+      "description": "Pro block for upload files and images.",
+      "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/UploadFiles",
+      "path": "UploadFiles",
       "features": [
         "antd",
         "i18n"
       ],
-      "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/AccountOpenning/snapshot.png",
+      "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/UploadFiles/snapshot.png",
       "tags": [
-        "templates"
+        "pro-block"
       ],
-      "previewUrl": "https://preview.pro.ant.design/upload/files"
-      }
+      "previewUrl": "https://preview.pro.ant.design/"
+    }
   ]
 }
