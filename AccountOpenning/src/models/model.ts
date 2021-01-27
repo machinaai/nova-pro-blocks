@@ -28,7 +28,7 @@ export interface ModelType {
   };
 }
 export const Model: ModelType = {
-  namespace: 'accountOpening',
+  namespace: 'BLOCK_NAME_CAMEL_CASE',
   state: {
     current: 0,
     splashScreen: false,

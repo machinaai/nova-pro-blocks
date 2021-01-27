@@ -29,7 +29,7 @@ import SplashScreen from './pro-blocks/splash-screen';
 
 const { Header, Footer, Content } = Layout;
 
-interface AccountOpeningProps {
+interface PAGE_NAME_UPPER_CAMEL_CASEProps {
   current: StateType['current'];
   dispatch?: Dispatch;
   stepsDataJson?: StateType['stepsDataJson'];
@@ -40,14 +40,14 @@ interface AccountOpeningProps {
   userData?: StateType['dataUser'];
 }
 
-const AccountOpening: React.FC<AccountOpeningProps> = (props) => {
+const PAGE_NAME_UPPER_CAMEL_CASE: React.FC<PAGE_NAME_UPPER_CAMEL_CASEProps> = (props) => {
   const { stepsDataJson, loading, current, splashScreen, typeFlow, phoneUser, userData } = props;
 
   const dispatch = useDispatch();
 
   const getStepper = () => {
     dispatch({
-      type: 'accountOpening/getStepperData',
+      type: 'BLOCK_NAME_CAMEL_CASE/getStepperData',
     });
   };
 
@@ -58,21 +58,21 @@ const AccountOpening: React.FC<AccountOpeningProps> = (props) => {
   const changeCurrent = (e: boolean) => {
     if (e) {
       dispatch({
-        type: 'accountOpening/changeCurrent',
+        type: 'BLOCK_NAME_CAMEL_CASE/changeCurrent',
       });
     }
   };
 
   const setTypeFlow = (event: any) => {
     dispatch({
-      type: 'accountOpening/setTypeFlow',
+      type: 'BLOCK_NAME_CAMEL_CASE/setTypeFlow',
       payload: event.step,
     });
   };
 
   const setPhoneUser = (event: any) => {
     dispatch({
-      type: 'accountOpening/setPhoneUser',
+      type: 'BLOCK_NAME_CAMEL_CASE/setPhoneUser',
       payload: event,
     });
   };
@@ -85,14 +85,14 @@ const AccountOpening: React.FC<AccountOpeningProps> = (props) => {
       });
     }else {
       dispatch({
-        type: 'accountOpening/changeCurrentReturn',
+        type: 'BLOCK_NAME_CAMEL_CASE/changeCurrentReturn',
       });
     }
   };
 
   const setDataUser = (event: any) => {
     dispatch({
-      type: 'accountOpening/setDataUser',
+      type: 'BLOCK_NAME_CAMEL_CASE/setDataUser',
       payload: event,
     });
   };
@@ -171,12 +171,12 @@ const AccountOpening: React.FC<AccountOpeningProps> = (props) => {
   );
 };
 
-export default connect(({ accountOpening }: { accountOpening: StateType }) => ({
-  current: accountOpening.current,
-  stepsDataJson: accountOpening.stepsDataJson,
-  loading: accountOpening.loading,
-  splashScreen: accountOpening.splashScreen,
-  typeFlow: accountOpening.typeFlow,
-  phoneUser: accountOpening.phoneUser,
-  userData: accountOpening.dataUser,
-}))(AccountOpening);
+export default connect(({ BLOCK_NAME_CAMEL_CASE }: { BLOCK_NAME_CAMEL_CASE: StateType }) => ({
+  current: BLOCK_NAME_CAMEL_CASE.current,
+  stepsDataJson: BLOCK_NAME_CAMEL_CASE.stepsDataJson,
+  loading: BLOCK_NAME_CAMEL_CASE.loading,
+  splashScreen: BLOCK_NAME_CAMEL_CASE.splashScreen,
+  typeFlow: BLOCK_NAME_CAMEL_CASE.typeFlow,
+  phoneUser: BLOCK_NAME_CAMEL_CASE.phoneUser,
+  userData: BLOCK_NAME_CAMEL_CASE.dataUser,
+}))(PAGE_NAME_UPPER_CAMEL_CASE);
