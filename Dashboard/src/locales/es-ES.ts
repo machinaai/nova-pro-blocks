@@ -10,7 +10,7 @@ export default {
   'BLOCK_NAME.Combo-op4':'Tablet',
   'BLOCK_NAME.titleCombo':'Tipo de usuario',
   'BLOCK_NAME.titleReport':'Reporte',
-  'BLOCK_NAME.configBLOCK_NAME':'Configurar BLOCK_NAME',
+  'BLOCK_NAME.configDashboard':'Configurar dashboard',
   'BLOCK_NAME.titleUsedDevices':'Dispositivos usados',
   'BLOCK_NAME.label1UsedDevices':'Android',
   'BLOCK_NAME.label2UsedDevices':'iOs',
