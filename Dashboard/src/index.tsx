@@ -231,7 +231,6 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC = () => {
                     </Col>
                     <Col xs={24} xl={8}>
                         <div className={styles.percentage}>
-                            {/* <ConsoleClosingPercentage /> */}
                             <ConsoleUsedDevices {...propsClosingPercentage}/>
                         </div>
                         <div>
