@@ -6,7 +6,7 @@ import ConsoleClientDetails from './pro-blocks/console-client-details/src/index'
 import { StateModelClient } from './pro-blocks/console-client-details/src/models/model';
 import styles from './index.less'
 
-const DetailsClient: React.FC = () => {
+const PAGE_NAME_UPPER_CAMEL_CASE: React.FC = () => {
     const dispatch = useDispatch();
     const intl = useIntl();
     const { TabPane } = Tabs;
@@ -36,10 +36,10 @@ const DetailsClient: React.FC = () => {
     return (
         <div className={styles.tabs}>
             <Tabs defaultActiveKey="1" onChange={callback}>
-                <TabPane tab={<p className={styles.titleTab}>{`${intl.formatMessage({ id: 'detailsClient.Title-tab1' })}`}</p>} key="1">
+                <TabPane tab={<p className={styles.titleTab}>{`${intl.formatMessage({ id: 'BLOCK_NAME.Title-tab1' })}`}</p>} key="1">
                     <ConsoleClientDetails {...propClientDetais} />
                 </TabPane>
-                <TabPane tab={<p className={styles.titleTab}>{`${intl.formatMessage({ id: 'detailsClient.Title-tab2' })}`}</p>} key="2">
+                <TabPane tab={<p className={styles.titleTab}>{`${intl.formatMessage({ id: 'BLOCK_NAME.Title-tab2' })}`}</p>} key="2">
                     <ConfigParams />
                 </TabPane>
             </Tabs>
@@ -47,5 +47,5 @@ const DetailsClient: React.FC = () => {
     )
 }
 export default connect(({ clientDetails }: { clientDetails: StateModelClient }) => ({
-}))(DetailsClient);
+}))(PAGE_NAME_UPPER_CAMEL_CASE);
 

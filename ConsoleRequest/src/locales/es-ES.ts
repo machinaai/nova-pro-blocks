@@ -1,8 +1,8 @@
 export default {
-  'consoleRequest.titleRequest':'Solicitudes pendientes',
-  'consoleRequest.RadioBtn-op1':'Todas',
-  'consoleRequest.RadioBtn-op2':'Documentación',
-  'consoleRequest.RadioBtn-op3':'Validación',
-  'consoleRequest.RadioBtn-op4':'Beneficiarios',
-  'consoleRequest.InputTxt':'Búsqueda por: número, nombre',  
+  'BLOCK_NAME.titleRequest':'Solicitudes pendientes',
+  'BLOCK_NAME.RadioBtn-op1':'Todas',
+  'BLOCK_NAME.RadioBtn-op2':'Documentación',
+  'BLOCK_NAME.RadioBtn-op3':'Validación',
+  'BLOCK_NAME.RadioBtn-op4':'Beneficiarios',
+  'BLOCK_NAME.InputTxt':'Búsqueda por: número, nombre',  
  };

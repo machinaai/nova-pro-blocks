@@ -7,7 +7,7 @@ import ConsoleRealTimeTable from './pro-blocks/console-real-time-table/src/index
 import { StateModel } from './pro-blocks/console-real-time-table/src/models/model'
 import styles from './index.less';
 
-const ConsoleRequest: React.FC = () => {
+const PAGE_NAME_UPPER_CAMEL_CASE: React.FC = () => {
     const intl = useIntl();
     const dispatch = useDispatch();
     const [valRadioBtn, setValRadioBtn] = useState('all');
@@ -32,22 +32,22 @@ const ConsoleRequest: React.FC = () => {
         dataOptions: [
             {
                 key: '1',
-                label: `${intl.formatMessage({ id: 'consoleRequest.RadioBtn-op1' })}`,
+                label: `${intl.formatMessage({ id: 'BLOCK_NAME.RadioBtn-op1' })}`,
                 value: 'all'
             },
             {
                 key: '2',
-                label: `${intl.formatMessage({ id: 'consoleRequest.RadioBtn-op2' })}`,
+                label: `${intl.formatMessage({ id: 'BLOCK_NAME.RadioBtn-op2' })}`,
                 value: 'documentation'
             },
             {
                 key: '3',
-                label: `${intl.formatMessage({ id: 'consoleRequest.RadioBtn-op3' })}`,
+                label: `${intl.formatMessage({ id: 'BLOCK_NAME.RadioBtn-op3' })}`,
                 value: 'validation'
             },
             {
                 key: '4',
-                label: `${intl.formatMessage({ id: 'consoleRequest.RadioBtn-op4' })}`,
+                label: `${intl.formatMessage({ id: 'BLOCK_NAME.RadioBtn-op4' })}`,
                 value: 'benefit'
             },
         ],
@@ -55,7 +55,7 @@ const ConsoleRequest: React.FC = () => {
     }
 
     const propsInput = {
-        placeholderVal: `${intl.formatMessage({ id: 'consoleRequest.InputTxt' })}`,
+        placeholderVal: `${intl.formatMessage({ id: 'BLOCK_NAME.InputTxt' })}`,
         actionInput: getValInput
     }
 
@@ -68,7 +68,7 @@ const ConsoleRequest: React.FC = () => {
         <div>
             <Row className={styles.header}>
                 <Col xs={24} xl={4}>
-                    <p className={styles.title}>{`${intl.formatMessage({ id: 'consoleRequest.titleRequest' })}`}</p>
+                    <p className={styles.title}>{`${intl.formatMessage({ id: 'BLOCK_NAME.titleRequest' })}`}</p>
                 </Col>
                 <Col xs={24} xl={8} className={styles.radioBtn}>
                     <RadioButtonBlock {...propsRadioBtn} />
@@ -82,4 +82,4 @@ const ConsoleRequest: React.FC = () => {
     )
 }
 export default connect(({ Real_Time_Table }: { Real_Time_Table: StateModel }) => ({
-}))(ConsoleRequest);
+}))(PAGE_NAME_UPPER_CAMEL_CASE);

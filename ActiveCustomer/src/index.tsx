@@ -3,7 +3,7 @@ import { connect, useDispatch } from 'umi';
 import ActiveCustomer from './pro-blocks/active-customer/src/index';
 import {StateModelCustomers} from './pro-blocks/active-customer/src/models/model'
 
-const ActiveCustomerTemplate: React.FC = () => {
+const PAGE_NAME_UPPER_CAMEL_CASE: React.FC = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -20,4 +20,4 @@ const ActiveCustomerTemplate: React.FC = () => {
     )
 }
 export default connect(({activeCustomer}:{activeCustomer: StateModelCustomers})=>({
-    }))(ActiveCustomerTemplate);
+    }))(PAGE_NAME_UPPER_CAMEL_CASE);

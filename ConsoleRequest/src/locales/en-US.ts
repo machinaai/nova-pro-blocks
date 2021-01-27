@@ -1,8 +1,8 @@
 export default {
-    'consoleRequest.titleRequest':'Awaiting requests',
-    'consoleRequest.RadioBtn-op1':'All',
-    'consoleRequest.RadioBtn-op2':'Documentation',
-    'consoleRequest.RadioBtn-op3':'Validation',
-    'consoleRequest.RadioBtn-op4':'Beneficiaries',
-    'consoleRequest.InputTxt':'Search by: number, name',  
+    'BLOCK_NAME.titleRequest':'Awaiting requests',
+    'BLOCK_NAME.RadioBtn-op1':'All',
+    'BLOCK_NAME.RadioBtn-op2':'Documentation',
+    'BLOCK_NAME.RadioBtn-op3':'Validation',
+    'BLOCK_NAME.RadioBtn-op4':'Beneficiaries',
+    'BLOCK_NAME.InputTxt':'Search by: number, name',  
    };

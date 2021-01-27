@@ -23,7 +23,7 @@ import download from './assets/ico-download.svg'
 import styles from './index.less';
 
 
-const Dashboard: React.FC = () => {
+const PAGE_NAME_UPPER_CAMEL_CASE: React.FC = () => {
     const intl = useIntl();
     const dispatch = useDispatch();
 
@@ -125,17 +125,17 @@ const Dashboard: React.FC = () => {
         dataOptions: [
             {
                 key: '1',
-                label: `${intl.formatMessage({ id: 'Dashboard.RadioBtn-op1' })}`,
+                label: `${intl.formatMessage({ id: 'BLOCK_NAME.RadioBtn-op1' })}`,
                 value: 'day'
             },
             {
                 key: '2',
-                label: `${intl.formatMessage({ id: 'Dashboard.RadioBtn-op2' })}`,
+                label: `${intl.formatMessage({ id: 'BLOCK_NAME.RadioBtn-op2' })}`,
                 value: 'month'
             },
             {
                 key: '3',
-                label: `${intl.formatMessage({ id: 'Dashboard.RadioBtn-op3' })}`,
+                label: `${intl.formatMessage({ id: 'BLOCK_NAME.RadioBtn-op3' })}`,
                 value: 'year'
             },
         ],
@@ -145,24 +145,24 @@ const Dashboard: React.FC = () => {
         dataOptions: [
             {
                 op: 1,
-                nameOp: `${intl.formatMessage({ id: 'Dashboard.Combo-op1' })}`,
+                nameOp: `${intl.formatMessage({ id: 'BLOCK_NAME.Combo-op1' })}`,
             },
             {
                 op: 2,
-                nameOp: `${intl.formatMessage({ id: 'Dashboard.Combo-op2' })}`,
+                nameOp: `${intl.formatMessage({ id: 'BLOCK_NAME.Combo-op2' })}`,
             },
             {
                 op: 3,
-                nameOp: `${intl.formatMessage({ id: 'Dashboard.Combo-op3' })}`,
+                nameOp: `${intl.formatMessage({ id: 'BLOCK_NAME.Combo-op3' })}`,
             },
             {
                 op: 4,
-                nameOp: `${intl.formatMessage({ id: 'Dashboard.Combo-op4' })}`,
+                nameOp: `${intl.formatMessage({ id: 'BLOCK_NAME.Combo-op4' })}`,
             },
 
         ],
         titleSelect: {
-            title: `${intl.formatMessage({ id: 'Dashboard.titleCombo' })}`,
+            title: `${intl.formatMessage({ id: 'BLOCK_NAME.titleCombo' })}`,
             font: 'Signika-Regular_Regular'
         }
     }
@@ -181,9 +181,9 @@ const Dashboard: React.FC = () => {
 
     const propsUsedDevices={
         legends:{
-            title: intl.formatMessage({ id: 'Dashboard.titleUsedDevices' }),
-            label1: intl.formatMessage({ id: 'Dashboard.label1UsedDevices' }),
-            label2: intl.formatMessage({ id: 'Dashboard.label2UsedDevices' }),
+            title: intl.formatMessage({ id: 'BLOCK_NAME.titleUsedDevices' }),
+            label1: intl.formatMessage({ id: 'BLOCK_NAME.label1UsedDevices' }),
+            label2: intl.formatMessage({ id: 'BLOCK_NAME.label2UsedDevices' }),
           },
         enviromentEndPoints: '/services/flowconsole/api/dashboard/_search/request-devices',
         imageCard:logoDispositivo
@@ -191,9 +191,9 @@ const Dashboard: React.FC = () => {
 
     const propsClosingPercentage={
         legends:{
-            title: intl.formatMessage({ id: 'Dashboard.closingPer_title' }),
-            label1: intl.formatMessage({ id: 'Dashboard.closingPer_label1' }),
-            label2: intl.formatMessage({ id: 'Dashboard.closingPer_label2' }),
+            title: intl.formatMessage({ id: 'BLOCK_NAME.closingPer_title' }),
+            label1: intl.formatMessage({ id: 'BLOCK_NAME.closingPer_label1' }),
+            label2: intl.formatMessage({ id: 'BLOCK_NAME.closingPer_label2' }),
           },
         enviromentEndPoints: '/services/flowconsole/api/dashboard/_search/request-close',
         imageCard:logoCierre,
@@ -205,7 +205,7 @@ const Dashboard: React.FC = () => {
             <Col className={styles.container} span={24}>
                 <Row gutter={{ xs: 16, sm: 16, md: 24, lg: 32 }}>
                     <Col xs={24} md={3} lg={3} >
-                        <p className={styles.title}>{intl.formatMessage({ id: 'Dashboard.titleRequest' })}</p>
+                        <p className={styles.title}>{intl.formatMessage({ id: 'BLOCK_NAME.titleRequest' })}</p>
                     </Col>
                     <Col xs={24} md={8} lg={6} className={styles.header}>
                         <RadioButtonBlock {...propsRadioRequest} />
@@ -219,7 +219,7 @@ const Dashboard: React.FC = () => {
                     <Col xs={24} lg={3} className={styles.header}>
                         <div className={styles.registry}>
                             <img src={download} alt="download ico" />
-                            <p>{intl.formatMessage({ id: 'Dashboard.titleReport' })}</p>
+                            <p>{intl.formatMessage({ id: 'BLOCK_NAME.titleReport' })}</p>
                         </div>
                     </Col>
                 </Row>
@@ -246,7 +246,7 @@ const Dashboard: React.FC = () => {
             <Col className={styles.container} span={24}>
                 <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
                     <Col xs={24} md={3} lg={3}>
-                        <p className={styles.title}>{intl.formatMessage({ id: 'Dashboard.titleFunel' })}</p>
+                        <p className={styles.title}>{intl.formatMessage({ id: 'BLOCK_NAME.titleFunel' })}</p>
                     </Col>
                     <Col xs={24} md={8} lg={6} className={styles.header}>
                         <RadioButtonBlock {...propsRadioFunel} />
@@ -260,7 +260,7 @@ const Dashboard: React.FC = () => {
                     <Col xs={24} lg={3} className={styles.header}>
                         <div className={styles.registry}>
                             <img src={download} alt="download ico" />
-                            <p>{intl.formatMessage({ id: 'Dashboard.titleReport' })}</p>
+                            <p>{intl.formatMessage({ id: 'BLOCK_NAME.titleReport' })}</p>
                         </div>
                     </Col>
                 </Row>
@@ -269,7 +269,7 @@ const Dashboard: React.FC = () => {
                 <RequestByStages />
             </Col>
             <Col xs={24} xl={8}>
-                <ConfigDashboardBlock title={intl.formatMessage({ id: 'Dashboard.configDashboard' })} />
+                <ConfigDashboardBlock title={intl.formatMessage({ id: 'BLOCK_NAME.configDashboard' })} />
             </Col>
         </Row>
     )
@@ -290,4 +290,4 @@ export default connect((
             Used_Channels: StateModelChannels;
             RequestByStages: StateModelStage
         }) => ({
-        }))(Dashboard);
+        }))(PAGE_NAME_UPPER_CAMEL_CASE);

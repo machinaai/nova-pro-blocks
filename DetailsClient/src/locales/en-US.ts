@@ -1,4 +1,4 @@
 export default {
-  'detailsClient.Title-tab1': 'Videoconference',
-  'detailsClient.Title-tab2': 'Parameter Settings',
+  'BLOCK_NAME.Title-tab1': 'Videoconference',
+  'BLOCK_NAME.Title-tab2': 'Parameter Settings',
 };
