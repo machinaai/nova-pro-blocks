@@ -1,5 +1,5 @@
 {
-  "name": "@nova-blocks/DetailsClient",
+  "name": "@nova-templates/details-client",
   "version": "0.0.1",
   "description": "Template for client details",
   "license": "ISC",

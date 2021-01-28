@@ -1,5 +1,5 @@
 {
-  "name": "@nova-blocks/ConsoleRequest",
+  "name": "@nova-templates/console-request",
   "version": "0.0.1",
   "description": "Template for ConsoleRequest",
   "license": "ISC",
