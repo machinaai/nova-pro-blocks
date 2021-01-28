@@ -399,6 +399,22 @@
         "pro-block"
       ],
       "previewUrl": "https://preview.pro.ant.design/"
+    },
+    {
+      "key": "UsedChannels",
+      "name": "UsedChannels",
+      "description": "Pro-block for most used channels",
+      "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/UsedChannels",
+      "path": "UsedChannels",
+      "features": [
+        "antd",
+        "i18n"
+      ],
+      "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/UsedChannels/snapshot.png",
+      "tags": [
+        "pro-block"
+      ],
+      "previewUrl": "https://preview.pro.ant.design/"
     }
   ]
 }
