@@ -1,7 +1,7 @@
 import { Effect, Reducer } from 'umi';
 import { ComponentsDefinition } from '../interfaces/componentsDefinition.interface';
 import { ErrorResponseEnum } from '../enums/error.enum';
-import { RequestStepsService } from '../services/request-steps';
+import { RequestService, RequestStepsService } from '../services/request-steps';
 
 export interface StateModelStage {
   dataSteps?: any;

@@ -32,22 +32,22 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC = () => {
         dataOptions: [
             {
                 key: '1',
-                label: `${intl.formatMessage({ id: 'BLOCK_NAME.RadioBtn-op1' })}`,
+                label: `${intl.formatMessage({ id: 'BLOCK_NAME.RadioBtnOp1' })}`,
                 value: 'all'
             },
             {
                 key: '2',
-                label: `${intl.formatMessage({ id: 'BLOCK_NAME.RadioBtn-op2' })}`,
+                label: `${intl.formatMessage({ id: 'BLOCK_NAME.RadioBtnOp2' })}`,
                 value: 'documentation'
             },
             {
                 key: '3',
-                label: `${intl.formatMessage({ id: 'BLOCK_NAME.RadioBtn-op3' })}`,
+                label: `${intl.formatMessage({ id: 'BLOCK_NAME.RadioBtnOp3' })}`,
                 value: 'validation'
             },
             {
                 key: '4',
-                label: `${intl.formatMessage({ id: 'BLOCK_NAME.RadioBtn-op4' })}`,
+                label: `${intl.formatMessage({ id: 'BLOCK_NAME.RadioBtnOp4' })}`,
                 value: 'benefit'
             },
         ],

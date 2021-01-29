@@ -59,7 +59,7 @@ const CarouselBlock: React.FC<PropsBlock> = ({ data = dataFixture, action=action
   };
 
   return (
-    <div style={{height:70}}> 
+    <> 
     <Carousel
       arrows
       dots={false}
@@ -75,7 +75,7 @@ const CarouselBlock: React.FC<PropsBlock> = ({ data = dataFixture, action=action
         </div>
       ))}
     </Carousel>
-    </div>
+    </>
   )
 }
 export default CarouselBlock;
