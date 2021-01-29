@@ -29,55 +29,38 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC<PAGE_NAME_UPPER_CAMEL_CASEProps> = ({
   /**
   * State to create object request INE
   */
-  const [objectServiceIne, createObjIne] = useState<any>({ineFront:{}, ineBack:{}, inePdf:{}});
+ const [objectServiceFiles, createObjFiles] = useState<any>({frontImage:'', backImage:'', phone: '', inePdf:''});
   /**
   * State to create object request Adress
   */
- const [objectServiceAdress, createObjAdress] = useState<any>({imageAdress: {} , pdfAdress: {}});
+ const [objectServiceAdress, createObjAdress] = useState<any>({imageAdress: '' , pdfAdress: '', phone: ''});
 
   useEffect(() => {
     if(dataIneComponent && dataIneComponent.base64InePdf) {
-     createObjIne({ineFront:{}, ineBack:{}, inePdf:{
-      type: 'type',
-      phone: phoneNumber,
-      image: dataIneComponent.base64InePdf,
-     }})
+      createObjFiles({frontImage:'', backImage:'', inePdf:dataIneComponent.base64InePdf,phone: phoneNumber})
     } else if((dataIneComponent && dataIneComponent.base64IneFront) && (dataIneComponent && dataIneComponent.base64IneBack)) {
-      createObjIne({...objectServiceIne, 
-        ineFront:{
-        type: 'type',
-        phone: phoneNumber,
-        image: dataIneComponent.base64IneFront,
-        },
-        ineBack:{
-          type: 'type',
-          phone: phoneNumber,
-          image: dataIneComponent.base64IneBack,
-         }
-      })
+      createObjFiles({...objectServiceFiles, 
+        frontImage: dataIneComponent.base64IneFront,
+        backImage: dataIneComponent.base64IneBack,
+        phone: phoneNumber
+        }
+      )
     } else {
-      createObjIne({ineFront:{}, ineBack:{}, inePdf:{}});
+      createObjFiles({frontImage:'', backImage:'', inePdf:'', phone:''});
       setError(false);
     }
   }, [dataIneComponent]);
 
   useEffect(() => {
     if(dataAdressComponent && dataAdressComponent.base64ImagePdf) {
-      createObjAdress({imageAdress:{}, pdfAdress:{
-      type: 'type',
-      phone: phoneNumber,
-      image: dataAdressComponent.base64ImagePdf,
-     }})
+      createObjAdress({imageAdress:'', pdfAdress: dataAdressComponent.base64ImagePdf, phone: phoneNumber})
     } else if(dataAdressComponent && dataAdressComponent.base64ImageAdress) {
-      createObjAdress({pdfAdress:{}, 
-        imageAdress:{
-        type: 'type',
-        phone: phoneNumber,
-        image: dataAdressComponent.base64ImageAdress,
-        },
+      createObjAdress({pdfAdress:'', 
+        imageAdress:dataAdressComponent.base64ImageAdress,
+        phone: phoneNumber
       }) 
     } else {
-      createObjAdress({imageAdress:{}, pdfAdress:{}});
+      createObjAdress({imageAdress:'', pdfAdress:'', phone: ''});
       setError(false);
     }
   }, [dataAdressComponent]);
@@ -86,20 +69,14 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC<PAGE_NAME_UPPER_CAMEL_CASEProps> = ({
   * Function to dispatch request model.
   */
   const action = () => {
-    let typePdf = objectServiceIne.inePdf.image ? true : false;
-    if(typeFlowProp === TypeFlow.INE && typePdf) {
+    //let typePdf = objectServiceIne.inePdf.image ? true : false;
+    if(typeFlowProp === TypeFlow.INE) {
       dispatch({
-        type: 'BLOCK_NAME_CAMEL_CASE/pdfData',
-        payload: objectServiceIne.inePdf,
-      });
-    } else if(typeFlowProp === TypeFlow.INE && !typePdf) {
-      let {ineFront, ineBack} = objectServiceIne;
-      dispatch({
-        type: 'BLOCK_NAME_CAMEL_CASE/ine',
-        payload: {ineFront, ineBack, onSetUserData},
+        type: 'BLOCK_NAME_CAMEL_CASE/uploadFileEffect',
+        payload:objectServiceFiles,
       });
     }
-    // }else if (typeFlowProp === TypeFlow.INE) {
+    // }else if (typeFlowProp === TypeFlow.Adress) {
     //     console.log('peticiones a adress');
     //   }
     // }
@@ -165,3 +142,4 @@ export default connect(({ BLOCK_NAME_CAMEL_CASE  }: { BLOCK_NAME_CAMEL_CASE : St
   dataUpload: BLOCK_NAME_CAMEL_CASE .dataUpload,
   status: BLOCK_NAME_CAMEL_CASE .status,
 }))(PAGE_NAME_UPPER_CAMEL_CASE);
+
