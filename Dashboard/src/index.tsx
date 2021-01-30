@@ -61,7 +61,9 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC = () => {
 
     const getValComboFunel = (val: any) => {
         if (val === 'Todos' || val === 'All') {
-            setValCombo('')
+            setValComboFunel('')
+        } else if (val === 'Mobile') {
+            setValComboFunel('movil')
         } else {
             setValComboFunel(val.toLowerCase())
         }
@@ -109,11 +111,11 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC = () => {
 
 
     useEffect(() => {
-        const { startDate, endDate } = dateRequest;
+        const { startDate, endDate } = dateFunel;
         dispatch({
             type: 'RequestByStages/setDateRequest',
             payload: {
-                userType: valCombo,
+                userType: valComboFunel,
                 startDate,
                 endDate
             },
@@ -178,25 +180,25 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC = () => {
     const propsRadioFunel = { ...propsRadio, action: getValRadioFunel }
     const propsComboFunel = { ...propsCombo, action: getValComboFunel }
 
-    const propsUsedDevices={
-        legends:{
+    const propsUsedDevices = {
+        legends: {
             title: intl.formatMessage({ id: 'BLOCK_NAME.titleUsedDevices' }),
             label1: intl.formatMessage({ id: 'BLOCK_NAME.label1UsedDevices' }),
             label2: intl.formatMessage({ id: 'BLOCK_NAME.label2UsedDevices' }),
-          },
+        },
         enviromentEndPoints: '/services/flowconsole/api/dashboard/_search/request-devices',
-        imageCard:logoDispositivo
+        imageCard: logoDispositivo
     }
 
-    const propsClosingPercentage={
-        legends:{
+    const propsClosingPercentage = {
+        legends: {
             title: intl.formatMessage({ id: 'BLOCK_NAME.closingPer_title' }),
             label1: intl.formatMessage({ id: 'BLOCK_NAME.closingPer_label1' }),
             label2: intl.formatMessage({ id: 'BLOCK_NAME.closingPer_label2' }),
-          },
+        },
         enviromentEndPoints: '/services/flowconsole/api/dashboard/_search/request-close',
-        imageCard:logoCierre,
-        percentage:true
+        imageCard: logoCierre,
+        percentage: true
     }
 
     return (
@@ -226,14 +228,14 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC = () => {
             <Col span={24} className={styles.container}>
                 <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
                     <Col xs={24} xl={8}>
-                        <TotalRequest/>
+                        <TotalRequest />
                     </Col>
                     <Col xs={24} xl={8}>
                         <div className={styles.percentage}>
-                            <ConsoleUsedDevices {...propsClosingPercentage}/>
+                            <ConsoleUsedDevices {...propsClosingPercentage} />
                         </div>
                         <div>
-                            <ConsoleUsedDevices {...propsUsedDevices}/>
+                            <ConsoleUsedDevices {...propsUsedDevices} />
                         </div>
                     </Col>
                     <Col xs={24} xl={8}>
