@@ -12,7 +12,6 @@ import ConsoleUsedDevices from './pro-blocks/used-devices/src/index';
 import { StateModel } from './pro-blocks/total-request/src/models/model';
 import { StateModelChannels } from './pro-blocks/used-channels/src/models/model';
 import { StateModelStage } from './pro-blocks/request-by-stages/src/models/model';
-import { StateModelPercentage } from './pro-blocks/ConsoleClosingPercentage/src/models/model';
 import { StateModelDevices } from './pro-blocks/used-devices/src/models/model';
 import logoDispositivo from './assets/ico-dispositivo.svg';
 import logoCierre from './assets/ico-cierre.svg';
@@ -89,7 +88,7 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC = () => {
         });
 
         dispatch({
-            type: 'Used_Devices/setDateRequest',
+            type: 'usedDevices/setDateRequest',
             payload: {
                 userType: valCombo,
                 startDate,
@@ -276,16 +275,14 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC = () => {
 export default connect((
     {
         totalRequestModel,
-        Closing_Percentage,
-        Used_Devices,
+        usedDevices,
         Used_Channels,
         RequestByStages
     }
         :
         {
             totalRequestModel: StateModel;
-            Closing_Percentage: StateModelPercentage;
-            Used_Devices: StateModelDevices;
+            usedDevices: StateModelDevices;
             Used_Channels: StateModelChannels;
             RequestByStages: StateModelStage
         }) => ({
