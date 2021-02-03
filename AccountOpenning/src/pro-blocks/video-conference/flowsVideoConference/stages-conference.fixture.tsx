@@ -1,6 +1,6 @@
 import { StageInterface } from '../interfaces/stage.interface';
-import scanner from '../assets/scan.png';
 import faceTraker from '../assets/FaceTracker_mobile.svg';
+import { assetsImages } from '../assets/assets.fixture';
 
 /**
  * Fixture Stages conference N4 video
@@ -26,14 +26,14 @@ export const StagesN4Video: StageInterface[] = [
     id: 2,
     legendStage: 'Acerca tu INE del lado frontal',
     name: 'idsFront',
-    shapeStage: scanner,
+    shapeStage: assetsImages.Scan,
     flipCamera: true
   },
   {
     id: 3,
     legendStage: 'Acerca tu INE del lado reverso',
     name: 'idsBack',
-    shapeStage: scanner,
+    shapeStage: assetsImages.Scan,
     flipCamera: true
   },
   {

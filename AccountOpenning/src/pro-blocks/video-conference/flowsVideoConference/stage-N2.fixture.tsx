@@ -1,5 +1,5 @@
 import { StageInterface } from '../interfaces/stage.interface';
-import scanner from '../assets/scan.png';
+import { assetsImages } from '../assets/assets.fixture';
 
 /**
  * Fixture Stages conference N2 video
@@ -11,14 +11,14 @@ export const StagesN2Video: StageInterface[] = [
     id: 0,
     legendStage: 'Acerca tu INE del lado frontal',
     name: 'idsFront',
-    shapeStage: scanner,
+    shapeStage: assetsImages.Scan,
     flipCamera: true
   },
   {
     id: 1,
     legendStage: 'Acerca tu INE del lado reverso',
     name: 'idsBack',
-    shapeStage: scanner,
+    shapeStage: assetsImages.Scan,
     flipCamera: true
   }
 ];

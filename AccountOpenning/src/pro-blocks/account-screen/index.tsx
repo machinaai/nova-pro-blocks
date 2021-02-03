@@ -1,13 +1,13 @@
 import React from "react";
 import { useDispatch, connect} from "umi";
-import { AccountScreen } from './components/AccountScreen';
+import AccountScreenComponent from './components/AccountScreen';
 import { dataAccount, dataFonts } from './fixture/dataFixture';
 import { Fonts, PropsAccount } from './interfaces/account-screen';
 import { OptionEnum } from "./enums/option.enum";
 import { StateModel } from './models/model';
 import styles from './index.less';
 
-interface PAGE_NAME_UPPER_CAMEL_CASEProps {
+interface AccountScreenProps {
   logoDesk?: string;
   logoMob?: string;
   iconCircle?: string;
@@ -29,7 +29,7 @@ interface PAGE_NAME_UPPER_CAMEL_CASEProps {
  * Pro block AccountScreen
  * @param props 
  */
-const  PAGE_NAME_UPPER_CAMEL_CASE: React.FC<PAGE_NAME_UPPER_CAMEL_CASEProps> = (props) => {
+const  AccountScreen: React.FC<AccountScreenProps> = (props) => {
   const {
     logoDesk = dataAccount.iconDesk,
     logoMob = dataAccount.iconMob,
@@ -84,7 +84,7 @@ const  PAGE_NAME_UPPER_CAMEL_CASE: React.FC<PAGE_NAME_UPPER_CAMEL_CASEProps> = (
   }
   return (
     <>
-    <AccountScreen {...propAccount} />
+    <AccountScreenComponent {...propAccount} />
     </>
   );
 };
@@ -94,4 +94,4 @@ export default connect(({ accountScreen }: { accountScreen: StateModel }) => ({
   nameUser: accountScreen.nameUser,
   option: accountScreen.option,
   flowComplete: accountScreen.flowComplete,
-}))( PAGE_NAME_UPPER_CAMEL_CASE)
+}))( AccountScreen)

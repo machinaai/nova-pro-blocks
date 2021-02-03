@@ -2,8 +2,8 @@ import React from 'react';
 import styles from './style.less';
 
 // assets
-import robot from './assets/Robot.gif';
 // import Sound from './assets/Camera3.mp3';
+import { assetsImages } from '../../assets/assets.fixture';
 
 interface VisualIndicatorProps {
   prefixLogo?: any;
@@ -17,7 +17,7 @@ interface VisualIndicatorProps {
 }
 
 const VisualIndicator: React.FC<VisualIndicatorProps> = ({
-  prefixLogo = robot,
+  prefixLogo = assetsImages.Robot,
   colorPrimary = 'red',
   legend,
   colorSucess = '#8bcc00',
@@ -44,7 +44,7 @@ const VisualIndicator: React.FC<VisualIndicatorProps> = ({
       {playSound && success && (
        <>
         <audio autoPlay >
-          <track kind="captions" src="./Camera3.mp3" />
+          <track kind="captions" src={assetsImages.AudioCamera} />
         </audio>
        </>
       )}

@@ -1,11 +1,24 @@
+import type { ResponseDataService } from "../interfaces";
+
 /**
  * Tranform data by manually component
  *
  * @param {*} data
- * @return {*} 
+ * @return {*}
  */
-export const transformData = (data: any) => {
-  const { address, brthDate, curp, electorID, fatherName, gender, motherName, name } = data;
+export const transformData = (data: ResponseDataService) => {
+  const {
+    address,
+    birth_date,
+    curp,
+    id,
+    gender,
+    name,
+    last_name,
+    second_last_name,
+    rectifiedImage,
+    register_date,
+  } = data;
 
   if (data) {
     return {
@@ -14,11 +27,13 @@ export const transformData = (data: any) => {
         birthplace: 'Mexico',
         gender,
         CURP: curp,
-        datebirth: brthDate,
-        idIne: electorID,
+        datebirth: birth_date,
+        idIne: id,
+        rectifiedImage,
+        register_date
       },
-      customerName: { name: `${name} ${fatherName} ${motherName}` },
+      customerName: { name: `${name} ${last_name} ${second_last_name}` },
     };
   }
-  return;
+  
 };

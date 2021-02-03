@@ -29,40 +29,39 @@ const UpdateAddress: React.FC<Props> = ({
     const blockVal = (/android/i.test(userAgent) || (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream)) ? true : false
 
     const options = [
-        { option: `${intl.formatMessage({ id: 'BLOCK_NAME.op1' })} (Telmex, Axtel, Izzi)` },
-        { option: intl.formatMessage({ id: 'BLOCK_NAME.op2' }) },
-        { option: intl.formatMessage({ id: 'BLOCK_NAME.op3' }) },
-        { option: intl.formatMessage({ id: 'BLOCK_NAME.op4' }) }
+        { option: `${intl.formatMessage({ id: 'account-openning.op1' })} (Telmex, Axtel, Izzi)` },
+        { option: intl.formatMessage({ id: 'account-openning.op2' }) },
+        { option: intl.formatMessage({ id: 'account-openning.op3' }) },
+        { option: intl.formatMessage({ id: 'account-openning.op4' }) }
     ]
     return (
         <div className={styles.container}>
-            <p className={styles.header} style={{ fontFamily: font.fontHeader }}>{intl.formatMessage({ id: 'BLOCK_NAME.headerText' })}</p>
-            <h2 style={{ fontFamily: `${font.fontTitle}` }}>{intl.formatMessage({ id: 'BLOCK_NAME.title' })}</h2>
-            <p className={styles.subtitle} style={{ fontFamily: `${font.fontSubtitle}` }}>{intl.formatMessage({ id: 'BLOCK_NAME.subtitle' })}</p>
+            <p className={styles.header} style={{ fontFamily: font.fontHeader }}>{intl.formatMessage({ id: 'account-openning.headerText' })}</p>
+            <h2 style={{ fontFamily: `${font.fontTitle}` }}>{intl.formatMessage({ id: 'account-openning.title' })}</h2>
+            <p className={styles.subtitle} style={{ fontFamily: `${font.fontSubtitle}` }}>{intl.formatMessage({ id: 'account-openning.subtitle' })}</p>
             <div className={styles.body}>
-                <p className={styles.title} style={{ fontFamily: font.fontBody }}>{intl.formatMessage({ id: 'BLOCK_NAME.title_options' })}</p>
+                <p className={styles.title} style={{ fontFamily: font.fontBody }}>{intl.formatMessage({ id: 'account-openning.title_options' })}</p>
                 <ul style={{ fontFamily: font.fontB_ul }}>
                     {options.map(op => (
                         <li key={op.option} >{op.option}</li>
                     ))}
                 </ul>
-                <p className={styles.subtitle} style={{ fontFamily: font.fontBody }}>{intl.formatMessage({ id: 'BLOCK_NAME.subtitle_options' })}</p>
+                <p className={styles.subtitle} style={{ fontFamily: font.fontBody }}>{intl.formatMessage({ id: 'account-openning.subtitle_options' })}</p>
                 <Button
                     type="primary"
                     size='large'
                     shape="round"
                     className={styles.btnContinue}
                     onClick={onValidateFlow} block={blockVal}>
-                    {intl.formatMessage({ id: 'BLOCK_NAME.capture_button' })}
+                    {intl.formatMessage({ id: 'account-openning.capture_button' })}
                 </Button>
             </div>
             <div className={styles.footerContent}>
-                <p className={styles.title} style={{ fontFamily: font.fontFooter }}>{intl.formatMessage({ id: 'BLOCK_NAME.footerTitle' })}</p>
-                <p className={styles.subtitle} style={{ fontFamily: font.fontFooter }}>{intl.formatMessage({ id: 'BLOCK_NAME.footerSubtitle' })}</p>
-                <Button className={styles.buttons} type='text' size='large' style={{ color: colorBtn }} onClick={actionBtn} block={blockVal}>{intl.formatMessage({ id: 'BLOCK_NAME.capture_laterBtn' })}</Button>
+                <p className={styles.title} style={{ fontFamily: font.fontFooter }}>{intl.formatMessage({ id: 'account-openning.footerTitle' })}</p>
+                <p className={styles.subtitle} style={{ fontFamily: font.fontFooter }}>{intl.formatMessage({ id: 'account-openning.footerSubtitle' })}</p>
+                <Button className={styles.buttons} type='text' size='large' style={{ color: colorBtn }} onClick={actionBtn} block={blockVal}>{intl.formatMessage({ id: 'account-openning.capture_laterBtn' })}</Button>
             </div>
         </div>
     )
 }
-
 export default UpdateAddress;
