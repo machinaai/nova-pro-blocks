@@ -2,7 +2,7 @@ import { TypeFlow } from '../block/upload-block/enum/emun';
 
 export interface PAGE_NAME_UPPER_CAMEL_CASEProps {
     typeFlowProp: TypeFlow;
-    phoneNumber: string | number;
+    phoneUser: string | number;
     onComplete?: Function;
     onSetUserData?: Function;
     status?: any;
