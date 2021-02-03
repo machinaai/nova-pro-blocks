@@ -7,7 +7,7 @@ import { useWindowSize } from '../../hooks/useWindowSize';
 import { PropsAccount } from '../../interfaces/account-screen';
 import styles from './index.less';
 
-export const AccountScreen: React.FC<PropsAccount> = ({
+const AccountScreen: React.FC<PropsAccount> = ({
   nameUser,
   numberCard,
   actionBtn,
@@ -149,3 +149,5 @@ export const AccountScreen: React.FC<PropsAccount> = ({
     </div>
   );
 };
+
+export default AccountScreen;

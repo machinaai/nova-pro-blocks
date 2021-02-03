@@ -9,7 +9,7 @@ import { UploadFixture } from './fixtures/fixture';
 import { Alert } from 'antd';
 
 const UploadFiles: React.FC<UploadFilesProps> = ({
-  phoneNumber= UploadFixture.phoneNumber,
+  phoneUser= UploadFixture.phoneNumber,
   typeFlowProp = UploadFixture.typeFlow,
   onComplete,
   onSetUserData,
@@ -29,55 +29,44 @@ const UploadFiles: React.FC<UploadFilesProps> = ({
   /**
   * State to create object request INE
   */
-  const [objectServiceIne, createObjIne] = useState<any>({ineFront:{}, ineBack:{}, inePdf:{}});
+ const [objectServiceFiles, createObjFiles] = useState<any>({frontImage:'', backImage:'', phone: '', inePdf:''});
   /**
   * State to create object request Adress
   */
- const [objectServiceAdress, createObjAdress] = useState<any>({imageAdress: {} , pdfAdress: {}});
+ const [objectServiceAdress, createObjAdress] = useState<any>({imageAdress: '' , pdfAdress: '', phone: ''});
 
-  useEffect(() => {
-    if(dataIneComponent && dataIneComponent.base64InePdf) {
-     createObjIne({ineFront:{}, ineBack:{}, inePdf:{
-      type: 'type',
-      phone: phoneNumber,
-      image: dataIneComponent.base64InePdf,
-     }})
-    } else if((dataIneComponent && dataIneComponent.base64IneFront) && (dataIneComponent && dataIneComponent.base64IneBack)) {
-      createObjIne({...objectServiceIne, 
-        ineFront:{
-        type: 'type',
-        phone: phoneNumber,
-        image: dataIneComponent.base64IneFront,
-        },
-        ineBack:{
-          type: 'type',
-          phone: phoneNumber,
-          image: dataIneComponent.base64IneBack,
-         }
-      })
-    } else {
-      createObjIne({ineFront:{}, ineBack:{}, inePdf:{}});
-      setError(false);
-    }
-  }, [dataIneComponent]);
+ useEffect(() => {
+  if(dataIneComponent && dataIneComponent.base64InePdf) {
+    createObjFiles({frontImage:'', backImage:'', inePdf:dataIneComponent.base64InePdf,phone: phoneUser})
+  } else if((dataIneComponent && dataIneComponent.base64IneFront) && (dataIneComponent && dataIneComponent.base64IneBack)) {
+    createObjFiles({...objectServiceFiles, 
+      frontImage: dataIneComponent.base64IneFront,
+      backImage: dataIneComponent.base64IneBack,
+      phone: phoneUser
+      }
+    )
+  } else {
+    createObjFiles({frontImage:'', backImage:'', inePdf:'', phone:''});
+    setError(false);
+  }
+}, [dataIneComponent]);
+
+useEffect(() => {
+  console.log(objectServiceFiles);
+  
+},[objectServiceFiles])
 
   useEffect(() => {
     if(dataAdressComponent && dataAdressComponent.base64ImagePdf) {
-      createObjAdress({imageAdress:{}, pdfAdress:{
-      type: 'type',
-      phone: phoneNumber,
-      image: dataAdressComponent.base64ImagePdf,
-     }})
+      createObjAdress({imageAdress:'', pdfAdress: dataAdressComponent.base64ImagePdf, phone: phoneUser,
+     })
     } else if(dataAdressComponent && dataAdressComponent.base64ImageAdress) {
-      createObjAdress({pdfAdress:{}, 
-        imageAdress:{
-        type: 'type',
-        phone: phoneNumber,
-        image: dataAdressComponent.base64ImageAdress,
-        },
+      createObjAdress({pdfAdress:'', 
+        imageAdress:dataAdressComponent.base64ImageAdress,
+        phone: phoneUser
       }) 
     } else {
-      createObjAdress({imageAdress:{}, pdfAdress:{}});
+      createObjAdress({imageAdress:'', pdfAdress:'', phone: ''});
       setError(false);
     }
   }, [dataAdressComponent]);
@@ -86,20 +75,14 @@ const UploadFiles: React.FC<UploadFilesProps> = ({
   * Function to dispatch request model.
   */
   const action = () => {
-    let typePdf = objectServiceIne.inePdf.image ? true : false;
-    if(typeFlowProp === TypeFlow.INE && typePdf) {
+    // let typePdf = objectServiceFiles.inePdf.image ? true : false;
+    if(typeFlowProp === TypeFlow.INE) {
       dispatch({
-        type: 'requestModel/pdfData',
-        payload: objectServiceIne.inePdf,
-      });
-    } else if(typeFlowProp === TypeFlow.INE && !typePdf) {
-      let {ineFront, ineBack} = objectServiceIne;
-      dispatch({
-        type: 'requestModel/ine',
-        payload: {ineFront, ineBack, onSetUserData},
+        type: 'requestModel/uploadFileEffect',
+        payload:objectServiceFiles,
       });
     }
-    // }else if (typeFlowProp === TypeFlow.INE) {
+    // }else if (typeFlowProp === TypeFlow.Adress {
     //     console.log('peticiones a adress');
     //   }
     // }
@@ -131,6 +114,10 @@ const UploadFiles: React.FC<UploadFilesProps> = ({
       dispatch({
         type: 'requestModel/setStatus',
         payload: undefined,
+      });
+      dispatch({
+        type: 'requestModel/setDataUpload',
+        payload: {},
       });
     }
   }, []);

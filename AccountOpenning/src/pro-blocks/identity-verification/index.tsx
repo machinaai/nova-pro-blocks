@@ -11,8 +11,7 @@ import { StateModel } from './models/model';
 // helper
 import { dataUserTransform } from './helpers/dataUserTransform.helper';
 import { transformData } from './helpers/transformData.helper';
-import { transformDataVideoConference } from './helpers/transformDataVideo.helper';
-//fixtures 
+// fixtures 
 import { stagesFixture } from './fixtures/stages.fixture';
 
 /**
@@ -153,7 +152,7 @@ const IdentityVerification: React.FC<IdentityVerificationProps> = ({
       case FlowN2N4Enum.N4Video:
         dispatch({
           type: 'identityVerification/setUserData',
-          payload: { informationObject: transformDataVideoConference(event) },
+          payload: { informationObject: transformData(event) },
         });
         break;
 
@@ -185,7 +184,7 @@ const generateFlow = (name: FlowN2N4Enum | undefined) => {
       const component = (name && stepsViews[name]) || 'p'; 
       switch (name) {
         case FlowN2N4Enum.N4Video:
-          return React.createElement(stepsViews.VideoConference, {
+          return React.createElement(stepsViews['VideoConference'], {
             onComplete: finishSubFlow,
             onTypeFlow: typeFlow,
             typeFlow: 'N4Video',
@@ -193,7 +192,7 @@ const generateFlow = (name: FlowN2N4Enum | undefined) => {
             phoneUser,
           });
         case FlowN2N4Enum.N2Scan:
-          return React.createElement(stepsViews.VideoConference, {
+          return React.createElement(stepsViews['VideoConference'], {
             onComplete: finishSubFlow,
             onTypeFlow: typeFlow,
             typeFlow: 'N2Video',
