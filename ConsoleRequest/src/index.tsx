@@ -22,7 +22,7 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC = () => {
 
     useEffect(() => {
         dispatch({
-            type: 'Real_Time_Table/setRoutePath',
+            type: 'realTimeTable/setRoutePath',
             payload: '/client-detail'
         });
     }, [valRadioBtn, valInput]);
@@ -81,5 +81,5 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC = () => {
         </div>
     )
 }
-export default connect(({ Real_Time_Table }: { Real_Time_Table: StateModel }) => ({
+export default connect(({ realTimeTable }: { realTimeTable: StateModel }) => ({
 }))(PAGE_NAME_UPPER_CAMEL_CASE);
