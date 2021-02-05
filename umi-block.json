@@ -33,6 +33,70 @@
       "previewUrl": "https://preview.pro.ant.design/"
     },
     {
+      "key": "ActiveCustomers",
+      "name": "ActiveCustomers",
+      "description": "Template for ActiveCustomer",
+      "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/ActiveCustomers",
+      "path": "ActiveCustomers",
+      "features": [
+        "antd",
+        "i18n"
+      ],
+      "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/ActiveCustomers/snapshot.png",
+      "tags": [
+        "template"
+      ],
+      "previewUrl": "https://preview.pro.ant.design/"
+    },
+    {
+      "key": "ConsoleRequest",
+      "name": "ConsoleRequest",
+      "description": "Template for ConsoleRequest",
+      "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/ConsoleRequest",
+      "path": "ConsoleRequest",
+      "features": [
+        "antd",
+        "i18n"
+      ],
+      "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/ConsoleRequest/snapshot.png",
+      "tags": [
+        "template"
+      ],
+      "previewUrl": "https://preview.pro.ant.design/"
+    },
+    {
+      "key": "Dashboard",
+      "name": "Dashboard",
+      "description": "Template for Dashboard",
+      "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/Dashboard",
+      "path": "Dashboard",
+      "features": [
+        "antd",
+        "i18n"
+      ],
+      "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/Dashboard/snapshot.png",
+      "tags": [
+        "template"
+      ],
+      "previewUrl": "https://preview.pro.ant.design/"
+    },
+    {
+      "key": "DetailsClient",
+      "name": "DetailsClient",
+      "description": "Template for client details",
+      "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/DetailsClient",
+      "path": "DetailsClient",
+      "features": [
+        "antd",
+        "i18n"
+      ],
+      "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/DetailsClient/snapshot.png",
+      "tags": [
+        "template"
+      ],
+      "previewUrl": "https://preview.pro.ant.design/"
+    },
+    {
       "key": "EditorFlow",
       "name": "EditorFlow",
       "description": "Un diagrama de flujo para representar el flujo de pantallas",
