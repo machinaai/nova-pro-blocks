@@ -4,6 +4,7 @@ export interface PieChartProps {
     height?: number;
     indexVal?: number;
     setVal?:Function | any
+    colors?: any;
 }
 
 export interface DataChart {
