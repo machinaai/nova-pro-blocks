@@ -258,7 +258,7 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC = () => {
                     <Col xs={24} md={24} lg={6} className={styles.header}>
                         <RangePickerBlock {...propsDateFunel} />
                     </Col>
-                    <Col xs={24} md={24} className={styles.header}>
+                    <Col xs={24} md={24} lg={6} className={styles.header}>
                         <SelectOptionsBlock {...propsComboFunel} />
                     </Col>
                     <Col xs={24} md={24} lg={3} className={styles.header}>
