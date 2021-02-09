@@ -228,18 +228,22 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC = () => {
             <Col span={24} className={styles.container}>
                 <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
                     <Col xs={24} xl={8}>
-                        <TotalRequest />
+                        <div className={styles.marginCard}>
+                            <TotalRequest />
+                        </div>
                     </Col>
                     <Col xs={24} xl={8}>
                         <div className={styles.percentage}>
                             <ConsoleUsedDevices {...propsClosingPercentage} />
                         </div>
-                        <div>
+                        <div className={styles.marginCard}>
                             <ConsoleUsedDevices {...propsUsedDevices} />
                         </div>
                     </Col>
                     <Col xs={24} xl={8}>
-                        <ConsoleUsedChannels />
+                        <div className={styles.marginCard}>
+                            <ConsoleUsedChannels />
+                        </div>
                     </Col>
                 </Row>
             </Col>
@@ -266,10 +270,14 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC = () => {
                 </Row>
             </Col>
             <Col span={24} className={styles.container}>
-                <RequestByStages />
+                <div className={styles.marginCard}>
+                    <RequestByStages />
+                </div>
             </Col>
-            <Col xs={24} xl={8}>
-                <ConfigDashboardBlock title={intl.formatMessage({ id: 'BLOCK_NAME.configDashboard' })} />
+            <Col xs={24} xl={8} className={styles.container}>
+                <div className={styles.marginCard}>
+                    <ConfigDashboardBlock title={intl.formatMessage({ id: 'dashboard.configDashboard' })} />
+                </div>
             </Col>
         </Row>
     )
