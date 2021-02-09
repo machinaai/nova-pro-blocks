@@ -24,13 +24,17 @@ const RadioButtonBlock: React.FC<SelectOptionsProps> = ({ dataOptions, action, f
   return (
     <Radio.Group
       buttonStyle="solid"
-      options={dataOptions}
       onChange={radioChange}
       value={radio}
-      optionType="button"
-      style={{fontFamily:`${fontOp}`,width:'100%'}}
-      size="middle"
-    />
+      style={{fontFamily:`${fontOp}`,width:'100%', display: 'flex'}}
+      size="medium"
+    >
+      {dataOptions.map((e:any)=> {
+        return (
+          <Radio.Button style={{fontFamily:`${fontOp}`,width:'100%', textAlign: "center"}} value={e.value} key={e.key}>{e.label}</Radio.Button>
+        )
+      })}
+      </Radio.Group>
   );
 };
 

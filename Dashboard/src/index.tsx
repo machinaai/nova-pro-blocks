@@ -204,20 +204,20 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC = () => {
     return (
         <Row >
             <Col className={styles.container} span={24}>
-                <Row gutter={{ xs: 16, sm: 16, md: 24, lg: 32 }}>
-                    <Col xs={24} md={3} lg={3} >
+            <Row gutter={[{xs: 8, sm: 16, md: 24, lg: 32 },16]}>
+                    <Col xs={24} md={24} lg={3} >
                         <p className={styles.title}>{intl.formatMessage({ id: 'BLOCK_NAME.titleRequest' })}</p>
                     </Col>
-                    <Col xs={24} md={8} lg={6} className={styles.header}>
+                    <Col xs={24} md={24} lg={6} className={styles.header}>
                         <RadioButtonBlock {...propsRadioRequest} />
                     </Col>
-                    <Col xs={24} md={6} lg={6} className={styles.header}>
+                    <Col xs={24} md={24} lg={6} className={styles.header}>
                         <RangePickerBlock {...propsDateReq} />
                     </Col>
-                    <Col xs={24} lg={6} className={styles.header}>
+                    <Col xs={24} md={24} lg={6} className={styles.header}>
                         <SelectOptionsBlock {...propsComboRequest} />
                     </Col>
-                    <Col xs={24} lg={3} className={styles.header}>
+                    <Col xs={24} md={24} lg={3} className={styles.header}>
                         <div className={styles.registry}>
                             <img src={download} alt="download ico" />
                             <p>{intl.formatMessage({ id: 'BLOCK_NAME.titleReport' })}</p>
@@ -226,38 +226,42 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC = () => {
                 </Row>
             </Col>
             <Col span={24} className={styles.container}>
-                <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
+                <Row gutter={[{xs: 8, sm: 16, md: 24, lg: 32 },16]}>
                     <Col xs={24} xl={8}>
-                        <TotalRequest />
+                        <div className={styles.marginCard}>
+                            <TotalRequest />
+                        </div>
                     </Col>
                     <Col xs={24} xl={8}>
                         <div className={styles.percentage}>
                             <ConsoleUsedDevices {...propsClosingPercentage} />
                         </div>
-                        <div>
+                        <div className={styles.marginCard}>
                             <ConsoleUsedDevices {...propsUsedDevices} />
                         </div>
                     </Col>
                     <Col xs={24} xl={8}>
-                        <ConsoleUsedChannels />
+                        <div className={styles.marginCard}>
+                            <ConsoleUsedChannels />
+                        </div>
                     </Col>
                 </Row>
             </Col>
             <Col className={styles.container} span={24}>
-                <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
-                    <Col xs={24} md={3} lg={3}>
+                <Row gutter={[{xs: 8, sm: 16, md: 24, lg: 32 },16]}>
+                    <Col xs={24} md={24} lg={3}>
                         <p className={styles.title}>{intl.formatMessage({ id: 'BLOCK_NAME.titleFunel' })}</p>
                     </Col>
-                    <Col xs={24} md={8} lg={6} className={styles.header}>
+                    <Col xs={24} md={24} lg={6} className={styles.header}>
                         <RadioButtonBlock {...propsRadioFunel} />
                     </Col>
-                    <Col xs={24} md={6} lg={6} className={styles.header}>
+                    <Col xs={24} md={24} lg={6} className={styles.header}>
                         <RangePickerBlock {...propsDateFunel} />
                     </Col>
-                    <Col xs={24} lg={6} className={styles.header}>
+                    <Col xs={24} md={24} className={styles.header}>
                         <SelectOptionsBlock {...propsComboFunel} />
                     </Col>
-                    <Col xs={24} lg={3} className={styles.header}>
+                    <Col xs={24} md={24} lg={3} className={styles.header}>
                         <div className={styles.registry}>
                             <img src={download} alt="download ico" />
                             <p>{intl.formatMessage({ id: 'BLOCK_NAME.titleReport' })}</p>
@@ -266,10 +270,14 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC = () => {
                 </Row>
             </Col>
             <Col span={24} className={styles.container}>
-                <RequestByStages />
+                <div className={styles.marginCard}>
+                    <RequestByStages />
+                </div>
             </Col>
-            <Col xs={24} xl={8}>
-                <ConfigDashboardBlock title={intl.formatMessage({ id: 'BLOCK_NAME.configDashboard' })} />
+            <Col xs={24} xl={8} className={styles.container}>
+                <div className={styles.marginCard}>
+                    <ConfigDashboardBlock title={intl.formatMessage({ id: 'dashboard.configDashboard' })} />
+                </div>
             </Col>
         </Row>
     )

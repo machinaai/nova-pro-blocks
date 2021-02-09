@@ -3,10 +3,14 @@
 }
 .percentage {
   margin-bottom: 20px;
+  border-radius: 10px;
+  border: 1px solid rgb(234, 240, 247);
+  box-shadow: 0px 0px 20px -10px rgba(0, 0, 0, 0.3);
 }
 .container {
-  margin-bottom: 20px;
-  padding: 0 20px;
+  @media only screen and (min-width: 768px) {
+    margin-bottom: 20px;
+  }
 }
 .title {
   color: rgb(0, 0, 0);
@@ -18,14 +22,15 @@
   width: 98px;
 }
 .registry {
-  overflow: hidden;
-  align-items: flex-start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   > img {
     width: 14.5;
     height: 13.5;
     color: black;
     float: left;
-    padding-top: 6px;
     margin-right: 10px;
   }
   > p {
@@ -40,5 +45,14 @@
 @media (min-width: 100px) and (max-width: 767px) {
   .header {
     margin-bottom: 12px;
+  }
+}
+.marginCard {
+  border-radius: 10px;
+  border: 1px solid rgb(234, 240, 247);
+  box-shadow: 0px 0px 20px -10px rgba(0, 0, 0, 0.3);
+
+  @media (min-width: 100px) and (max-width: 1024px) {
+    margin-bottom: 20px;
   }
 }
