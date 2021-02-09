@@ -1,4 +1,5 @@
 export default {
+  'menu.total-request':'Total request',
   'BLOCK_NAME.title': 'Total requests',
   'BLOCK_NAME.subtitle': 'Status of requests',
   'BLOCK_NAME.op1': 'Initiates',
