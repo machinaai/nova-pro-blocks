@@ -4,7 +4,6 @@ import logoProceso from './ico-enproceso.svg';
 import logoIniciadas from './ico-iniciadas.svg';
 import logoSolicitudes from './ico-solicitudes.svg';
 import logoTerminadas from './ico-terminadas.svg';
-import styles from '../components/request-container/card/src/index.less';
 
 export const dataFixture = {
   font: {
@@ -16,10 +15,10 @@ export const dataFixture = {
   },
   icons: {
     iconTotalReq: logoSolicitudes,
-    iconOp1: <img className={styles.iconStatus} src={logoIniciadas} alt='option1' />,
-    iconOp2: <img className={styles.iconStatus} src={logoProceso} alt='option2' />,
-    iconOp3: <img className={styles.iconStatus} src={logoAbandonadas} alt='option3' />,
-    iconOp4: <img className={styles.iconStatus} src={logoTerminadas} alt='option4' />
+    iconOp1: <img src={logoIniciadas} alt='option1' />,
+    iconOp2: <img src={logoProceso} alt='option2' />,
+    iconOp3: <img src={logoAbandonadas} alt='option3' />,
+    iconOp4: <img src={logoTerminadas} alt='option4' />
   },
   request: {
     totalRequest: 54,
