@@ -1,4 +1,5 @@
 export default {
+  'menu.ConsoleRequest':'Solicitudes',
   'BLOCK_NAME.titleRequest':'Solicitudes pendientes',
   'BLOCK_NAME.RadioBtnOp1':'Todas',
   'BLOCK_NAME.RadioBtnOp2':'Documentación',
