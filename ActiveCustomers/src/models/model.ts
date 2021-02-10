@@ -25,7 +25,7 @@ interface Model {
 }
 
 const Model: Model = {
-  namespace: 'activeCustomer',
+  namespace: 'BLOCK_NAME_CAMEL_CASE',
   state: {},
   effects: {
     *getActiveCustomers({ payload }:any, { call, put }:any) {

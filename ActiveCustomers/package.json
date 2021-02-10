@@ -1,8 +1,7 @@
 {
-  "name": "@nova-templates/active-customers",
+  "name": "@nova-pro-blocks/active-customer",
   "version": "0.0.1",
-  "description": "Template for ActiveCustomer",
-  "license": "ISC",
+  "description": "Pro-block for active customer",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/machinaai"
   },
@@ -14,7 +13,8 @@
     "react": ">=16.12.0",
     "@ant-design/icons": "^4.0.0",
     "umi-request": "^1.0.0",
-    "antd": "^4.7.2"
+    "antd": "^4.7.2",
+    "bizcharts": ">=4.0.0"
   },
   "peerDependencies": {
     "@ant-design/pro-layout": "^4.5.5"

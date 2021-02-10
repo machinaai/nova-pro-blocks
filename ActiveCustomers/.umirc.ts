@@ -5,13 +5,16 @@ export default defineConfig({
     type: 'none',
   },
   dva: {
-    hmr: true
+    hmr: true,
   },
   locale: {
     default: 'es-ES',
     useLocalStorage: true,
   },
-  routes: [{
-    path: '/', component: '@/index'
-  }]
+  routes: [
+    {
+      path: '/',
+      component: '@/index',
+    },
+  ],
 });

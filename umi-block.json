@@ -35,7 +35,7 @@
     {
       "key": "ActiveCustomers",
       "name": "ActiveCustomers",
-      "description": "Template for ActiveCustomer",
+      "description": "Pro-block for active customer",
       "url": "https://github.com/machinaai/nova-pro-blocks/tree/master/ActiveCustomers",
       "path": "ActiveCustomers",
       "features": [
@@ -44,7 +44,7 @@
       ],
       "img": "https://raw.githubusercontent.com/machinaai/nova-pro-blocks/master/ActiveCustomers/snapshot.png",
       "tags": [
-        "template"
+        "pro-block"
       ],
       "previewUrl": "https://preview.pro.ant.design/"
     },
