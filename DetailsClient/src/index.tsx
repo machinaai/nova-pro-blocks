@@ -2,8 +2,8 @@ import { Tabs } from 'antd';
 import React, { useEffect } from 'react';
 import { connect, useDispatch, useHistory, useIntl } from 'umi';
 import ConfigParams from './pro-blocks/parameter-configuration/index';
-import ConsoleClientDetails from './pro-blocks/hkjhkj/index'
-import { StateModelClient } from './pro-blocks/hkjhkj/models/model';
+import ConsoleClientDetails from './pro-blocks/console-client-details/index'
+import { StateModelClient } from './pro-blocks/console-client-details/models/model';
 import styles from './index.less'
 
 const PAGE_NAME_UPPER_CAMEL_CASE: React.FC = () => {
