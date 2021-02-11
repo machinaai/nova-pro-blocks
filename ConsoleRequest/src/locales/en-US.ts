@@ -1,4 +1,5 @@
 export default {
+    'menu.ConsoleRequest':'Console Request',
     'BLOCK_NAME.titleRequest':'Awaiting requests',
     'BLOCK_NAME.RadioBtnOp1':'All',
     'BLOCK_NAME.RadioBtnOp2':'Documentation',
