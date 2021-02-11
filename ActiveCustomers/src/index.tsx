@@ -9,7 +9,7 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC = () => {
     useEffect(() => {
         dispatch({
             type: 'activeCustomer/setRoutePath',
-            payload: '/client-detail'
+            payload: '/clientdetail'
         });
     }, []);
 
