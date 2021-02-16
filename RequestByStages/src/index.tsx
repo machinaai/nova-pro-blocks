@@ -49,13 +49,13 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC<PAGE_NAME_UPPER_CAMEL_CASEProps> = ({
   const {dataDevice,dataStatistic} = getCleanData(dataSteps);
 
   const propsFunnelChart: FunnelChartProps = {
-    dataOptions: dataDevice,
+    dataOptions: dataDevice || [],
     heightStatistic: 195,
     heightCanvas: 140
   }
 
   const propsExperienceStatistic: StatisticProps = {
-    dataOptions: dataStatistic,
+    dataOptions: dataStatistic || [],
     icons
   }
   return (
