@@ -224,7 +224,9 @@ const PersonalData: React.FC<PersonalDataProps> = ({
             </div>
             <div className={styles.group}>
               <div className={styles.colum}>
-                <ConfigProvider locale={locale}>
+                <p className={styles.label_date}>{internationalization.formatMessage({
+                  id: 'personaldata.formManually.date',
+                  })}</p>
                   <Form.Item name="date" rules={[{ required: true }]}>
                     <DatePicker
                       format={dateFormat}
@@ -241,7 +243,6 @@ const PersonalData: React.FC<PersonalDataProps> = ({
                       disabledDate={disabledDate}
                     />
                   </Form.Item>
-                </ConfigProvider>
               </div>
               <div className={styles.colum}>
                 <Form.Item name="address" rules={[{ required: true }]}>
