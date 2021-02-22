@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useDispatch, connect, useIntl } from "umi";
 
 import Title from "./components/contentTitle";
@@ -16,6 +16,8 @@ interface PAGE_NAME_UPPER_CAMEL_CASEProps {
   status?: StateModel["status"];
   flagFlowComplete?: StateModel["flowComplete"];
   onComplete?: Function;
+  phoneSave?: StateModel['phone'];
+  onSetPhone?: Function;
 }
 /**
  * Pro block RegisterOtp
@@ -26,24 +28,47 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC<PAGE_NAME_UPPER_CAMEL_CASEProps> = ({
   step,
   onComplete,
   flagFlowComplete,
+  phoneSave,
+  onSetPhone
 }) => {
   const Internationalization = useIntl();
   const dispatch = useDispatch();
+  const [newData, setNewData] = useState({
+    upTitle: '',
+    title: '',
+    content: ''
+  });
 
-  const data = useMemo(
-    () => ({
+    /**
+   * Function that mask phone number
+   * @param phoneValue 
+   */
+  const maskNumber = (phoneValue: any) => {
+    const phone = phoneValue?.toString();
+    const formatPhone = `${phone?.substring(0, 2)} ${phone?.substring(2, 6)} ${phone?.substring(6, 10)} `.trim();
+    return formatPhone.replace(formatPhone.substring(0, 7), '** ****');
+  }
+
+  useEffect(() => {
+    if (phoneSave && onSetPhone) {
+      onSetPhone(phoneSave);
+    }
+    const data = {
       upTitle: Internationalization.formatMessage({
-        id: `BLOCK_NAME.${step}.upTitle`,
+        id: `registerOtp.${step}.upTitle`,
       }),
       title: Internationalization.formatMessage({
-        id: `BLOCK_NAME.${step}.title`,
+        id: `registerOtp.${step}.title`,
       }),
-      content: Internationalization.formatMessage({
-        id: `BLOCK_NAME.${step}.content`,
-      }),
-    }),
-    [step]
-  );
+      content: step === 'validate' ? `${Internationalization.formatMessage({
+        id: `registerOtp.${step}.content`,
+      })} ${maskNumber(phoneSave)}` :
+        Internationalization.formatMessage({
+          id: `registerOtp.${step}.content`,
+        }),
+    }
+    setNewData(data);
+  }, [phoneSave,step]);
 
   useEffect(() => {
     if (flagFlowComplete && onComplete) {
@@ -95,7 +120,7 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC<PAGE_NAME_UPPER_CAMEL_CASEProps> = ({
 
   return (
     <>
-      <Title data={data} />
+      <Title data={newData} />
       {step === StepEnum.getOtp ? (
         <GetOtp action={getOtp} />
       ) : (

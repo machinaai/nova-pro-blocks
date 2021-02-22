@@ -7,7 +7,8 @@ import { stepGetOtpPhone, stepValidateOtpPhone } from '../service';
 export interface StateModel {
   step?: StepEnum;
   status?: StatusResponseEnum;
-  flowComplete?: boolean
+  flowComplete?: boolean;
+  phone?: string;
 }
 
 interface Model {
@@ -21,6 +22,7 @@ interface Model {
     setStatus: Reducer<StateModel>;
     setStep: Reducer<StateModel>;
     setFlowStatus: Reducer<StateModel>;
+    savePhone: Reducer<StateModel>;
   }
 }
 
@@ -31,7 +33,6 @@ const Model: Model = {
     flowComplete: false
   },
   effects: {
-   
     *submitPhoneNumber({ payload }, { call, put }) {
       const response = yield call(stepGetOtpPhone, payload);
       const { status } = response;
@@ -39,20 +40,22 @@ const Model: Model = {
       if (status) {
         yield put({ type: 'setStatus', payload: status });
       } else {
-        yield put({ type: 'setStep', payload:  StepEnum.validateOtp});
+        yield put({ type: 'setStep', payload: StepEnum.validateOtp });
+        yield put({ type: 'savePhone', payload: payload.phone });
         yield put({ type: 'setStatus', payload: 200 });
       }
     },
 
-    *validateOtp({ payload }, { call, put }) {
+     *validateOtp({ payload }, { call, put }) {
       const response = yield call(stepValidateOtpPhone, payload);
-      const { status } = response;
+      const { status, metadata, identityToken } = response;
 
       if (status) {
         yield put({ type: 'setStatus', payload: status });
       } else {
-        yield put({ type: 'setFlowStatus', payload:  true});
+        yield put({ type: 'setFlowStatus', payload: true });
         yield put({ type: 'setStatus', payload: 200 });
+        yield put({ type: 'setFlowStatus', payload: false });
       }
     },
   },
@@ -62,6 +65,12 @@ const Model: Model = {
         ...state,
         step: payload
       }
+    },
+    savePhone(state, { payload }) {
+      return {
+        ...state,
+        phone: payload,
+      };
     },
     setStatus(state, { payload }) {
       return {
