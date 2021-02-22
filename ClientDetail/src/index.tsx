@@ -1,4 +1,4 @@
-import { Tabs } from 'antd';
+import { Tabs, Alert, Button, Space } from 'antd';
 import React, { useEffect } from 'react';
 import { connect, useDispatch, useHistory, useIntl } from 'umi';
 import ConfigParams from './pro-blocks/parameter-configuration/index';
@@ -31,19 +31,36 @@ const PAGE_NAME_UPPER_CAMEL_CASE: React.FC = () => {
         console.log(key);
     }
     const propClientDetais = {
-        pathBtnReturn: '/requests/:id'
+        pathBtnReturn: '/consolerequest'
+    }
+
+    const btnReturn = () => {
+        params.push('/consolerequest');
     }
     return (
-        <div className={styles.tabs}>
-            <Tabs defaultActiveKey="1" onChange={callback}>
-                <TabPane tab={<p className={styles.titleTab}>{`${intl.formatMessage({ id: 'BLOCK_NAME.Title-tab1' })}`}</p>} key="1">
-                    <ConsoleClientDetails {...propClientDetais} />
-                </TabPane>
-                <TabPane tab={<p className={styles.titleTab}>{`${intl.formatMessage({ id: 'BLOCK_NAME.Title-tab2' })}`}</p>} key="2">
-                    <ConfigParams />
-                </TabPane>
-            </Tabs>
-        </ div>
+        <>
+            {(search && search !== '?id=') ?
+                <div className={styles.tabs}>
+                    <Tabs defaultActiveKey="1" onChange={callback}>
+                        <TabPane tab={<p className={styles.titleTab}>{`${intl.formatMessage({ id: 'BLOCK_NAME.Title-tab1' })}`}</p>} key="1">
+                            <ConsoleClientDetails {...propClientDetais} />
+                        </TabPane>
+                        <TabPane tab={<p className={styles.titleTab}>{`${intl.formatMessage({ id: 'BLOCK_NAME.Title-tab2' })}`}</p>} key="2">
+                            <ConfigParams />
+                        </TabPane>
+                    </Tabs>
+                </ div>
+                : <Alert
+                    message={`${intl.formatMessage({ id: 'BLOCK_NAME.titleAlert' })}.`}
+                    type="warning"
+                    description={
+                        <Button className={styles.btnAlert} size="large" type='ghost' onClick={btnReturn}>
+                            {`${intl.formatMessage({ id: 'BLOCK_NAME.btnAlert' })}`}
+                        </Button>}
+                    closable
+                />
+            }
+        </>
     )
 }
 export default connect(({ clientDetails }: { clientDetails: StateModelClient }) => ({
